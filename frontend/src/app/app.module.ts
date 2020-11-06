@@ -7,6 +7,7 @@ import { LogInComponent } from './LogIn/log-in/log-in.component';
 import { UserListComponent } from './UserList/user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import {FormsModule} from "@angular/forms";
+import { HttpClientModule} from '@angular/common/http'
 
 //Service
 import {UserServiceService} from "./User/user-service.service";
@@ -22,6 +23,7 @@ import {UserServiceService} from "./User/user-service.service";
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [UserServiceService],
   bootstrap: [AppComponent]
