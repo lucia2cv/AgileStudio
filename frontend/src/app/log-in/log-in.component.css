@@ -1,6 +1,23 @@
 #right{
-  background-color: lavender;
+  background-color: bisque;
 }
 #image{
   height: 100%;
+}
+.mat-card{
+  width: 75%;
+  height: 75%;
+  padding: 0px;
+}
+.mat-card-header{
+  background-color: chocolate;
+  height: 10%;
+  width: 100%;
+}
+.mat-card-title {
+  padding-top: 25px;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  font-family: "Franklin Gothic Medium";
 }

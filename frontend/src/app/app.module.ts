@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component'
 import { HttpClientModule} from '@angular/common/http';
 import {MatGridListModule} from "@angular/material/grid-list";
+import {MatCardModule,} from '@angular/material/card';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
     AppRoutingModule,
     HttpClientModule,
     MatGridListModule,
-
+    MatCardModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
