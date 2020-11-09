@@ -1,13 +1,17 @@
-#right{
-  background-color: bisque;
+.grid-container{
+  height: auto;
 }
 #image{
-  height: 100%;
+  height: auto;
+}
+#right{
+  background-color: bisque;
 }
 .mat-card{
   width: 75%;
   height: 75%;
-  padding: 0px;
+  margin: 50px;
+
 }
 .mat-card-header{
   background-color: chocolate;
@@ -17,7 +21,10 @@
 .mat-card-title {
   padding-top: 25px;
   font-size: 40px;
-  display: flex;
-  justify-content: center;
   font-family: "Franklin Gothic Medium";
 }
+.grid-container{
+  background-color: blue;
+}
+
+
