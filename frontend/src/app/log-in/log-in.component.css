@@ -1,11 +1,17 @@
+#global{
+  height: 100%;
+}
 .grid-container{
-  height: auto;
+  height: 100%;
+  width: 100%;
+  background-color: blue;
 }
 #image{
   height: auto;
 }
-#right{
+#right, #left{
   background-color: bisque;
+  height: 100% ;
 }
 .mat-card{
   width: 75%;
@@ -23,8 +29,6 @@
   font-size: 40px;
   font-family: "Franklin Gothic Medium";
 }
-.grid-container{
-  background-color: blue;
-}
+
 
 
