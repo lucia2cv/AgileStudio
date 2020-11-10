@@ -1,34 +1,36 @@
 #global{
-  height: 100%;
+  height: inherit;
 }
 .grid-container{
   height: 100%;
   width: 100%;
-  background-color: blue;
 }
-#image{
-  height: auto;
-}
-#right, #left{
+#right{
   background-color: bisque;
   height: 100% ;
+}
+#image{
+ height: 100%;
 }
 .mat-card{
   width: 75%;
   height: 75%;
-  margin: 50px;
+
+}
+
+.mat-card-title {
+  padding-top: 30px;
+  font-size: 40px;
+  font-family: "Franklin Gothic Medium";
 
 }
 .mat-card-header{
-  background-color: chocolate;
   height: 10%;
-  width: 100%;
 }
-.mat-card-title {
-  padding-top: 25px;
-  font-size: 40px;
-  font-family: "Franklin Gothic Medium";
+.main-div{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-
 

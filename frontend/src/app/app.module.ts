@@ -9,6 +9,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule,} from '@angular/material/card';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatGridListModule,
     MatCardModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatFormFieldModule
 
   ],
   providers: [],
