@@ -37,4 +37,9 @@
 .mat-card-content{
   text-align: center;
   justify-content: center;
+  padding-top: 20%;
+}
+.email, .contraseña{
+  width: 75%;
+  padding-bottom: 35px;
 }
