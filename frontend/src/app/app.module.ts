@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component'
+import { DialogoRegistroComponent } from './dialogoRegistro/dialogoRegistro.component';
+
+
 import { HttpClientModule} from '@angular/common/http';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule,} from '@angular/material/card';
@@ -16,10 +19,13 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatIconModule} from "@angular/material/icon";
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LogInComponent,
+    DialogoRegistroComponent,
   ],
   imports: [
     BrowserModule,
