@@ -1,0 +1,17 @@
+#aceptar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#cerrar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-container{
+  height: 61%;
+  width: 100%;
+}
+#global{
+  height: 100%;
+}

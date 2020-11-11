@@ -1,11 +1,37 @@
 <h1 mat-dialog-title>REGISTRARSE</h1>
 <div mat-dialog-content>
-  <mat-form-field>
-    <mat-label>Correo Electrónico</mat-label>
-    <input matInput [(ngModel)]="data.email">
+  <mat-form-field class ="email">
+    <mat-label>Correo electrónico</mat-label>
+    <input type="email" matInput placeholder="correo@ejemplo.com"
+           [formControl]="email" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
+
+  <div>
+    <mat-form-field class ="contraseña">
+      <mat-label>Contraseña</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.email" >Ok</button>
+<div class="grid-container">
+  <div gdAreas=" cerrar aceptar" gdColumns="50% 50%" id="global">
+
+    <div gdArea="cerrar" id="cerrar" >
+      <div mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="data.email">No Thanks</button>
+
+      </div>
+    </div>
+
+    <div gdArea="aceptar" id = "aceptar" >
+      <div mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="data.email" >Ok</button>
+      </div>
+    </div>
+  </div>
 </div>

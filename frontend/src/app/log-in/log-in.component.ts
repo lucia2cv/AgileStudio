@@ -56,6 +56,7 @@ export class LogInComponent implements OnInit {
       this.email = result;
     });
   }
+
   ngOnInit(): void {
   }
 
