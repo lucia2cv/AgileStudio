@@ -9,9 +9,19 @@
   align-items: center;
 }
 .grid-container{
-  height: 61%;
+  height: 100%;
   width: 100%;
 }
 #global{
   height: 100%;
+}
+#contenedor{
+  display: flex;
+  height: 88%;
+}
+#divide{
+  height: inherit;
+}
+.email, .equipo, .contraseña{
+  width: 50% !important;
 }

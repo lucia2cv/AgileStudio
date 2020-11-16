@@ -1,7 +1,9 @@
 #global{
   height: inherit;
 }
-
+#botones{
+  padding-top: 10%;
+}
 .grid-container{
   height: 100%;
   width: 100%;

@@ -11,7 +11,6 @@ import {FormControl, Validators} from "@angular/forms";
 export class DialogoRegistroComponent implements OnInit {
   email = new FormControl('', [ Validators.required, Validators.email]);
   hide = true;
-  dialogoAbierto =true;
   constructor( public dialogoRef: MatDialogRef<DialogoRegistroComponent>,
                @Inject(MAT_DIALOG_DATA) public data:DialogData) {
 
@@ -24,11 +23,6 @@ export class DialogoRegistroComponent implements OnInit {
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
-  onNoClick():void{
-    this.dialogoAbierto = false;
-    this.dialogoRef.close();
-  }
-
 
   ngOnInit(): void {
   }

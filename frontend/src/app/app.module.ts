@@ -18,7 +18,8 @@ import {ErrorStateMatcher, ShowOnDirtyErrorStateMatcher} from "@angular/material
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatIconModule} from "@angular/material/icon";
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dialog";
-
+import {MatRadioModule} from '@angular/material/radio';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -41,7 +42,9 @@ import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dia
     BrowserAnimationsModule,
     MatIconModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule,
+    MatButtonModule
 
 
   ],

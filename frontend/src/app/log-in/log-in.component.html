@@ -23,18 +23,30 @@
 
                    <mat-form-field class ="contraseña">
                      <mat-label>Contraseña</mat-label>
-                     <input matInput [type]="hide ? 'password' : 'text'">
+                     <input matInput [type]="hide ? 'password' : 'text'" required>
                      <button mat-icon-button matSuffix (click)="hide = !hide"
                             [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                      </button>
                    </mat-form-field>
-                   <div class="button">
-                     <button type="submit" mat-button>Login</button>
-                   </div>
 
-               <!--  </form> -->
-                 <button mat-raised-button (click)="openDialog()"> Registrarse</button>
+                 <div class="grid-container" id="botones">
+                   <div gdAreas=" log registrarse" gdColumns="50% 50%" >
+
+                     <div gdArea="log" id="log in" >
+
+                       <div class="button">
+                         <button type="submit" mat-raised-button >Login</button>
+                       </div>
+
+                     </div>
+
+                     <div gdArea="registrarse" id = "registro" >
+                       <button mat-raised-button (click)="openDialog()"> Registrarse</button>
+                     </div>
+                   </div>
+                 </div>
+
                </mat-card-content>
 
         </mat-card>
