@@ -19,7 +19,7 @@ export class LogInComponent implements OnInit {
   email = new FormControl('', [ Validators.required, Validators.email]);
   hide = true;
   dialogoAbierto = false;
-/*
+
   form: FormGroup = new FormGroup({
     correo: new FormControl(''),
     contraseña: new FormControl(''),
@@ -31,7 +31,7 @@ export class LogInComponent implements OnInit {
   }
   @Input() error: string | null;
 
-  @Output() submitEM = new EventEmitter();*/
+  @Output() submitEM = new EventEmitter();
   getErrorMessage() {
     if(this.email.hasError('required')){
       return 'You must enter a value';

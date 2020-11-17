@@ -13,7 +13,7 @@
           <mat-card-title >Iniciar Sesión</mat-card-title>
         </mat-card-header>
                <mat-card-content *ngIf="dialogoAbierto == false">
-                <!-- <form [formGroup]="form" (ngSubmit)="submit()">-->
+                <form [formGroup]="form" (ngSubmit)="submit()">
                    <mat-form-field class ="email">
                      <mat-label>Correo electrónico</mat-label>
                      <input type="email" matInput placeholder="correo@ejemplo.com"
@@ -36,17 +36,15 @@
                      <div gdArea="log" id="log in" >
 
                        <div class="button">
-                         <button type="submit" mat-raised-button >Login</button>
+                         <button type="submit" mat-raised-button >Acceder</button>
                        </div>
-
                      </div>
-
                      <div gdArea="registrarse" id = "registro" >
                        <button mat-raised-button (click)="openDialog()"> Registrarse</button>
                      </div>
                    </div>
                  </div>
-
+                </form>
                </mat-card-content>
 
         </mat-card>
