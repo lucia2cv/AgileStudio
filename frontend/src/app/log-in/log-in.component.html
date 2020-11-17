@@ -1,0 +1,54 @@
+<div class="grid-container">
+  <div gdAreas=" left right" gdColumns="50% 50%" id="global">
+
+    <div gdArea="left" id="left" >
+
+        <img src="assets/officeImage.jpg" id="image">
+
+    </div>
+
+    <div gdArea="right" id = "right" >
+      <mat-card >
+        <mat-card-header >
+          <mat-card-title >Iniciar Sesión</mat-card-title>
+        </mat-card-header>
+               <mat-card-content *ngIf="dialogoAbierto == false">
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                   <mat-form-field class ="email">
+                     <mat-label>Correo electrónico</mat-label>
+                     <input type="email" matInput placeholder="correo@ejemplo.com"
+                            [formControl]="email" required>
+                     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                   </mat-form-field>
+
+                   <mat-form-field class ="contraseña">
+                     <mat-label>Contraseña</mat-label>
+                     <input matInput [type]="hide ? 'password' : 'text'" required>
+                     <button mat-icon-button matSuffix (click)="hide = !hide"
+                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                     </button>
+                   </mat-form-field>
+
+                 <div class="grid-container" id="botones">
+                   <div gdAreas=" log registrarse" gdColumns="50% 50%" >
+
+                     <div gdArea="log" id="log in" >
+
+                       <div class="button">
+                         <button type="submit" mat-raised-button >Acceder</button>
+                       </div>
+                     </div>
+                     <div gdArea="registrarse" id = "registro" >
+                       <button mat-raised-button (click)="openDialog()"> Registrarse</button>
+                     </div>
+                   </div>
+                 </div>
+                </form>
+               </mat-card-content>
+
+        </mat-card>
+    </div>
+  </div>
+</div>
+

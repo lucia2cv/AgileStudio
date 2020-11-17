@@ -1,0 +1,47 @@
+#global{
+  height: inherit;
+}
+#botones{
+  padding-top: 10%;
+}
+.grid-container{
+  height: 100%;
+  width: 100%;
+}
+#right{
+  background-color: bisque;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#image{
+ height: 100%;
+}
+.mat-card{
+  width: 75%;
+  height: 75%;
+
+}
+
+.mat-card-title {
+  padding-top: 30px;
+  font-size: 40px;
+  font-family: "Franklin Gothic Medium";
+
+}
+.mat-card-header{
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+.mat-card-content{
+  text-align: center;
+  justify-content: center;
+  padding-top: 20%;
+}
+.email, .contraseña{
+  width: 75%;
+  padding-bottom: 35px;
+}
