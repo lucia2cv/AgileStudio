@@ -21,6 +21,7 @@ import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dia
 import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
+import {LoginService} from "./log-in/login.service";
 
 
 
@@ -50,7 +51,7 @@ import { HomeComponent } from './home/home.component';
 
 
   ],
-  providers: [
+  providers: [ LoginService,
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {panelClass: 'mat-dialog-override'}},
   ],

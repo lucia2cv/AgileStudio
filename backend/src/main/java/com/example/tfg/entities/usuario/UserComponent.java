@@ -1,5 +1,4 @@
 package com.example.tfg.entities.usuario;
-
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 

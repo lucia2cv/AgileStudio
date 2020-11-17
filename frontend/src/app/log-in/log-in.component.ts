@@ -3,6 +3,8 @@ import {FormControl, Validators, FormGroup} from "@angular/forms";
 import {EventEmitter} from "events";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogoRegistroComponent} from "../dialogoRegistro/dialogoRegistro.component";
+import {Router} from "@angular/router";
+import {LoginService} from "./login.service";
 
 
 export interface DialogData {
@@ -41,8 +43,24 @@ export class LogInComponent implements OnInit {
   }
 
 
-  constructor( public dialog: MatDialog) { }
+  constructor( public dialog: MatDialog, public router: Router, public loginService: LoginService) { }
 
+  login(event:any, email:string, pass:string){
+    event.preventDefault();
+    this.loginService.login(email, pass).subscribe((us)=> {
+      console.log(us);
+    },
+      (error) =>alert('Invalid data'),
+      );
+  }
+
+  logout(){
+    this.loginService.logout().subscribe( (response) =>{
+      this.router.navigate(['/']);
+    },
+      (error) => console.log('Error whe trying to logout' + error),
+      );
+  }
 
   openDialog(): void{
     this.dialogoAbierto = true;

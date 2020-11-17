@@ -12,7 +12,7 @@ public class UserController {
     private UserRepository userRepository;
 
     /*Add user*/
-    @PostMapping(value = "/usuarios/{id")
+    @PostMapping(value = "/usuarios/")
     @ResponseStatus(HttpStatus.CREATED)
     public User newUser(@RequestBody User user){
         userRepository.save(user);
