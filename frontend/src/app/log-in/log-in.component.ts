@@ -8,7 +8,7 @@ import {LoginService} from "./login.service";
 
 
 export interface DialogData {
-  email:string
+  nombre:string
   contraseña: string;
 }
 @Component({
@@ -18,12 +18,12 @@ export interface DialogData {
 })
 export class LogInComponent implements OnInit {
 
-  email = new FormControl('', [ Validators.required, Validators.email]);
+  /*email = new FormControl('', [ Validators.required, Validators.email]);*/
   hide = true;
   dialogoAbierto = false;
-
+  nombre:string;
   form: FormGroup = new FormGroup({
-    correo: new FormControl(''),
+    nombre: new FormControl(''),
     contraseña: new FormControl(''),
   });
   submit() {
@@ -34,20 +34,20 @@ export class LogInComponent implements OnInit {
   @Input() error: string | null;
 
   @Output() submitEM = new EventEmitter();
-  getErrorMessage() {
+ /* getErrorMessage() {
     if(this.email.hasError('required')){
       return 'You must enter a value';
     }
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
-
+*/
 
   constructor( public dialog: MatDialog, public router: Router, public loginService: LoginService) { }
 
-  login(event:any, email:string, pass:string){
+  login(event:any, nombre:string, pass:string){
     event.preventDefault();
-    this.loginService.login(email, pass).subscribe((us)=> {
+    this.loginService.login(nombre, pass).subscribe((us)=> {
       console.log(us);
     },
       (error) =>alert('Invalid data'),
@@ -66,12 +66,12 @@ export class LogInComponent implements OnInit {
     this.dialogoAbierto = true;
     console.log('Dialogo abierto');
     const dialogRef = this.dialog.open(DialogoRegistroComponent,{
-      width: '50%', height:'50%', data: {email: this.email}
+      width: '50%', height:'50%', data: {nombre: this.nombre}
     });
     dialogRef.afterClosed().subscribe( result =>{
       console.log('Dialogo cerrado');
       this.dialogoAbierto=false;
-      this.email = result;
+      this.nombre = result;
     });
   }
 
