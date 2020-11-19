@@ -31,7 +31,7 @@ public class UserAuthenticationProvider implements AuthenticationProvider {
         String username = auth.getName();
         String password = (String)auth.getCredentials();
 
-        User user = (User) userRepository.findByName(auth.getName());
+        User user = (User) userRepository.findByNombre(auth.getName());
 
         if ( user == null){
             System.out.println("No autenticado");

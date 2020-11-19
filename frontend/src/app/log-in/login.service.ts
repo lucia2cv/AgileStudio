@@ -5,7 +5,7 @@ import {map} from "rxjs/operators";
 
 export interface User{
   id?:number;
-  name:string;
+  nombre:string;
   rol:string;
   authdata: string;
   email:string;
@@ -35,8 +35,8 @@ export class LoginService {
     this.isLogged = false;
   }
 
-  login(email: string, password:string){
-    let auth = window.btoa(email + ':' + password); //encripta
+  login(nombre: string, password:string){
+    let auth = window.btoa(nombre + ':' + password); //encripta
     const headers = new HttpHeaders({
       Authorization: 'Basic ' + auth, 'X-Requested-With' : 'XMLHttpRequest',
     });
