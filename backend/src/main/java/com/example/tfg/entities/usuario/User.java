@@ -1,9 +1,7 @@
 package com.example.tfg.entities.usuario;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {
@@ -22,8 +20,7 @@ public class User {
 
     protected User(){}
 
-    public User(long id, String nombre, String contraseña, String email, String rol, long id_equipo) {
-        this.id = id;
+    public User(String nombre, String contraseña, String email, String rol, long id_equipo) {
         this.nombre = nombre;
         this.contraseña = contraseña;
         this.email = email;
