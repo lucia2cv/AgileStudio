@@ -41,7 +41,7 @@ export class LoginService {
       Authorization: 'Basic ' + auth, 'X-Requested-With' : 'XMLHttpRequest',
     });
 
-    return this.http.get<User>('/api/login', { headers })
+    return this.http.get<User>('', { headers })
       .pipe(map( user => {
         if(user){
           this.setCurrentUser(user);

@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //http.authorizeRequests().anyRequest().authenticated();
         http.authorizeRequests().antMatchers("/home").hasAnyRole("DESARROLLADOR","SCRUM MASTER","PRODUCT OWNER");
         //LoginForm
-        http.formLogin().loginPage("/api/login");
+        http.formLogin().loginPage("/login");
         http.formLogin().usernameParameter("username");
         http.formLogin().passwordParameter("password");
         http.formLogin().defaultSuccessUrl("/home");

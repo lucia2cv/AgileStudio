@@ -60,7 +60,7 @@ export class LogInComponent implements OnInit {
     this.loginService.logout().subscribe( (response) =>{
       this.router.navigate(['/']);
     },
-      (error) => console.log('Error whe trying to logout' + error),
+      (error) => console.log('Error when trying to logout' + error),
       );
   }
 
