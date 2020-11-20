@@ -24,7 +24,7 @@ export class LogInComponent implements OnInit {
   nombre:string;
   form: FormGroup = new FormGroup({
     nombre: new FormControl(''),
-    contraseña: new FormControl(''),
+    password: new FormControl(''),
   });
   submit() {
     if (this.form.valid) {
@@ -45,9 +45,11 @@ export class LogInComponent implements OnInit {
 
   constructor( public dialog: MatDialog, public router: Router, public loginService: LoginService) { }
 
-  login(event:any, nombre:string, pass:string){
+  login(event:any, nombre:string, password:string){
+    console.log(nombre);
+    console.log(password);
     event.preventDefault();
-    this.loginService.login(nombre, pass).subscribe((us)=> {
+    this.loginService.login(nombre, password).subscribe((us)=> {
       console.log(us);
     },
       (error) =>alert('Invalid data'),

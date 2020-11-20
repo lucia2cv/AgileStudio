@@ -18,7 +18,7 @@ public class LoginController {
     private static final Logger log = LoggerFactory.getLogger(LoginController.class);
     @Autowired
     private UserComponent userComponent;
-    @RequestMapping("/api/login")
+    @RequestMapping(value = "/api/login")
     public ResponseEntity<User>login(){
         if (!userComponent.isLoggedUser()){
             log.info("usuario no registrado");

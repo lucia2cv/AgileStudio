@@ -17,7 +17,7 @@
                    <mat-form-field class ="nombre">
                      <mat-label>Nombre</mat-label>
                      <input matInput #nombre placeholder="Nombre del usuario"
-                            [formControl]="nombre" required>
+                            [formControl]="form.controls.nombre" required>
                      <!--<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
                    </mat-form-field>
 
@@ -33,7 +33,7 @@
                  <div class="grid-container" id="botones">
                    <div gdAreas=" log registrarse" gdColumns="50% 50%" >
 
-                     <div gdArea="log" id="log in" >
+                     <div gdArea="log" id="log in">
 
                        <div class="button">
                          <button type="submit" mat-raised-button (click)="login($event,nombre.value, password.value )">Acceder</button>
