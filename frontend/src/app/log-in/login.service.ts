@@ -9,7 +9,7 @@ export interface User{
   rol:string;
   authdata: string;
   email:string;
-  contraseña:string;
+
 
 }
 @Injectable()
@@ -36,9 +36,9 @@ export class LoginService {
     this.isLogged = false;
   }
 
-  login(nombre: string, contraseña:string){
-    let auth = window.btoa(nombre + ':' + contraseña); //encripta
-    console.log( nombre + contraseña + " servicio login");
+  login(nombre: string, password:string){
+    let auth = window.btoa(nombre + ':' + password); //encripta
+    console.log( nombre + password + " servicio login");
     const headers = new HttpHeaders({
       Authorization: 'Basic ' + auth, 'X-Requested-With' : 'XMLHttpRequest',
     });

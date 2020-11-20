@@ -45,14 +45,14 @@ export class LogInComponent implements OnInit {
 
   constructor( public dialog: MatDialog, public router: Router, public loginService: LoginService) { }
 
-  login(event:any, nombre:string, contraseña:string){
+  login(event:any, nombre:string, password:string){
     console.log(nombre);
-    console.log(contraseña);
+    console.log(password);
     event.preventDefault();
-    this.loginService.login(nombre, contraseña).subscribe((us)=> {
+    this.loginService.login(nombre, password).subscribe((us)=> {
       console.log(us);
     },
-      (error) =>alert('Invalid data' + error),
+      (error) =>alert('Invalid data ' + error),
       );
   }
 
