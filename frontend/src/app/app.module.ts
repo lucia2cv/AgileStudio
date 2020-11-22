@@ -47,7 +47,7 @@ import {LoginService} from "./log-in/login.service";
     FormsModule,
     MatDialogModule,
     MatRadioModule,
-    MatButtonModule
+    MatButtonModule,
 
 
   ],

@@ -38,13 +38,13 @@ export class LoginService {
 
   login(nombre: string, password:string){
     let auth = window.btoa(nombre + ':' + password); //encripta
-    console.log( nombre + password + " servicio login");
+    console.log( "nombre: "+ nombre +" " + "password: " + password + " servicio login");
     const headers = new HttpHeaders({
       Authorization: 'Basic ' + auth, 'X-Requested-With' : 'XMLHttpRequest',
     });
 
     console.log("buscando ruta");
-    return this.http.get<User>('', { headers })
+    return this.http.get<User>('http://localhost:8080/login', { headers })
       .pipe(map( user => {
         console.log("No entra en set")
         if(user){
