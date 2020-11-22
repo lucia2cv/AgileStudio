@@ -1,7 +1,6 @@
 package com.example.tfg.entities.usuario;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class User {
@@ -11,7 +10,7 @@ public class User {
     private long id;
 
     private String nombre;
-    private String contraseña;
+    private String password;
     private String email;
     private String rol;
     private long id_equipo;
@@ -20,9 +19,9 @@ public class User {
 
     protected User(){}
 
-    public User(String nombre, String contraseña, String email, String rol, long id_equipo) {
+    public User(String nombre, String password, String email, String rol, long id_equipo) {
         this.nombre = nombre;
-        this.contraseña = contraseña;
+        this.password = password;
         this.email = email;
         this.rol = rol;
         this.id_equipo = id_equipo;
@@ -44,12 +43,12 @@ public class User {
         this.nombre = nombre;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setPassword(String contraseña) {
+        this.password = contraseña;
     }
 
     public String getEmail() {
@@ -81,7 +80,7 @@ public class User {
         return "Usuario{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", contraseña='" + contraseña + '\'' +
+                ", contraseña='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", rol='" + rol + '\'' +
                 ", id_equipo=" + id_equipo +

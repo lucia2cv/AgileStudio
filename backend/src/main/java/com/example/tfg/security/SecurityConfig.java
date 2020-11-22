@@ -42,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(corsFilter(), SessionManagementFilter.class);
         //Public pages
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/").permitAll();
-        //http.authorizeRequests().antMatchers(HttpMethod.GET,"/login").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/login").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/loginerror").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/logout").permitAll();
 
