@@ -27,11 +27,11 @@ public class UserAuthenticationProvider implements AuthenticationProvider {
 
 
     @Override
-    public Authentication authenticate(Authentication auth) throws AuthenticationException {
-        String username = auth.getName();
-        String password = (String)auth.getCredentials();
+    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+        String nombre = authentication.getName();
+        String password = (String)authentication.getCredentials();
 
-        User user = (User) userRepository.findByNombre(auth.getName());
+        User user = userRepository.findByNombre(nombre);
 
         if ( user == null){
             System.out.println("No autenticado");
@@ -44,7 +44,7 @@ public class UserAuthenticationProvider implements AuthenticationProvider {
             List<GrantedAuthority> roles = new ArrayList<>();
             String role = user.getRol();
             roles.add(new SimpleGrantedAuthority(role));
-            return  new UsernamePasswordAuthenticationToken(username,password,roles);
+            return  new UsernamePasswordAuthenticationToken(nombre,password,roles);
         }
 
     }
