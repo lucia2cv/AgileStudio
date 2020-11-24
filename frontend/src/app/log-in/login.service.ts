@@ -21,9 +21,9 @@ export class LoginService {
 
   constructor(private http:HttpClient) {
     let user = JSON.parse(localStorage.getItem('currentUser'));
-    if (user){
+    if (user) {
       console.log('Logged user');
-      this.setCurrentUser (user);
+      this.setCurrentUser(user);
     }
   }
 
@@ -36,7 +36,8 @@ export class LoginService {
     this.isLogged = false;
   }
 
-  login(nombre: string, password:string){
+  loginService(nombre: string, password:string){
+
     let auth = window.btoa(nombre + ':' + password); //encripta
     console.log( "nombre: "+ nombre +" " + "password: " + password + " servicio login");
     const headers = new HttpHeaders({
