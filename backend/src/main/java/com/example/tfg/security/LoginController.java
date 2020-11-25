@@ -7,21 +7,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
-
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
+//@RequestMapping("/")
 public class LoginController {
-
     private static final Logger log = LoggerFactory.getLogger(LoginController.class);
     @Autowired
     private UserComponent userComponent;
 
-    @RequestMapping(value= "/login", method = RequestMethod.GET)
+   // @GetMapping(path = "/login")
+   @RequestMapping(value= "/login", method = RequestMethod.GET)
     public ResponseEntity<User>login(){
         if(!userComponent.isLoggedUser()){
             log.info("usuario no registrado");

@@ -49,7 +49,7 @@ export class LogInComponent implements OnInit {
     console.log(nombre);
     console.log(password);
     event.preventDefault();
-    this.loginService.loginService(nombre, password).subscribe((us)=> {
+    this.loginService.login(nombre, password).subscribe((us)=> {
       console.log("login service")
       console.log(us);
     },

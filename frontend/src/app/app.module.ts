@@ -7,7 +7,7 @@ import { LogInComponent } from './log-in/log-in.component'
 import { DialogoRegistroComponent } from './dialogoRegistro/dialogoRegistro.component';
 
 
-import { HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule,} from '@angular/material/card';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -22,6 +22,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
 import {LoginService} from "./log-in/login.service";
+import {BasicAuthInterceptor} from "./auth/auth.interceptor";
+import {ErrorInterceptor} from "./auth/error.interceptor";
 
 
 
@@ -52,6 +54,8 @@ import {LoginService} from "./log-in/login.service";
 
   ],
   providers: [ LoginService,
+    {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi:true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {panelClass: 'mat-dialog-override'}},
   ],

@@ -4,7 +4,6 @@ import com.example.tfg.entities.usuario.User;
 import com.example.tfg.entities.usuario.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -14,8 +13,6 @@ public class DatabaseLoader {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
     @PostConstruct
     private void initDataBase(){
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
