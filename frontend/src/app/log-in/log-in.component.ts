@@ -22,6 +22,7 @@ export class LogInComponent implements OnInit {
   hide = true;
   dialogoAbierto = false;
   nombre:string;
+
   form: FormGroup = new FormGroup({
     nombre: new FormControl(''),
     password: new FormControl(''),
@@ -49,7 +50,7 @@ export class LogInComponent implements OnInit {
     console.log(nombre);
     console.log(password);
     event.preventDefault();
-    this.loginService.login(nombre, password).subscribe((us)=> {
+    this.loginService.login(nombre, password).subscribe(us => {
       console.log("login service")
       console.log(us);
     },
