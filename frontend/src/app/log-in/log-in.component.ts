@@ -3,10 +3,12 @@ import {FormControl, Validators, FormGroup} from "@angular/forms";
 import {EventEmitter} from "events";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogoRegistroComponent} from "../dialogoRegistro/dialogoRegistro.component";
+import {Router} from "@angular/router";
+import {LoginService} from "./login.service";
 
 
 export interface DialogData {
-  email:string
+  nombre:string
   contraseña: string;
 }
 @Component({
@@ -16,13 +18,14 @@ export interface DialogData {
 })
 export class LogInComponent implements OnInit {
 
-  email = new FormControl('', [ Validators.required, Validators.email]);
+  /*email = new FormControl('', [ Validators.required, Validators.email]);*/
   hide = true;
   dialogoAbierto = false;
+  nombre:string;
 
   form: FormGroup = new FormGroup({
-    correo: new FormControl(''),
-    contraseña: new FormControl(''),
+    nombre: new FormControl(''),
+    password: new FormControl(''),
   });
   submit() {
     if (this.form.valid) {
@@ -32,28 +35,47 @@ export class LogInComponent implements OnInit {
   @Input() error: string | null;
 
   @Output() submitEM = new EventEmitter();
-  getErrorMessage() {
+ /* getErrorMessage() {
     if(this.email.hasError('required')){
       return 'You must enter a value';
     }
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
+*/
 
+  constructor( public dialog: MatDialog, public router: Router, public loginService: LoginService) { }
 
-  constructor( public dialog: MatDialog) { }
+  login(event:any, nombre:string, password:string){
+    console.log(nombre);
+    console.log(password);
+    event.preventDefault();
+    this.loginService.login(nombre, password).subscribe(us => {
+      console.log("login service")
+      console.log(us);
+    },
+      (error) =>alert('Invalid data ' + error),
+      );
+  }
 
+  logout(){
+    this.loginService.logout().subscribe( (response) =>{
+      this.router.navigate(['/']);
+    },
+      (error) => console.log('Error when trying to logout' + error),
+      );
+  }
 
   openDialog(): void{
     this.dialogoAbierto = true;
     console.log('Dialogo abierto');
     const dialogRef = this.dialog.open(DialogoRegistroComponent,{
-      width: '50%', height:'50%', data: {email: this.email}
+      width: '50%', height:'50%', data: {nombre: this.nombre}
     });
     dialogRef.afterClosed().subscribe( result =>{
       console.log('Dialogo cerrado');
       this.dialogoAbierto=false;
-      this.email = result;
+      this.nombre = result;
     });
   }
 

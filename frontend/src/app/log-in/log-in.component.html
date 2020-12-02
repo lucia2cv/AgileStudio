@@ -14,16 +14,16 @@
         </mat-card-header>
                <mat-card-content *ngIf="dialogoAbierto == false">
                 <form [formGroup]="form" (ngSubmit)="submit()">
-                   <mat-form-field class ="email">
-                     <mat-label>Correo electrónico</mat-label>
-                     <input type="email" matInput placeholder="correo@ejemplo.com"
-                            [formControl]="email" required>
-                     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                   <mat-form-field class ="nombre">
+                     <mat-label>Nombre</mat-label>
+                     <input matInput #nombre placeholder="Nombre del usuario"
+                            [formControl]="form.controls.nombre"  required>
+                     <!--<mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
                    </mat-form-field>
 
                    <mat-form-field class ="contraseña">
                      <mat-label>Contraseña</mat-label>
-                     <input matInput [type]="hide ? 'password' : 'text'" required>
+                     <input matInput #password [type]="hide ? 'password' : 'text'" required>
                      <button mat-icon-button matSuffix (click)="hide = !hide"
                             [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -33,10 +33,10 @@
                  <div class="grid-container" id="botones">
                    <div gdAreas=" log registrarse" gdColumns="50% 50%" >
 
-                     <div gdArea="log" id="log in" >
+                     <div gdArea="log" id="log in">
 
                        <div class="button">
-                         <button type="submit" mat-raised-button >Acceder</button>
+                         <button type="submit" mat-raised-button (click)="login($event,nombre.value, password.value )">Acceder</button>
                        </div>
                      </div>
                      <div gdArea="registrarse" id = "registro" >
