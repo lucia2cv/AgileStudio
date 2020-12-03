@@ -18,7 +18,7 @@ import {ErrorStateMatcher, ShowOnDirtyErrorStateMatcher} from "@angular/material
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatIconModule} from "@angular/material/icon";
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dialog";
-import {MatRadioModule} from '@angular/material/radio';
+import {MAT_RADIO_DEFAULT_OPTIONS, MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
 import {LoginService} from "./log-in/login.service";
@@ -57,6 +57,7 @@ import {ErrorInterceptor} from "./auth/error.interceptor";
     {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi:true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},
+    {provide: MAT_RADIO_DEFAULT_OPTIONS, useValue: { color: 'accent'}},
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {panelClass: 'mat-dialog-override'}},
   ],
   bootstrap: [AppComponent]
