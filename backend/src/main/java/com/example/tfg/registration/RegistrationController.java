@@ -2,6 +2,7 @@ package com.example.tfg.registration;
 
 import com.example.tfg.entities.usuario.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,7 +12,8 @@ public class RegistrationController {
     @Autowired
     private RegistrationService service;
 
-    @PostMapping("/registeruser")
+    @PostMapping("/")
+    @ResponseStatus (HttpStatus.CREATED)
     public User registerUser(@RequestBody User user) throws Exception {
 
         //check the email doesnt exist
