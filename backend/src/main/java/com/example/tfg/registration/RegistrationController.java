@@ -14,7 +14,7 @@ public class RegistrationController {
 
     @PostMapping("/")
     @ResponseStatus (HttpStatus.CREATED)
-    public User registerUser(@RequestBody User user) throws Exception {
+    public User saveUser(@RequestBody User user) throws Exception {
 
         //check the email doesnt exist
         String tempEmail = user.getEmail();
@@ -24,9 +24,11 @@ public class RegistrationController {
                 throw new Exception("Email ya registrado");
             }
         }
-        User userObj = null;
+        service.saveUser(user);
+        return user;
+        /*User userObj = null;
         userObj = service.saveUser(user);
-        return userObj;
+        return userObj;*/
     }
 
 }
