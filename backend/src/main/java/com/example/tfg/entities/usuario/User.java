@@ -13,18 +13,18 @@ public class User {
     private String password;
     private String email;
     private String rol;
-    private long id_equipo;
+    //private long id_equipo;
 
     //Constructor needed for the load from the BBDD
 
     protected User(){}
 
-    public User(String nombre, String password, String email, String rol, long id_equipo) {
+    public User(String nombre, String password, String email, String rol /*long id_equipo*/) {
         this.nombre = nombre;
         this.password = password;
         this.email = email;
         this.rol = rol;
-        this.id_equipo = id_equipo;
+        //this.id_equipo = id_equipo;
     }
 
     public long getId() {
@@ -67,13 +67,13 @@ public class User {
         this.rol = rol;
     }
 
-    public long getId_equipo() {
+    /*public long getId_equipo() {
         return id_equipo;
     }
 
     public void setId_equipo(long id_equipo) {
         this.id_equipo = id_equipo;
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -83,7 +83,7 @@ public class User {
                 ", contraseña='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", rol='" + rol + '\'' +
-                ", id_equipo=" + id_equipo +
+                //", id_equipo=" + id_equipo +
                 '}';
     }
 }

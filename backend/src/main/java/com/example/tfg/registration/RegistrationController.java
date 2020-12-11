@@ -12,6 +12,7 @@ public class RegistrationController {
     @Autowired
     private RegistrationService service;
 
+    //@CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("/")
     @ResponseStatus (HttpStatus.CREATED)
     public User saveUser(@RequestBody User user) throws Exception {

@@ -51,7 +51,7 @@ export class DialogoRegistroComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  registerUser(){
+  saveUser(){
     if (this.myForm.valid){
       this.usuario = new User(this.myForm.value.nombre, this.myForm.value.password, this.myForm.value.email, this.myForm.value.rol);
       this.usuario.imprimir();
