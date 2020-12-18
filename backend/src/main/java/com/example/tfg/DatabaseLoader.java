@@ -17,8 +17,8 @@ public class DatabaseLoader {
     private void initDataBase(){
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode("user");
-        /*userRepository.save(
-                new User("user",password,"user@email.com","desarrollador",20));*/
+        userRepository.save(
+                new User("user",password,"user@email.com","desarrollador","equipo"));
 
        /* userRepository.save(
                 new User("sm","sm","sm@email.com","scrum master",02));

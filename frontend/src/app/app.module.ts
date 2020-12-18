@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+//import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component'
 import { DialogoRegistroComponent } from './dialogoRegistro/dialogoRegistro.component';
-
+import {HomeComponent} from "./home/home.component";
 
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatGridListModule} from "@angular/material/grid-list";
@@ -20,13 +20,18 @@ import {MatIconModule} from "@angular/material/icon";
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dialog";
 import {MAT_RADIO_DEFAULT_OPTIONS, MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
-import { HomeComponent } from './home/home.component';
 import {LoginService} from "./log-in/login.service";
 import {BasicAuthInterceptor} from "./auth/auth.interceptor";
 import {ErrorInterceptor} from "./auth/error.interceptor";
+import {RouterModule} from "@angular/router";
 
 
 
+const appRoutes =[
+  {path: 'login', component: LogInComponent, useAsDefault: true},
+  {path: 'home', component: HomeComponent},
+  {path: '**', redirectTo: ''}
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,8 +40,9 @@ import {ErrorInterceptor} from "./auth/error.interceptor";
     HomeComponent,
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
-    AppRoutingModule,
+   // AppRoutingModule,
     HttpClientModule,
     MatGridListModule,
     MatCardModule,

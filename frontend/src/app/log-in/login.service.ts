@@ -47,15 +47,15 @@ export class LoginService {
 
 
     console.log("buscando ruta");
-    return this.http.get<User>('http://localhost:8080/login', { headers })
+    return this.http.get<User>('http://localhost:8080/', { headers })
       .pipe(map(user => {
 
         if (user) {
           this.setCurrentUser(user);
           user.authdata = auth;
           localStorage.setItem('currentUser', JSON.stringify(user));
-        }
 
+        }
         return user;
       }));
     console.log("hola estoy aqui")
