@@ -53,7 +53,7 @@ export class DialogoRegistroComponent implements OnInit {
 
   saveUser(){
     if (this.myForm.valid){
-      this.usuario = new User(this.myForm.value.nombre, this.myForm.value.password, this.myForm.value.email, this.myForm.value.rol);
+      this.usuario = new User(this.myForm.value.nombre, this.myForm.value.password, this.myForm.value.email, this.myForm.value.rol, this.myForm.value.equipo);
       this.usuario.imprimir();
       this.service.saveUser(this.usuario).subscribe(
         _=>{},(error: Error)=>console.error('ERROR COMPONENTE DIALOGO '));
