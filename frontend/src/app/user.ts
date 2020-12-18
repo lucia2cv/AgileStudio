@@ -6,9 +6,9 @@ export class User {
   rol: string
   //id_equipo: number;
 
-  constructor(name: string, password: string, email: string, rol: string) {
+  constructor(nombre: string, password: string, email: string, rol: string) {
     //this.id = id;
-    this.nombre = name;
+    this.nombre = nombre;
     this.password = password;
     this.email = email;
     this.rol = rol;
