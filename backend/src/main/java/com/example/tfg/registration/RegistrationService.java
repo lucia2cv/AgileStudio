@@ -14,7 +14,6 @@ public class RegistrationService {
     public void   saveUser(User user){
 
         repository.save(user);
-        //repository.save(user);
 
     }
     public  User fetchUserByEmail(String email){

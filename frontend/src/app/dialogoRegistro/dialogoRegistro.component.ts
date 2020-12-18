@@ -18,13 +18,13 @@ export class DialogoRegistroComponent implements OnInit {
   email = new FormControl('', [ Validators.required, Validators.email]);
   hide = true;
   password = new FormControl('',[Validators.required, Validators.minLength(8)]);
-  nombre = new FormControl();
+  name = new FormControl();
   equipo = new FormControl();
   rol = new FormControl();
   teamRole = String;
   roles: string[] = ['desarrollador', 'scrum master', 'product owner'];
   myForm: FormGroup = new FormGroup({
-    nombre: this.nombre,
+    name: this.name,
     email:this.email,
     password: this.password,
     equipo: this.equipo,
@@ -53,7 +53,7 @@ export class DialogoRegistroComponent implements OnInit {
 
   saveUser(){
     if (this.myForm.valid){
-      this.usuario = new User(this.myForm.value.nombre, this.myForm.value.password, this.myForm.value.email, this.myForm.value.rol);
+      this.usuario = new User(this.myForm.value.name, this.myForm.value.password, this.myForm.value.email, this.myForm.value.rol);
       this.usuario.imprimir();
       this.service.saveUser(this.usuario).subscribe(
         _=>{},(error: Error)=>console.error('ERROR COMPONENTE DIALOGO '));
