@@ -24,13 +24,14 @@ import {LoginService} from "./log-in/login.service";
 import {BasicAuthInterceptor} from "./auth/auth.interceptor";
 import {ErrorInterceptor} from "./auth/error.interceptor";
 import {RouterModule} from "@angular/router";
+import {AppRoutingModule} from "./app-routing.module";
 
 
 
 const appRoutes =[
-  {path: 'login', component: LogInComponent, useAsDefault: true},
-  {path: 'home', component: HomeComponent},
-  {path: '**', redirectTo: ''}
+  {path: '', component: LogInComponent, useAsDefault: true},
+  {path: 'home', component: HomeComponent}
+ // {path: '**', redirectTo: ''}
 ];
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ const appRoutes =[
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
-   // AppRoutingModule,
+    AppRoutingModule,
     HttpClientModule,
     MatGridListModule,
     MatCardModule,
