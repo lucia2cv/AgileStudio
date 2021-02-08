@@ -3,12 +3,12 @@
   justify-content: center;
   align-items: center;
 }
-#cerrar{
+#cerrar, #roles{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.grid-container{
+.grid-container,  .myForm{
   height: 100%;
   width: 100%;
 }
@@ -22,6 +22,6 @@
 #divide{
   height: inherit;
 }
-.email, .equipo, .contraseña{
+.email, .equipo, .contraseña, .nombre {
   width: 50% !important;
 }

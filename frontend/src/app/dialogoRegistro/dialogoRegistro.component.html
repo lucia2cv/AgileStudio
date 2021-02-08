@@ -1,19 +1,31 @@
 <h1 mat-dialog-title>REGISTRARSE</h1>
 <div mat-dialog-content id="contenedor">
+  <form class="myForm" (ngSubmit)="saveUser()">
   <div class="grid-container">
     <div gdAreas="info roles | cerrar aceptar" gdColumns="50% 50%"
-    gdRows="50% 25%" id="divide" >
+         gdRows="65% 35%" id="divide" >
+
       <div gdArea="info" >
+
+        <div id="nombre"></div>
+        <mat-form-field class ="nombre">
+          <mat-label>Nombre</mat-label>
+          <input  matInput   placeholder="Nombre" required [formControl]="nombre">
+       </mat-form-field>
+
+        <div></div>
+
         <mat-form-field class ="email">
           <mat-label>Correo electrónico</mat-label>
           <input type="email" matInput placeholder="correo@ejemplo.com"
-                 [formControl]="email" required>
+                 [formControl]="email" required  >
           <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
+
         <div id="contraseña"></div>
           <mat-form-field class ="contraseña">
             <mat-label>Contraseña</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" required>
+            <input matInput [type]="hide ? 'password' : 'text'" required [formControl]="password">
             <button mat-icon-button matSuffix (click)="hide = !hide"
                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -23,10 +35,11 @@
         <div id="equipo"></div>
           <mat-form-field class ="equipo">
             <mat-label>Equipo</mat-label>
-            <input matInput placeholder="equipo" required>
+            <input matInput placeholder="equipo" required [formControl]="equipo">
           </mat-form-field>
       </div>
-        <div gdArea="roles">
+
+        <!--<div gdArea="roles">
           <mat-radio-group aria-label="Select an option">
             <h3>Seleccionar un rol de equipo</h3>
             <mat-radio-button value="1">Desarrollador</mat-radio-button>
@@ -35,20 +48,27 @@
             <p></p>
             <mat-radio-button value="2">Product Owner</mat-radio-button>
           </mat-radio-group>
-        </div>
+        </div>-->
+      <div gdArea="roles" id="roles">
+          <label id="example-radio-label">Selecciona un equipo</label>
+          <mat-radio-group aria-label="Select an option" class="example-radio-group" [formControl]="rol">
+           <mat-radio-button class="example-radio.button" *ngFor=" let role of roles" [value]="role"> {{role}}
+            </mat-radio-button>
+          </mat-radio-group>
+      </div>
         <div gdArea="cerrar" id="cerrar">
           <div mat-dialog-actions>
-            <button mat-raised-button [mat-dialog-close]="data.nombre">No Thanks</button>
+            <button mat-raised-button type="button" [mat-dialog-close]="data.nombre">No Thanks</button>
           </div>
         </div>
         <div gdArea="aceptar" id="aceptar">
           <div mat-dialog-actions>
-            <button mat-raised-button [mat-dialog-close]="data.nombre" >Ok</button>
+            <button mat-raised-button type="submit" [mat-dialog-close]="data.nombre" >Ok</button>
           </div>
         </div>
-
     </div>
   </div>
+  </form>
 </div>
   <!-- <mat-form-field class ="email">
      <mat-label>Correo electrónico</mat-label>

@@ -20,7 +20,8 @@ public class LoginController {
     private UserComponent userComponent;
 
    // @GetMapping(path = "/login")
-   @RequestMapping(value= "/login", method = RequestMethod.GET)
+  // @RequestMapping(value= "/", method = RequestMethod.GET)
+   @GetMapping("/")
     public ResponseEntity<User>login(){
         if(!userComponent.isLoggedUser()){
             log.info("usuario no registrado");

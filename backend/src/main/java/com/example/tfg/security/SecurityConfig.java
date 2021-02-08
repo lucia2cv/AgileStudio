@@ -22,11 +22,11 @@ import java.util.List;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired UserAuthenticationProvider authenticationProvider;
-    @Bean
+    /*@Bean
     CorsFilter corsFilter() {
         CorsFilter filter = new CorsFilter();
         return filter;
-    }
+    }*/
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -42,13 +42,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             cors.setAllowedHeaders(List.of("*"));
             return cors;
         });
-        http
-                .addFilterBefore(corsFilter(), SessionManagementFilter.class);
+       /* http
+                .addFilterBefore(corsFilter(), SessionManagementFilter.class);*/
         //Public pages
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/login").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/loginerror").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/logout").permitAll();
+
+        http.authorizeRequests().antMatchers(HttpMethod.POST,"/").permitAll();
 
         //Private pages(all the others)
         //http.authorizeRequests().anyRequest().authenticated();
