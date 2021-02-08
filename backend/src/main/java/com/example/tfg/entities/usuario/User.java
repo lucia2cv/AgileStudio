@@ -80,7 +80,6 @@ public class User {
     /*public long getId_equipo() {
         return id_equipo;
     }
-
     public void setId_equipo(long id_equipo) {
         this.id_equipo = id_equipo;
     }*/
