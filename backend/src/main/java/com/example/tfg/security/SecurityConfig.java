@@ -55,6 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //Private pages(all the others)
         //http.authorizeRequests().anyRequest().authenticated();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/home").hasRole("desarrollador");
+
         /*LoginForm
         http.formLogin().loginPage("/login");
         http.formLogin().usernameParameter("username");
