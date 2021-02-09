@@ -1,6 +1,6 @@
 package com.example.tfg.security;
 
-import com.example.tfg.entities.usuario.User;
+import com.example.tfg.entities.usuario.Users;
 import com.example.tfg.entities.usuario.UserComponent;
 import com.example.tfg.entities.usuario.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,18 +31,18 @@ public class UserAuthenticationProvider implements AuthenticationProvider {
         String nombre = authentication.getName();
         String password = (String)authentication.getCredentials();
 
-        User user = userRepository.findByNombre(nombre);
+        Users users = userRepository.findByNombre(nombre);
 
-        if ( user == null){
+        if ( users == null){
             System.out.println("No autenticado");
             throw new BadCredentialsException("User doesnt exist");
         }
-        if (!new BCryptPasswordEncoder().matches(password, user.getPassword())){
+        if (!new BCryptPasswordEncoder().matches(password, users.getPassword())){
             throw new BadCredentialsException("Wrong password");
         }else{
-            userComponent.setLoggedUser(user);
+            userComponent.setLoggedUser(users);
             List<GrantedAuthority> roles = new ArrayList<>();
-            String role = user.getRol();
+            String role = users.getRol();
             roles.add(new SimpleGrantedAuthority(role));
             return  new UsernamePasswordAuthenticationToken(nombre,password,roles);
         }

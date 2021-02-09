@@ -1,6 +1,6 @@
 package com.example.tfg.registration;
 
-import com.example.tfg.entities.usuario.User;
+import com.example.tfg.entities.usuario.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,18 +15,18 @@ public class RegistrationController {
     //@CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("/")
     @ResponseStatus (HttpStatus.CREATED)
-    public User saveUser(@RequestBody User user) throws Exception {
+    public Users saveUser(@RequestBody Users users) throws Exception {
 
         //check the email doesnt exist
-        String tempEmail = user.getEmail();
+        String tempEmail = users.getEmail();
         if(tempEmail != null && !"".equals(tempEmail)){
-            User userObj = service.fetchUserByEmail(tempEmail);
-            if(userObj !=null ){
+            Users usersObj = service.fetchUserByEmail(tempEmail);
+            if(usersObj !=null ){
                 throw new Exception("Email ya registrado");
             }
         }
-        service.saveUser(user);
-        return user;
+        service.saveUser(users);
+        return users;
         /*User userObj = null;
         userObj = service.saveUser(user);
         return userObj;*/
