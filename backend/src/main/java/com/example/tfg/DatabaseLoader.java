@@ -2,6 +2,8 @@ package com.example.tfg;
 
 import com.example.tfg.entities.equipo.Equipo;
 import com.example.tfg.entities.equipo.EquipoRepository;
+import com.example.tfg.entities.taller.Taller;
+import com.example.tfg.entities.taller.TallerRepository;
 import com.example.tfg.entities.usuario.Users;
 import com.example.tfg.entities.usuario.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,8 @@ public class DatabaseLoader {
     private UserRepository userRepository;
     @Autowired
     private EquipoRepository equipoRepository;
+    @Autowired
+    private TallerRepository tallerRepository;
 
     @PostConstruct
     private void initDataBase(){
@@ -25,8 +29,9 @@ public class DatabaseLoader {
         Equipo equipo1 = new Equipo("equipo1");
         equipoRepository.save(equipo1);
 
-        Equipo equipo3 = new Equipo("equipo3");
+        Equipo equipo3 = new Equipo("equipo2");
         equipoRepository.save(equipo3);
+
 
         Users users1 = new Users("user1",password,"user@email.com","desarrollador");
         users1.setEquipo(equipo1);
@@ -41,6 +46,13 @@ public class DatabaseLoader {
         userRepository.save(users1);
         userRepository.save(users2);
         userRepository.save(users3);
+
+        Taller taller1  = new Taller("taller1" , "prueba");
+        tallerRepository.save(taller1);
+
+
+
+
        /* userRepository.save(
                 new User("user",password,"user@email.com","desarrollador","equipo"));
 

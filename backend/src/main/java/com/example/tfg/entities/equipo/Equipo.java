@@ -1,5 +1,6 @@
 package com.example.tfg.entities.equipo;
 
+import com.example.tfg.entities.taller.Taller;
 import com.example.tfg.entities.usuario.Users;
 
 import javax.persistence.*;
@@ -18,11 +19,18 @@ public class Equipo {
     @OneToMany(mappedBy = "equipo")
     private List<Users> miembros;
 
+
     protected Equipo(){}
 
     public Equipo(String nombre_equipo) {
         this.nombre_equipo = nombre_equipo;
         this.miembros = new ArrayList<>();
+    }
+
+    public Equipo(String nombre_equipo, List<Users> miembros) {
+        this.nombre_equipo = nombre_equipo;
+        this.miembros = miembros;
+
     }
 
     public long getId() {
@@ -49,6 +57,8 @@ public class Equipo {
     public void setMiembros(List<Users> miembros) {
         this.miembros = miembros;
     }
+
+
 
     @Override
     public String toString() {
