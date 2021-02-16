@@ -16,17 +16,23 @@ public class Taller {
     private String nombre_taller;
     private String categoria;
 
-
-
+    @ManyToMany (mappedBy = "talleres")
+    private List<Equipo> equipos;
 
     protected Taller(){}
 
     public Taller(String nombre_taller, String categoria) {
         this.nombre_taller = nombre_taller;
         this.categoria = categoria;
+        this.equipos = new ArrayList<>();
 
     }
 
+    public Taller(String nombre_taller, String categoria, List<Equipo> equipos) {
+        this.nombre_taller = nombre_taller;
+        this.categoria = categoria;
+        this.equipos = equipos;
+    }
 
     public String getNombre_taller() {
         return nombre_taller;
@@ -44,7 +50,13 @@ public class Taller {
         this.categoria = categoria;
     }
 
+    public List<Equipo> getEquipos() {
+        return equipos;
+    }
 
+    public void setEquipos(List<Equipo> equipos) {
+        this.equipos = equipos;
+    }
 
     @Override
     public String toString() {

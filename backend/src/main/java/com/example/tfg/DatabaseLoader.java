@@ -29,8 +29,8 @@ public class DatabaseLoader {
         Equipo equipo1 = new Equipo("equipo1");
         equipoRepository.save(equipo1);
 
-        Equipo equipo3 = new Equipo("equipo2");
-        equipoRepository.save(equipo3);
+        Equipo equipo2 = new Equipo("equipo2");
+        equipoRepository.save(equipo2);
 
 
         Users users1 = new Users("user1",password,"user@email.com","desarrollador");
@@ -41,7 +41,7 @@ public class DatabaseLoader {
         users2.setEquipo(equipo1);
 
         Users users3 = new Users("user3",password,"user@email.com","desarrollador");
-        users3.setEquipo(equipo3);
+        users3.setEquipo(equipo2);
 
         userRepository.save(users1);
         userRepository.save(users2);
@@ -50,6 +50,14 @@ public class DatabaseLoader {
         Taller taller1  = new Taller("taller1" , "prueba");
         tallerRepository.save(taller1);
 
+        Taller taller2  = new Taller("taller2" , "scrum");
+        tallerRepository.save(taller2);
+
+        equipo1.getTalleres().add(taller1);
+        equipo2.getTalleres().add(taller1);
+        equipo2.getTalleres().add(taller2);
+        equipoRepository.save(equipo1);
+        equipoRepository.save(equipo2);
 
 
 
