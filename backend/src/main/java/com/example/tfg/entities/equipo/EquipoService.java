@@ -11,6 +11,12 @@ public class EquipoService {
     @Autowired
     private EquipoRepository equipoRepository;
 
+    public void  saveEquipo (Equipo equipo){
+        equipoRepository.save(equipo);
+    }
+    public Equipo fetchTeamByNombreEquipo(String nombreEquipo){
+        return equipoRepository.findByNombreEquipo(nombreEquipo);
+    }
     public List<Equipo> findAll(){
         return equipoRepository.findAll();
     }

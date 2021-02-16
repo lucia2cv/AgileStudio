@@ -12,13 +12,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class EquipoController {
 
     @Autowired
-    private EquipoRepository equipoRepository;
+    private EquipoService service;
 
     /*Add equipo*/
-    @PostMapping(value = "/equipos/")
+    @PostMapping(value = "/equipo")
     @ResponseStatus(HttpStatus.CREATED)
-    public Equipo newEquipo(@RequestBody Equipo equipo){
-        equipoRepository.save(equipo);
+    public Equipo saveEquipo(@RequestBody Equipo equipo) throws Exception{
+        String tempNombre = equipo.getNombreEquipo();
+        if (tempNombre != null && !"".equals(tempNombre)) {
+            Equipo equipoObj = service.fetchTeamByNombreEquipo(tempNombre);
+            if(equipoObj != null){
+                throw new Exception("Equipo ya existente");
+            }
+        }
+        service.saveEquipo(equipo);
         return equipo;
     }
 }

@@ -51,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/logout").permitAll();
 
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/").permitAll();
-
+        http.authorizeRequests().antMatchers(HttpMethod.POST,"/equipo").permitAll();
         //Private pages(all the others)
         //http.authorizeRequests().anyRequest().authenticated();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/home").hasRole("desarrollador");

@@ -14,7 +14,7 @@ public class Equipo {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private long id;
 
-    private String nombre_equipo;
+    private String nombreEquipo;
 
     @OneToMany(mappedBy = "equipo")
     private List<Users> miembros;
@@ -24,20 +24,20 @@ public class Equipo {
 
     protected Equipo(){}
 
-    public Equipo(String nombre_equipo) {
-        this.nombre_equipo = nombre_equipo;
+    public Equipo(String nombreEquipo) {
+        this.nombreEquipo = nombreEquipo;
         this.miembros = new ArrayList<>();
         this.talleres = new ArrayList<>();
     }
 
-    public Equipo(String nombre_equipo, List<Users> miembros) {
-        this.nombre_equipo = nombre_equipo;
+    public Equipo(String nombreEquipo, List<Users> miembros) {
+        this.nombreEquipo = nombreEquipo;
         this.miembros = miembros;
 
     }
 
-    public Equipo(String nombre_equipo, List<Users> miembros, List<Taller> talleres) {
-        this.nombre_equipo = nombre_equipo;
+    public Equipo(String nombreEquipo, List<Users> miembros, List<Taller> talleres) {
+        this.nombreEquipo = nombreEquipo;
         this.miembros = miembros;
         this.talleres = talleres;
     }
@@ -50,12 +50,12 @@ public class Equipo {
         this.id = id;
     }
 
-    public String getNombre_equipo() {
-        return nombre_equipo;
+    public String getNombreEquipo() {
+        return nombreEquipo;
     }
 
-    public void setNombre_equipo(String nombre_equipo) {
-        this.nombre_equipo = nombre_equipo;
+    public void setNombreEquipo(String nombre_equipo) {
+        this.nombreEquipo = nombre_equipo;
 
     }
 
@@ -79,7 +79,7 @@ public class Equipo {
     public String toString() {
         return "Equipo{" +
                 "id=" + id +
-                ", nombre_equipo='" + nombre_equipo + '\'' +
+                ", nombre_equipo='" + nombreEquipo + '\'' +
                 ", miembros=" + miembros +
                 '}';
     }
