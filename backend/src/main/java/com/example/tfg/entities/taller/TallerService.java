@@ -11,5 +11,12 @@ public class TallerService {
     @Autowired
     private TallerRepository tallerRepository;
 
+    public void saveTaller (Taller taller){
+        tallerRepository.save(taller);
+    }
+
+    public Taller fetchByNombreTaller(String nombreTaller){
+        return tallerRepository.findByNombreTaller(nombreTaller);
+    }
     public List<Taller> findAll(){ return tallerRepository.findAll();}
 }

@@ -13,7 +13,7 @@ public class Taller {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private long id;
 
-    private String nombre_taller;
+    private String nombreTaller;
     private String categoria;
 
     @ManyToMany (mappedBy = "talleres")
@@ -21,25 +21,25 @@ public class Taller {
 
     protected Taller(){}
 
-    public Taller(String nombre_taller, String categoria) {
-        this.nombre_taller = nombre_taller;
+    public Taller(String nombreTaller, String categoria) {
+        this.nombreTaller = nombreTaller;
         this.categoria = categoria;
         this.equipos = new ArrayList<>();
 
     }
 
-    public Taller(String nombre_taller, String categoria, List<Equipo> equipos) {
-        this.nombre_taller = nombre_taller;
+    public Taller(String nombreTaller, String categoria, List<Equipo> equipos) {
+        this.nombreTaller = nombreTaller;
         this.categoria = categoria;
         this.equipos = equipos;
     }
 
-    public String getNombre_taller() {
-        return nombre_taller;
+    public String getNombreTaller() {
+        return nombreTaller;
     }
 
-    public void setNombre_taller(String nombre_taller) {
-        this.nombre_taller = nombre_taller;
+    public void setNombreTaller(String nombre_taller) {
+        this.nombreTaller = nombre_taller;
     }
 
     public String getCategoria() {
@@ -62,7 +62,7 @@ public class Taller {
     public String toString() {
         return "Taller{" +
                 "id=" + id +
-                ", nombre_taller='" + nombre_taller + '\'' +
+                ", nombre_taller='" + nombreTaller + '\'' +
                 ", categoria='" + categoria + '\'' +
                 '}';
     }

@@ -10,13 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TallerController {
     @Autowired
-    private TallerRepository tallerRepository;
+    private TallerService service;
 
     /*Add taller*/
-    @PostMapping(value = "/taller/")
+    @PostMapping(value = "/talleres")
     @ResponseStatus(HttpStatus.CREATED)
-    public Taller newTaller(@RequestBody Taller taller){
-        tallerRepository.save(taller);
+    public Taller saveTaller(@RequestBody Taller taller) throws Exception{
+        String tempNombre = taller.getNombreTaller();
+        if (tempNombre != null && !"".equals(tempNombre)){
+            Taller tallerObj = service.fetchByNombreTaller(tempNombre);
+            if (tallerObj != null){
+                throw new Exception("Taller ya existente");
+            }
+        }
+        service.saveTaller(taller);
         return taller;
     }
 }
