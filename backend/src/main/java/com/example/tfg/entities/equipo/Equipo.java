@@ -2,12 +2,18 @@ package com.example.tfg.entities.equipo;
 
 import com.example.tfg.entities.taller.Taller;
 import com.example.tfg.entities.usuario.Users;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 public class Equipo {
 
     @Id
@@ -16,7 +22,8 @@ public class Equipo {
 
     private String nombreEquipo;
 
-    @OneToMany(mappedBy = "equipo")
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL,mappedBy = "equipo",  orphanRemoval = true)
+    //@JsonManagedReference
     private List<Users> miembros;
 
     @ManyToMany

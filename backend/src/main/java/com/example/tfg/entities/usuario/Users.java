@@ -1,6 +1,8 @@
 package com.example.tfg.entities.usuario;
 
 import com.example.tfg.entities.equipo.Equipo;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
@@ -17,6 +19,8 @@ public class Users {
     private String rol;
 
     @ManyToOne
+    @JsonIgnore
+    //@JsonBackReference
     private Equipo equipo;
     //private long id_equipo;
 

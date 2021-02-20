@@ -33,7 +33,7 @@ public class DatabaseLoader {
         equipoRepository.save(equipo2);
 
 
-        Users users1 = new Users("user1",password,"user@email.com","desarrollador");
+        Users users1 = new Users("user",password,"user@email.com","desarrollador");
         users1.setEquipo(equipo1);
 
 
