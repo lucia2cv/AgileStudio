@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-//import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from "@angular/router";
 import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component'
 import { DialogoRegistroComponent } from './dialogoRegistro/dialogoRegistro.component';
@@ -23,19 +23,20 @@ import {MatButtonModule} from '@angular/material/button';
 import {LoginService} from "./log-in/login.service";
 import {BasicAuthInterceptor} from "./auth/auth.interceptor";
 import {ErrorInterceptor} from "./auth/error.interceptor";
-import {RouterModule} from "@angular/router";
+
 import {AppRoutingModule} from "./app-routing.module";
 import { TalleresComponent } from './components/talleres/talleres.component';
 import { EquiposComponent } from './components/equipos/equipos.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import {ROUTES} from "./app.routes";
 
 
 
-const appRoutes =[
+/*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
   {path: 'home', component: HomeComponent}
  // {path: '**', redirectTo: ''}
-];
+];*/
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,7 @@ const appRoutes =[
     NavbarComponent,
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(ROUTES),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
