@@ -25,6 +25,9 @@ import {BasicAuthInterceptor} from "./auth/auth.interceptor";
 import {ErrorInterceptor} from "./auth/error.interceptor";
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
+import { TalleresComponent } from './components/talleres/talleres.component';
+import { EquiposComponent } from './components/equipos/equipos.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
@@ -39,6 +42,9 @@ const appRoutes =[
     LogInComponent,
     DialogoRegistroComponent,
     HomeComponent,
+    TalleresComponent,
+    EquiposComponent,
+    NavbarComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
