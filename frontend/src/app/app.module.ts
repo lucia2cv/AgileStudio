@@ -29,6 +29,7 @@ import { TalleresComponent } from './components/talleres/talleres.component';
 import { EquiposComponent } from './components/equipos/equipos.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {ROUTES} from "./app.routes";
+import {MatTabsModule} from "@angular/material/tabs";
 
 
 
@@ -64,7 +65,7 @@ import {ROUTES} from "./app.routes";
     MatDialogModule,
     MatRadioModule,
     MatButtonModule,
-
+    MatTabsModule
 
   ],
   providers: [ LoginService,
