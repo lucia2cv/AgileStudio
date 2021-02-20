@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatTabsModule} from "@angular/material/tabs";
+
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +7,8 @@ import {MatTabsModule} from "@angular/material/tabs";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+
 
   constructor() { }
 

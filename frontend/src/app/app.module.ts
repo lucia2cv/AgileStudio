@@ -31,6 +31,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import {ROUTES} from "./app.routes";
 
 import {MatTabsModule} from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 /*const appRoutes =[
@@ -65,7 +66,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatDialogModule,
     MatRadioModule,
     MatButtonModule,
-    MatTabsModule
+    MatTabsModule,
+    MatToolbarModule
 
   ],
   providers: [ LoginService,
