@@ -50,7 +50,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     NavbarComponent,
   ],
   imports: [
-    RouterModule.forRoot(ROUTES),
+    RouterModule.forRoot(ROUTES, { relativeLinkResolution: 'legacy' }),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
