@@ -1,0 +1,14 @@
+#mat{
+  position: absolute;
+  left: 77%;
+
+}
+.mat-toolbar{
+  background-color: chocolate;
+}
+.mat-icon{
+  padding-right: 10px;
+}
+.matB{
+  width: 145px;
+}

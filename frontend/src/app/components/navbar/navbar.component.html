@@ -1,6 +1,8 @@
 <mat-toolbar>
-  <a mat-button [routerLink]="'/home'"> Home </a>
-  <a mat-button [routerLink]="'/equipos'"> Equipos </a>
-  <a mat-button [routerLink]="'/talleres'"> Talleres </a>
-
+  <div id="mat">
+    <a mat-button [routerLink]="'/home'" class="matB">
+      <mat-icon>home</mat-icon>Home </a>
+    <a mat-button [routerLink]="'/equipos'" class="matB"> Equipos </a>
+    <a mat-button [routerLink]="'/talleres'" class="matB"> Talleres </a>
+  </div>
 </mat-toolbar>
