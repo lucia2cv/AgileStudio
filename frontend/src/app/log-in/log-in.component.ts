@@ -51,11 +51,11 @@ export class LogInComponent implements OnInit {
     console.log(password);
     event.preventDefault();
     this.loginService.login(nombre, password).subscribe(us => {
-      console.log("login service")
+      console.log("login service1")
       console.log(us);
       this.router.navigate(['/home'])
     },
-      (error) =>alert('Invalid data ' + error),
+      (error) =>alert('Invalid data login component ' + error),
       );
   }
 

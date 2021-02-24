@@ -1,6 +1,6 @@
 package com.example.tfg.registration;
 
-import com.example.tfg.entities.usuario.User;
+import com.example.tfg.entities.usuario.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,12 +11,12 @@ public class RegistrationService {
 
     @Autowired
     private RegistrationRepository repository;
-    public void   saveUser(User user){
+    public void   saveUser(Users users){
 
-        repository.save(user);
+        repository.save(users);
 
     }
-    public  User fetchUserByEmail(String email){
+    public Users fetchUserByEmail(String email){
        return repository.findByEmail(email);
     }
 }

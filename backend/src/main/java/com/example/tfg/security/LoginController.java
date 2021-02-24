@@ -1,6 +1,6 @@
 package com.example.tfg.security;
 
-import com.example.tfg.entities.usuario.User;
+import com.example.tfg.entities.usuario.Users;
 import com.example.tfg.entities.usuario.UserComponent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,14 +22,14 @@ public class LoginController {
    // @GetMapping(path = "/login")
   // @RequestMapping(value= "/", method = RequestMethod.GET)
    @GetMapping("/")
-    public ResponseEntity<User>login(){
+    public ResponseEntity<Users>login(){
         if(!userComponent.isLoggedUser()){
             log.info("usuario no registrado");
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }else{
-            User loggedUser=userComponent.getLoggedUser();
+            Users loggedUsers =userComponent.getLoggedUser();
             log.info("Entra");
-            return new ResponseEntity<>(loggedUser,HttpStatus.OK);
+            return new ResponseEntity<>(loggedUsers,HttpStatus.OK);
         }
     }
     @RequestMapping("/api/logout")

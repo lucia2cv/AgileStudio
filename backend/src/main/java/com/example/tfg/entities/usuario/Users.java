@@ -1,9 +1,13 @@
 package com.example.tfg.entities.usuario;
 
+import com.example.tfg.entities.equipo.Equipo;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
@@ -13,20 +17,31 @@ public class User {
     private String password;
     private String email;
     private String rol;
-    private String equipo;
+
+    @ManyToOne
+    @JsonIgnore
+    //@JsonBackReference
+    private Equipo equipo;
     //private long id_equipo;
 
     //Constructor needed for the load from the BBDD
 
-    protected User(){}
+    protected Users(){}
 
-    public User(String nombre, String password, String email, String rol, String nombreEquipo /*long id_equipo*/) {
+    public Users(String nombre, String password, String email, String rol, Equipo equipo /*long id_equipo*/) {
         this.nombre = nombre;
         this.password = password;
         this.email = email;
         this.rol = rol;
-        this.equipo = nombreEquipo;
+        this.equipo = equipo;
         //this.id_equipo = id_equipo;
+    }
+
+    public Users(String nombre, String password, String email, String rol) {
+        this.nombre = nombre;
+        this.password = password;
+        this.email = email;
+        this.rol = rol;
     }
 
     public long getId() {
@@ -69,18 +84,17 @@ public class User {
         this.rol = rol;
     }
 
-    public String getEquipo() {
+    public Equipo getEquipo() {
         return equipo;
     }
 
-    public void setEquipo(String equipo) {
+    public void setEquipo(Equipo equipo) {
         this.equipo = equipo;
     }
 
     /*public long getId_equipo() {
         return id_equipo;
     }
-
     public void setId_equipo(long id_equipo) {
         this.id_equipo = id_equipo;
     }*/

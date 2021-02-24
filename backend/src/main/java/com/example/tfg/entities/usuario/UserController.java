@@ -14,8 +14,8 @@ public class UserController {   //todos los metodos de busqueda
     /*Add user*/
     @PostMapping(value = "/users/")
     @ResponseStatus(HttpStatus.CREATED)
-    public User newUser(@RequestBody User user){
-        userRepository.save(user);
-        return user;
+    public Users newUser(@RequestBody Users users){
+        userRepository.save(users);
+        return users;
     }
 }
