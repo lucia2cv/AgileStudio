@@ -1,8 +1,3 @@
-#mat{
-  position: absolute;
-  left: 77%;
-
-}
 .mat-toolbar{
   background-color: chocolate;
 }
@@ -11,4 +6,9 @@
 }
 .matB{
   width: 145px;
+}
+.mat-raised-button{
+  background-color: #ffd740;
+  position: absolute;
+  left: 93%;
 }
