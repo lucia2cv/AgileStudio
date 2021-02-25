@@ -32,6 +32,8 @@ import {ROUTES} from "./app.routes";
 
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 
 /*const appRoutes =[
@@ -67,7 +69,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatRadioModule,
     MatButtonModule,
     MatTabsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+
 
   ],
   providers: [ LoginService,

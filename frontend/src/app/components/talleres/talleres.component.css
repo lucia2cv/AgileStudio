@@ -1,0 +1,16 @@
+.sidenav {
+  width: 400px;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+#contenido{
+  display: flex;
+  padding-top: 40%;
+  text-align: center;
+  flex-direction: column !important;
+}
+.mat-tab-group mat-primary{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
