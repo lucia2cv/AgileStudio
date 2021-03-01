@@ -8,7 +8,7 @@ import {MediaMatcher} from "@angular/cdk/layout";
 })
 export class TalleresComponent implements OnInit {
   mobileQuery: MediaQueryList;
-
+  categorias: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
   fillerNav = Array.from({length: 3}, (_, i) => `Nav Item ${i + 1}`);
 
 
