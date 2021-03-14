@@ -1,6 +1,14 @@
 <app-navbar></app-navbar>
 
-<mat-card id="card">Simple card</mat-card>
+<ng-container *ngIf="loginService.isLogged">
+  <mat-card id="card">
+    <div>
+      <strong>{{users.nombre}}</strong>
+
+    </div>
+  </mat-card>
+</ng-container>
+
 <!--<mat-card id="card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>

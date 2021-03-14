@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -16,8 +17,8 @@ public class UserService {
         return userRepository.findAll();
     }
 
-   /* @Override
-    public User registerNewUserAccount(String nombre, String password, String correo ){
+    public Optional<Users> findOne(long id){
+        return userRepository.findById(id);
+    }
 
-    }*/
 }

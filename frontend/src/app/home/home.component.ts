@@ -1,13 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import {Users, UserService} from "../user.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {LoginService} from "../log-in/login.service";
+
+//import { TdDialogService } from '@covalent/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
+
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  users: Users;
+
+
+  constructor(private routes:Router, activatedRoute:ActivatedRoute, public userService: UserService, public loginService: LoginService) {
+    const id = activatedRoute.snapshot.params['id'];
+    userService.getUserById(id).subscribe((users) =>(this.users = users),(error) => console.error(error));
+
+  }
 
   ngOnInit(): void {
   }

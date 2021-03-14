@@ -5,6 +5,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {DialogoRegistroComponent} from "../dialogoRegistro/dialogoRegistro.component";
 import {Router} from "@angular/router";
 import {LoginService} from "./login.service";
+import {UserService} from "../user.service";
 
 
 export interface DialogData {
@@ -44,16 +45,18 @@ export class LogInComponent implements OnInit {
   }
 */
 
-  constructor( public dialog: MatDialog, public router: Router, public loginService: LoginService) { }
+  constructor( public dialog: MatDialog, public router: Router, public loginService: LoginService, public userService: UserService) { }
 
   login(event:any, nombre:string, password:string){
     console.log(nombre);
     console.log(password);
     event.preventDefault();
     this.loginService.login(nombre, password).subscribe(us => {
-      console.log("login service1")
-      console.log(us);
-      this.router.navigate(['/home'])
+      console.log("loglin service1")
+        console.log(us);
+      this.router.navigate(['/home/'+us.id])
+      this.userService.getUserById(us.id);
+
     },
       (error) =>alert('Invalid data login component ' + error),
       );

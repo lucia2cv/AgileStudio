@@ -35,7 +35,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
-
+import {UserService} from "./user.service";
 
 /*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
@@ -76,8 +76,9 @@ import {MatDividerModule} from '@angular/material/divider';
     MatDividerModule,
 
 
+
   ],
-  providers: [ LoginService,
+  providers: [ LoginService,UserService,
     {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi:true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},
