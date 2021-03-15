@@ -21,6 +21,7 @@ export class UserService {
   constructor(private loginService: LoginService, private http:HttpClient) {}
 
   getUserById(id:number|string):Observable<Users>{
+    console.log("entrando en get user By Id " + id);
     console.log("entra en user unica");
     console.log(id);
 
