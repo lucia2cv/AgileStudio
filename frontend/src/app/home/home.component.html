@@ -3,7 +3,7 @@
 <ng-container *ngIf="loginService.isLogged">
   <mat-card id="card">
     <div>
-      <strong>{{users.nombre}}</strong>
+      <strong>{{loginService.user.nombre}}</strong>
 
     </div>
   </mat-card>

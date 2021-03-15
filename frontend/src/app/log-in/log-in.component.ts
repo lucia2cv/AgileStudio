@@ -6,6 +6,7 @@ import {DialogoRegistroComponent} from "../dialogoRegistro/dialogoRegistro.compo
 import {Router} from "@angular/router";
 import {LoginService} from "./login.service";
 import {UserService} from "../user.service";
+import {User} from "../user";
 
 
 export interface DialogData {
@@ -52,11 +53,13 @@ export class LogInComponent implements OnInit {
     console.log(password);
     event.preventDefault();
     this.loginService.login(nombre, password).subscribe(us => {
-      console.log("loglin service1")
-        console.log(us);
-      this.router.navigate(['/home/'+us.id])
-      this.userService.getUserById(us.id);
+      console.log("loglin service1");
+      console.log(us);
 
+     // this.userService.getUserById(us.id);
+      console.log("estoy en linea 59");
+      this.router.navigate(['/home']);
+      return us;
     },
       (error) =>alert('Invalid data login component ' + error),
       );

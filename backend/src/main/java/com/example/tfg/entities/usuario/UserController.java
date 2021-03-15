@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-
+//@CrossOrigin("http://localhost:4200")
 @RestController
-@RequestMapping("/home/")
+@RequestMapping(value = "/home")
 public class UserController {   //todos los metodos de busqueda
 
     @Autowired
@@ -23,7 +23,7 @@ public class UserController {   //todos los metodos de busqueda
         return users;
     }
 
-    @RequestMapping(value="/home/", method=RequestMethod.GET)
+    @GetMapping("/")
     public ResponseEntity<Users> getUserById(@PathVariable long id){
         Users usuario = userService.findOne(id).get();
         if (usuario != null){

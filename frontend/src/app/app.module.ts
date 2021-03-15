@@ -53,7 +53,7 @@ import {UserService} from "./user.service";
     NavbarComponent,
   ],
   imports: [
-    RouterModule.forRoot(ROUTES, { relativeLinkResolution: 'legacy' }),
+    RouterModule.forRoot(ROUTES),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {LoginService} from "./log-in/login.service";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {catchError} from "rxjs/operators";
+import {Observable, throwError} from "rxjs";
+import {catchError, map} from "rxjs/operators";
 
 export interface Users {
   id?: number;
@@ -13,7 +13,7 @@ export interface Users {
   equipo_id: number;
 }
 
-const URL='/home/';
+const URL='/';
 
 @Injectable()
 export class UserService {
@@ -26,11 +26,11 @@ export class UserService {
     console.log(id);
 
     return this.http.get<any>(URL,{withCredentials:true})
-      .pipe(catchError((error)=>this.handleError(error)));
+      .pipe(map(result => result.content),catchError((error)=>this.handleError(error)));
   }
 
   private handleError(error:any){
-    console.error(error);
-    return Observable.throw('Server error ('+error.status+ '): '+error);
+    
+    return throwError('Server error ('+error.status+ '): '+error);
   }
 }
