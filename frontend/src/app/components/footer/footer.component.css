@@ -22,4 +22,15 @@
   right: 0px;
   width: 25%;
   font-size: 20px;
+  text-align: center;
+}
+#imageInsta{
+  position: absolute;
+  bottom: 43px;
+  right: 140px;
+}
+#imageTwitter{
+  position: absolute;
+  bottom: 10px;
+  right: 140px;
 }
