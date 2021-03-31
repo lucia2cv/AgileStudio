@@ -36,6 +36,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import {UserService} from "./user.service";
+import { FooterComponent } from './components/footer/footer.component';
 
 /*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
@@ -51,6 +52,7 @@ import {UserService} from "./user.service";
     TalleresComponent,
     EquiposComponent,
     NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     RouterModule.forRoot(ROUTES),
