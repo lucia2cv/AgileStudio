@@ -52,7 +52,7 @@ export class LogInComponent implements OnInit {
     console.log(nombre);
     console.log(password);
     event.preventDefault();
-    this.loginService.login(nombre, password).subscribe(us => {
+    this.loginService.login(nombre, password).subscribe((us) => {
       console.log("loglin service1");
       console.log(us);
 

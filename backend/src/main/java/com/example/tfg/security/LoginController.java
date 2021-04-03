@@ -32,7 +32,7 @@ public class LoginController {
             return new ResponseEntity<>(loggedUsers,HttpStatus.OK);
         }
     }
-    @RequestMapping("/api/logout")
+    @RequestMapping(value = "/")
     public ResponseEntity<Boolean>logout(HttpSession session){
         if(!userComponent.isLoggedUser()){
             log.info("Not logged user");

@@ -20,15 +20,12 @@ export class HomeComponent implements OnInit {
   constructor(private routes:Router, activatedRoute:ActivatedRoute, public userService: UserService, public loginService: LoginService) {
     /*const id = activatedRoute.
     console.log("este es el id en homecompo " +id);*/
-    userService.getUserById(this.loginService.user.id).subscribe((users) =>(this.users = users),(error) => console.error(error));
+    //console.log("Ver " + JSON.stringify(this.userService));
+    //userService.getUserById(this.loginService.user.id).subscribe((users) =>(this.users = users),(error) => console.error(error));
 
   }
 
   ngOnInit(): void {
-    console.log("pidiendo datos");
-    /*this.userService.getUserById(this.users.id).subscribe(
-    users => this.users = users , error => console.log(error)
-    );*/
   }
 
 }
