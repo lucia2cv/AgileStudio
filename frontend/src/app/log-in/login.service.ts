@@ -56,7 +56,7 @@ export class LoginService {
   }
 
   logout(){
-    return this.http.get(URL + '/').pipe(
+    return this.http.get('http://localhost:8080/').pipe(
       map(response => {
         this.removeCurrentUser();
         return response;
