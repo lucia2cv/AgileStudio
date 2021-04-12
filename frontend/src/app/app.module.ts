@@ -37,6 +37,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import {UserService} from "./user.service";
 import { FooterComponent } from './components/footer/footer.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 /*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
@@ -76,6 +77,7 @@ import { FooterComponent } from './components/footer/footer.component';
     MatSidenavModule,
     MatListModule,
     MatDividerModule,
+    MatTooltipModule,
 
 
 
