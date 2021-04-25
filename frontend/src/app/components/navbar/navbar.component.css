@@ -2,7 +2,7 @@
   position: fixed;
 /* Make sure the toolbar will stay on top of the content as it scrolls past.*/
 z-index: 2;
-background-color: chocolate;
+background-color: #00695C;
 }
 .mat-icon{
 padding-right: 10px;
@@ -10,9 +10,12 @@ padding-right: 10px;
 .matB{
 width: 145px;
 }
-.mat-raised-button{
-background-color: #ffd740;
+.mat-stroked-button{
 position: absolute;
 left: 93%;
 }
 
+.mat-button{
+  color: #D7FFD9;
+  font-size: 20px;
+}

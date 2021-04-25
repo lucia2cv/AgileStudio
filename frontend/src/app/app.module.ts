@@ -86,7 +86,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi:true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},
-    {provide: MAT_RADIO_DEFAULT_OPTIONS, useValue: { color: 'accent'}},
+    //{provide: MAT_RADIO_DEFAULT_OPTIONS, useValue: { color: '#003D33'}},
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {panelClass: 'mat-dialog-override'}},
   ],
   bootstrap: [AppComponent]
