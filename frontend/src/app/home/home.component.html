@@ -1,21 +1,22 @@
-<app-navbar></app-navbar>
+<app-navbar xmlns="http://www.w3.org/1999/html"></app-navbar>
 
 <ng-container *ngIf="loginService.isLogged">
   <mat-card id="card">
-    <div
-      gdAreas="header header | side content | footer footer"
-      gdGap="16px"
-      gdRows="auto auto auto">
-      <div gdArea="header">
-        Header
+    <div class="grid-container"
+      gdAreas="imagen imagen | nombreRol nombreRol| equipo equipo"
+      gdGap="13px"
+      gdRows="40% 10% 45%">
+      <div gdArea="imagen">
+        <!-- Imagen por defecto si el usuario no tiene una-->
+        <img src="assets/userIcon.png" id="icon">
+        <!-- Añadir comprobación de la imagen del usuario  loginService.user.image-->
       </div>
-      <div gdArea="side">
-        Side
+      <div gdArea="nombreRol" id="nombreRol">
+        {{loginService.user.nombre}} <br>
+        {{loginService.user.rol}}
       </div>
-      <div gdArea="content">
-        Content
-      </div>
-      <div gdArea="footer">
+
+      <div gdArea="equipo">
         Footer
       </div>
     </div>
