@@ -1,4 +1,4 @@
-<app-navbar xmlns="http://www.w3.org/1999/html"></app-navbar>
+<app-navbar></app-navbar>
 
 <ng-container *ngIf="loginService.isLogged">
   <mat-card id="card">
@@ -9,6 +9,9 @@
       <div gdArea="imagen">
         <!-- Imagen por defecto si el usuario no tiene una-->
         <img src="assets/userIcon.png" id="icon">
+        <button mat-icon-button color="black" >
+          <mat-icon>mode_edit</mat-icon>
+        </button>
         <!-- Añadir comprobación de la imagen del usuario  loginService.user.image-->
       </div>
       <div gdArea="nombreRol" id="nombreRol">
@@ -17,7 +20,7 @@
       </div>
 
       <div gdArea="equipo">
-        Footer
+        EQUIPOS
       </div>
     </div>
     <!--<div>
