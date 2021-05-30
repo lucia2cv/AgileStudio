@@ -1,18 +1,37 @@
 <app-navbar></app-navbar>
 
 <ng-container *ngIf="loginService.isLogged">
-  <mat-card id="card">
-    <div class="grid-container"
+
+<mat-card class="as-global">
+  <div class="as-global__img">
+    <img src="assets/userIcon.png" class="icon">
+    <button mat-icon-button class="as-global__edit"  matTooltip="Editar perfil">
+      <mat-icon>mode_edit</mat-icon>
+    </button>
+  </div>
+
+  <div class="as-wrapper">
+    <div class="as-wrapper__info">{{loginService.user.nombre}}</div>
+    <div class="as-wrapper__info">{{loginService.user.rol}}</div>
+  </div>
+
+  <div class="as-wrapper__equipos">
+    <h2>Mis equipos</h2>
+    <div>
+      
+    </div>
+  </div>
+    <!--<div class="grid-container"
       gdAreas="imagen imagen | nombreRol nombreRol| equipo equipo"
       gdGap="13px"
       gdRows="40% 10% 45%">
       <div gdArea="imagen">
-        <!-- Imagen por defecto si el usuario no tiene una-->
+                                                                       Imagen por defecto si el usuario no tiene una
         <img src="assets/userIcon.png" id="icon">
         <button mat-icon-button color="black" >
           <mat-icon>mode_edit</mat-icon>
         </button>
-        <!-- Añadir comprobación de la imagen del usuario  loginService.user.image-->
+                                                                                Añadir comprobación de la imagen del usuario  loginService.user.image
       </div>
       <div gdArea="nombreRol" id="nombreRol">
         {{loginService.user.nombre}} <br>
@@ -23,7 +42,7 @@
         EQUIPOS
       </div>
     </div>
-    <!--<div>
+    !!!!!!!!!!!!!!!!!!!!<div>
       <strong>{{loginService.user.nombre}}</strong>
       {{loginService.user.rol}}
 
@@ -35,7 +54,7 @@
         Editar
       </button>
 
-    </div>-->
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!</div>-->
   </mat-card>
 </ng-container>
 <app-footer></app-footer>
