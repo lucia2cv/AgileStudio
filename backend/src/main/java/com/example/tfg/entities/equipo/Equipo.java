@@ -5,6 +5,8 @@ import com.example.tfg.entities.usuario.Users;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -22,11 +24,12 @@ public class Equipo {
 
     private String nombreEquipo;
 
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL,mappedBy = "equipo",  orphanRemoval = true)
+    @ManyToMany(fetch = FetchType.EAGER)
     //@JsonManagedReference
     private List<Users> miembros;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Taller> talleres;
 
     protected Equipo(){}
