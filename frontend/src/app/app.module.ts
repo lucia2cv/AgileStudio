@@ -38,7 +38,6 @@ import {MatDividerModule} from '@angular/material/divider';
 import {UserService} from "./user.service";
 import { FooterComponent } from './components/footer/footer.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { EditUserComponent } from './edit-user/edit-user.component';
 
 /*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
@@ -55,7 +54,6 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     EquiposComponent,
     NavbarComponent,
     FooterComponent,
-    EditUserComponent,
   ],
   imports: [
     RouterModule.forRoot(ROUTES),
