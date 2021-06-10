@@ -11,6 +11,6 @@ export const ROUTES: Routes = [
   {path: 'home', component:HomeComponent},
   {path: 'talleres', component:TalleresComponent},
   {path: 'equipos', component:EquiposComponent},
-  {path: 'home/editUser/:id', component:EditUserComponent},
+  {path: 'home/editUser/:id', component:EditUserComponent },
   {path: '**', component:HomeComponent}
 ];
