@@ -14,10 +14,10 @@ import {LoginService} from "../log-in/login.service";
 
 export class HomeComponent implements OnInit {
 
-  users: Users;
+  user: Users;
 
 
-  constructor(private routes:Router, activatedRoute:ActivatedRoute, public userService: UserService, public loginService: LoginService) {
+  constructor(private router:Router, activatedRoute:ActivatedRoute, public userService: UserService, public loginService: LoginService) {
     /*const id = activatedRoute.
     console.log("este es el id en homecompo " +id);*/
     //console.log("Ver " + JSON.stringify(this.userService));
@@ -25,6 +25,10 @@ export class HomeComponent implements OnInit {
 
   }
 
+  editUser(){
+
+    this.router.navigate(['/home/editUser',this.loginService.user.id]);
+  }
   ngOnInit(): void {
   }
 
