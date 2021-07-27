@@ -11,9 +11,13 @@
     <a mat-list-item [routerLink]="['/talleres/programación']">Programación</a>
     <mat-divider></mat-divider>
   </mat-nav-list>
-
-
 </mat-drawer-container>
+
+<h1 class="workshop__tittle">TALLERES</h1>
+<div  class="workshop__wrapper-button">
+  <button mat-raised-button  class="workshop__button">Nuevo Taller</button>
+</div>
+<app-footer></app-footer>
 <!--<mat-sidenav-container class="example-sidenav-container"
                        [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
   <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"

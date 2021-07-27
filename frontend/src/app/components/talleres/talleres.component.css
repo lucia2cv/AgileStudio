@@ -1,8 +1,9 @@
 .sidenav {
   position: absolute;
   top: 6.8%;
-  width:15%;
-  height: 93.2%;
+  width:10%;
+  min-width: 175px;
+  height: 85.3%;
   border: solid 1px #003D33 !important;
   background-color: #75A478;
 }
@@ -13,7 +14,7 @@
 }
 
 .mat-subheader{
-  font-size: 20px;
+  font-size: 1.25rem;
   justify-content: center;
   color: #01332B;
 
@@ -23,4 +24,23 @@
 }
 .mat-divider{
   border-color: rgba(0, 61, 51, 1) !important;
+}
+.workshop__tittle {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 6rem;
+  font-size: 3rem;
+}
+.workshop__wrapper-button {
+  display: flex;
+  position: relative;
+  top: 2rem;
+  justify-content: flex-end;
+  height: 4rem;
+  margin-right: 6rem;
+}
+.workshop__button {
+  width: 15rem;
+  font-size: 1.5rem;
 }
