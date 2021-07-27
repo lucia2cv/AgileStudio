@@ -1,0 +1,23 @@
+.card-global {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 6.8%;
+  left: 25%;
+  width: 50%;
+  height: 30%;
+  padding-top: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background-color: #75A478;
+}
+.card-global .card-global__form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.card-global .card-global__button {
+  align-self: flex-end;
+  margin-top: 3rem;
+}

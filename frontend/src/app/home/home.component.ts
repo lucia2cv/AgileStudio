@@ -3,7 +3,6 @@ import {Users, UserService} from "../user.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {LoginService} from "../log-in/login.service";
 
-//import { TdDialogService } from '@covalent/core';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +23,9 @@ export class HomeComponent implements OnInit {
     //userService.getUserById(this.loginService.user.id).subscribe((users) =>(this.users = users),(error) => console.error(error));
 
   }
-
+  navigateEdit(): void {
+    this.routes.navigateByUrl('/editarPerfil');
+  }
   ngOnInit(): void {
   }
 
