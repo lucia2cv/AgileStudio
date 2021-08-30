@@ -5,16 +5,16 @@ import org.springframework.web.context.annotation.SessionScope;
 @Component
 @SessionScope
 public class UserComponent {
-    private Users users;
+    private Users user;
     public Users getLoggedUser(){
-        return users;
+        return user;
     }
     public void setLoggedUser(Users users){
-        this.users = users;
+        this.user = users;
     }
 
     public boolean isLoggedUser(){
-        return this.users != null;
+        return this.user != null;
     }
 
 }

@@ -47,6 +47,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //Public pages
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/login").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/home").permitAll();
+       // http.authorizeRequests().antMatchers(HttpMethod.GET,"/home/{id}").hasAnyRole("desarrollador");
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/loginerror").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/logout").permitAll();
 
@@ -55,7 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/talleres").permitAll();
         //Private pages(all the others)
         //http.authorizeRequests().anyRequest().authenticated();
-        http.authorizeRequests().antMatchers(HttpMethod.GET,"/home").hasRole("desarrollador");
+       // http.authorizeRequests().antMatchers(HttpMethod.GET,"/home").hasRole("desarrollador");
 
         /*LoginForm
         http.formLogin().loginPage("/login");

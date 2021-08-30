@@ -32,7 +32,13 @@ import {ROUTES} from "./app.routes";
 
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
+import {UserService} from "./user.service";
+import { FooterComponent } from './components/footer/footer.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 /*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
@@ -48,9 +54,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     TalleresComponent,
     EquiposComponent,
     NavbarComponent,
+    FooterComponent,
+    EditUserComponent,
   ],
   imports: [
-    RouterModule.forRoot(ROUTES, { relativeLinkResolution: 'legacy' }),
+    RouterModule.forRoot(ROUTES),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -67,14 +75,20 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatRadioModule,
     MatButtonModule,
     MatTabsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule,
+    MatTooltipModule,
+
+
 
   ],
-  providers: [ LoginService,
+  providers: [ LoginService,UserService,
     {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi:true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},
-    {provide: MAT_RADIO_DEFAULT_OPTIONS, useValue: { color: 'accent'}},
+    //{provide: MAT_RADIO_DEFAULT_OPTIONS, useValue: { color: '#003D33'}},
     {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {panelClass: 'mat-dialog-override'}},
   ],
   bootstrap: [AppComponent]

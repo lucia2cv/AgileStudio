@@ -1,6 +1,8 @@
 package com.example.tfg.entities.taller;
 
 import com.example.tfg.entities.equipo.Equipo;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -17,7 +19,8 @@ public class Taller {
     private String nombreTaller;
     private String categoria;
 
-    @ManyToMany (mappedBy = "talleres")
+    @ManyToMany (mappedBy = "talleres",fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Equipo> equipos;
 
     protected Taller(){}

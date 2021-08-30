@@ -1,7 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.mat-raised-button{
-  background-color: chocolate;
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #F2F2F4}
+/*.mat-raised-button{
+  background-color: #75A478;
+  border: #003D33 !important;
+}*/
+.mat-stroked-button{
+  background-color: #75A478;
+  border: solid 1px #003D33 !important;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  color: rgb(117, 164, 120);
+  background-color: rgb(117, 164, 120);
+
+  /*color: rgb(66, 134, 244);
+  background-color: rgb(66, 134, 244)*/
 }

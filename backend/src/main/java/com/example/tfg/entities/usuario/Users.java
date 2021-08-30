@@ -2,11 +2,18 @@ package com.example.tfg.entities.usuario;
 
 import com.example.tfg.entities.equipo.Equipo;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 public class Users {
 
     @Id
@@ -18,22 +25,24 @@ public class Users {
     private String email;
     private String rol;
 
-    @ManyToOne
+    /*@ManyToOne
     @JsonIgnore
     //@JsonBackReference
     private Equipo equipo;
     //private long id_equipo;
-
+*/
+    @ManyToMany(mappedBy = "miembros",fetch = FetchType.EAGER)
+    private List<Equipo> equipos;
     //Constructor needed for the load from the BBDD
 
     protected Users(){}
 
-    public Users(String nombre, String password, String email, String rol, Equipo equipo /*long id_equipo*/) {
+    public Users(String nombre, String password, String email, String rol, List<Equipo> equipos /*long id_equipo*/) {
         this.nombre = nombre;
         this.password = password;
         this.email = email;
         this.rol = rol;
-        this.equipo = equipo;
+       this.equipos = equipos;
         //this.id_equipo = id_equipo;
     }
 
@@ -42,6 +51,7 @@ public class Users {
         this.password = password;
         this.email = email;
         this.rol = rol;
+        this.equipos = new ArrayList<>();
     }
 
     public long getId() {
@@ -84,7 +94,15 @@ public class Users {
         this.rol = rol;
     }
 
-    public Equipo getEquipo() {
+    public List<Equipo> getEquipos() {
+        return equipos;
+    }
+
+    public void setEquipos(List<Equipo> equipos) {
+        this.equipos = equipos;
+    }
+
+/* public Equipo getEquipo() {
         return equipo;
     }
 
@@ -107,7 +125,7 @@ public class Users {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", rol='" + rol + '\'' +
-                ", equipo='" + equipo + '\'' +
+               // ", equipo='" + equipo + '\'' +
                 '}';
     }
 }

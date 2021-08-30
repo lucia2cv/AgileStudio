@@ -34,18 +34,23 @@ public class DatabaseLoader {
 
 
         Users users1 = new Users("user",password,"user@email.com","desarrollador");
-        users1.setEquipo(equipo1);
-
-
-        Users users2 = new Users("user2",password,"user@email.com","desarrollador");
-        users2.setEquipo(equipo1);
-
-        Users users3 = new Users("user3",password,"user@email.com","desarrollador");
-        users3.setEquipo(equipo2);
 
         userRepository.save(users1);
+
+        Users users2 = new Users("user2",password,"user@email.com","desarrollador");
+
         userRepository.save(users2);
+        Users users3 = new Users("user3",password,"user@email.com","desarrollador");
+
         userRepository.save(users3);
+
+
+
+
+        equipo1.getMiembros().add(users1);
+        equipo2.getMiembros().add(users2);
+        equipo2.getMiembros().add(users3);
+
 
         Taller taller1  = new Taller("taller1" , "prueba");
         tallerRepository.save(taller1);
