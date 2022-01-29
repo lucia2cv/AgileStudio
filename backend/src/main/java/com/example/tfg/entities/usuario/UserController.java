@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-//@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping(value = "/home")
 public class UserController {   //todos los metodos de busqueda
 
     @Autowired
     private UserRepository userRepository;
+    @Autowired
     private UserService userService;
     /*Add user*/
     @PostMapping(value = "/users/")
@@ -32,4 +33,13 @@ public class UserController {   //todos los metodos de busqueda
             return new ResponseEntity<>(usuario, HttpStatus.NOT_FOUND);
         }
     }
+    @PutMapping("/editarPerfil/{id}")
+    public Users updateUser(@PathVariable long id, @RequestBody Users updateUser){
+        System.out.println("updateUser");
+        userService.findOne(id).get();
+        updateUser.setId(id);
+        userService.saveUser(updateUser);
+        return updateUser;
+    }
+
 }
