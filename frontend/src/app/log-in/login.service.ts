@@ -4,12 +4,13 @@ import {map} from "rxjs/operators";
 
 
 export interface Users {
-  id?:number;
+  id?: number;
   nombre:string;
-  rol:string;
-  authdata: string;
+  password:string;
   email:string;
-  //equipo_id: number[];
+  rol: string;
+  equipo_id: number;
+  authdata: string;
 
 }
 @Injectable()
