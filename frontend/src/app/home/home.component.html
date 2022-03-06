@@ -18,7 +18,9 @@
   <div class="as-wrapper__equipos">
     <h2>Mis equipos</h2>
     <div>
-
+      <a *ngFor="let equipo of equipos">
+        {{equipo.nombreEquipo}}
+      </a>
     </div>
   </div>
     <!--<div class="grid-container"

@@ -4,6 +4,7 @@ import {map} from "rxjs/operators";
 
 
 export interface Users {
+  equipos: [];
   id?: number;
   nombre:string;
   password:string;
