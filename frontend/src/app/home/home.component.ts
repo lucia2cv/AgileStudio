@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Users, UserService} from "../user.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {LoginService} from "../log-in/login.service";
+import {Equipo, EquipoService} from "../servicios/equipo.service";
 
 
 @Component({
@@ -14,15 +15,23 @@ import {LoginService} from "../log-in/login.service";
 export class HomeComponent implements OnInit {
 
   users: Users;
+  equipos: Equipo [];
 
+  constructor(private router:Router, activatedRoute:ActivatedRoute, public userService: UserService, public loginService: LoginService, public equipoService: EquipoService) {
 
-  constructor(private router:Router, activatedRoute:ActivatedRoute, public userService: UserService, public loginService: LoginService) {}
+    let equipos = this.loginService.user.equipos;
+    this.equipos = equipos;
+  }
   navigateEdit(): void {
     let user = this.loginService.user;
     this.router.navigate(['home/editarPerfil',user.id]);
 
   }
   ngOnInit(): void {
+    /* this.equipoService.getAllEquipos().subscribe(
+      equipos=>this.equipos=equipos,
+      error=>console.log(error)
+    ); */
   }
 
 }
