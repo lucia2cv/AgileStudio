@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {Users, UserService} from "../../user.service";
+import {LoginService} from "../../log-in/login.service";
+import {Equipo, EquipoService} from "../../servicios/equipo.service";
+import {User} from "../../user";
 
 @Component({
   selector: 'app-equipos',
@@ -7,9 +12,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EquiposComponent implements OnInit {
 
-  constructor() { }
+  equipos: Equipo[];
+  miembros: Users[] ;
+  constructor(private router:Router, activatedRoute:ActivatedRoute, public userService: UserService, public loginService: LoginService, public equipoService: EquipoService) {
+
+    console.log(this.equipos)
+
+  }
 
   ngOnInit(): void {
+      this.equipoService.getAllEquipos().subscribe(
+      eq=>this.equipos=eq,
+      error=>console.log(error)
+    );
   }
 
 }

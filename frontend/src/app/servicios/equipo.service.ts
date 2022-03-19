@@ -9,10 +9,10 @@ import {catchError} from "rxjs/operators";
 export interface Equipo {
   id?:number;
   nombreEquipo:string;
-  miembros: Users[] | number[];
+  miembros: Users[] ;
 }
 
-const URL='/home';
+const URL='http://localhost:8080/equipos/'
 @Injectable()
 export class EquipoService{
   /*Constructor con lo que vamos a necesitar*/
@@ -35,7 +35,7 @@ export class EquipoService{
 
   getAllEquipos():Observable<Equipo[]>{
     console.log("pidiendo todos los datos");
-    return this.http.get<Equipo[]>(URL,{withCredentials:true})
+    return this.http.get<Equipo[]>(URL)
       .pipe(catchError((error)=>this.handleError(error)));
   }
 

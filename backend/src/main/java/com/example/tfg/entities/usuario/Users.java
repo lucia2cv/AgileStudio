@@ -25,16 +25,16 @@ public class Users {
     private String email;
     private String rol;
 
+    @ManyToMany(mappedBy = "miembros",fetch = FetchType.EAGER)
+    private List<Equipo> equipos;
+    //Constructor needed for the load from the BBDD
+
     /*@ManyToOne
     @JsonIgnore
     //@JsonBackReference
     private Equipo equipo;
     //private long id_equipo;
-*/
-    @ManyToMany(mappedBy = "miembros",fetch = FetchType.EAGER)
-    private List<Equipo> equipos;
-    //Constructor needed for the load from the BBDD
-
+    */
     protected Users(){}
 
     public Users(String nombre, String password, String email, String rol, List<Equipo> equipos /*long id_equipo*/) {

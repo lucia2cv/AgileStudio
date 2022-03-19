@@ -17,7 +17,7 @@ public class EquipoService {
     public Equipo fetchTeamByNombreEquipo(String nombreEquipo){
         return equipoRepository.findByNombreEquipo(nombreEquipo);
     }
-    public List<Equipo> findAll(){
+    /*public List<Equipo> findAll(){
         return equipoRepository.findAll();
-    }
+    }*/
 }

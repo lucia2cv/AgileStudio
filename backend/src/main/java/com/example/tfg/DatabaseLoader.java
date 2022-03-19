@@ -33,23 +33,31 @@ public class DatabaseLoader {
         equipoRepository.save(equipo2);
 
 
-        Users users1 = new Users("user",password,"user@email.com","desarrollador");
 
-        userRepository.save(users1);
+        Users user1 = new Users("user1",password,"user@email.com","desarrollador");
+        userRepository.save(user1);
 
-        Users users2 = new Users("user2",password,"user@email.com","desarrollador");
+        Users user2 = new Users("user2",password,"user@email.com","desarrollador");
+        userRepository.save(user2);
 
-        userRepository.save(users2);
-        Users users3 = new Users("user3",password,"user@email.com","desarrollador");
+        Users user3 = new Users("user3",password,"user@email.com","desarrollador");
+        userRepository.save(user3);
 
-        userRepository.save(users3);
+        Users user4 = new Users("user4",password,"user@email.com","scrum master");
+        userRepository.save(user4);
 
+        Users user5 = new Users("user5",password,"user@email.com","scrum master");
+        userRepository.save(user5);
 
+        equipo1.getMiembros().add(user1);
+        equipo1.getMiembros().add(user4);
+        equipo1.getMiembros().add(user3);
+        equipo1.getMiembros().add(user5);
 
+        equipo2.getMiembros().add(user2);
+        equipo2.getMiembros().add(user3);
+        equipo2.getMiembros().add(user4);
 
-        equipo1.getMiembros().add(users1);
-        equipo2.getMiembros().add(users2);
-        equipo2.getMiembros().add(users3);
 
 
         Taller taller1  = new Taller("taller1" , "prueba");

@@ -1,12 +1,30 @@
 <app-navbar></app-navbar>
 
+<ng-container *ngIf="loginService.isLogged">
+  <div class="teams">
+    <div class="teams__header">
+      <h1 class="teams__tittle">MIS EQUIPOS</h1>
+      <button mat-raised-button  class="teams__button">Nuevo Equipo</button>
+    </div>
 
-<h1 class="teams__tittle">MIS EQUIPOS</h1>
-<div  class="teams__wrapper-button">
-  <button mat-raised-button  class="teams__button">Nuevo Equipo</button>
-</div>
+    <ul class="teams__container">
+      <li class="teams__container-item" *ngFor="let equipo of equipos">
+        <div class="teams__container-name">{{equipo.nombreEquipo}}</div>
+        <div *ngFor="let miembro of miembros">{{miembro.nombre}}</div>
+      </li>
+    </ul>
+  </div>
+</ng-container>
+ <!-- <h1 class="teams__tittle">MIS EQUIPOS</h1>
+  <div  class="teams__wrapper-button">
+    <button mat-raised-button  class="teams__button">Nuevo Equipo</button>
+  </div>
 
-<div class="teams__container">
-  <div class="teams__container-wrapper"></div>
-</div>
-<app-footer></app-footer>
+  <div class="teams__container">
+    <div class="teams__container-wrapper" *ngFor="let equipo of equipos">
+      {{equipo.nombreEquipo}}
+      <div *ngFor="let miembro of miembros">{{miembro.nombre}}</div>
+    </div>
+  </div>-->
+
+<!--<app-footer></app-footer>-->

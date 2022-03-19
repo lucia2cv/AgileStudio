@@ -1,9 +1,10 @@
 <mat-toolbar>
+    <div class="navbar">
+      <a mat-button [routerLink]="'/home'" class="matB">
+        <mat-icon>home</mat-icon>Home </a>
+      <a mat-button [routerLink]="'/equipos'" class="matB"> Equipos </a>
+      <a mat-button [routerLink]="'/talleres'" class="matB"> Talleres </a>
 
-    <a mat-button [routerLink]="'/home'" class="matB">
-      <mat-icon>home</mat-icon>Home </a>
-    <a mat-button [routerLink]="'/equipos'" class="matB"> Equipos </a>
-    <a mat-button [routerLink]="'/talleres'" class="matB"> Talleres </a>
-
-    <a mat-stroked-button (click)="logout()">Cerrar Sesión</a>
+      <a mat-stroked-button (click)="logout()">Cerrar Sesión</a>
+    </div>
 </mat-toolbar>
