@@ -1,17 +1,26 @@
 package com.example.tfg.entities.taller;
 
+import com.example.tfg.entities.equipo.Equipo;
+import com.example.tfg.entities.usuario.UserRepository;
+import com.example.tfg.entities.usuario.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@CrossOrigin("http://localhost:4200")
 @RestController
+@RequestMapping(value = "/talleres")
 public class TallerController {
     @Autowired
     private TallerService service;
+    @Autowired
+    private TallerRepository tallerRepository;
 
+    @Autowired
+    private UserRepository userRepository;
     /*Add taller*/
     @PostMapping(value = "/talleres")
     @ResponseStatus(HttpStatus.CREATED)
@@ -25,5 +34,22 @@ public class TallerController {
         }
         service.saveTaller(taller);
         return taller;
+    }
+
+    @GetMapping("/")
+    public List<Taller> getAllWorkshops(Long id){
+        Users user = userRepository.findUsersById(id);
+        List<Equipo> equiposUsuarios = user.getEquipos();
+        List<Taller> talleres = new ArrayList<>();
+        List<Taller> talleresEquipo;
+        for (Equipo eq: equiposUsuarios) {
+           talleresEquipo = eq.getTalleres();
+            for (Taller t: talleresEquipo) {
+                if(!talleres.contains(t)) {
+                    talleres.add(t);
+                }
+            }
+        }
+        return  talleres;
     }
 }

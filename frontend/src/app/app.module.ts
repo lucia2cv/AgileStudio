@@ -40,6 +40,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import {EquipoService} from "./servicios/equipo.service";
+import {TallerService} from "./servicios/taller.service";
 
 /*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
@@ -85,7 +86,7 @@ import {EquipoService} from "./servicios/equipo.service";
 
 
   ],
-  providers: [ LoginService,UserService,EquipoService,
+  providers: [ LoginService,UserService,EquipoService,TallerService,
     {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi:true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},
