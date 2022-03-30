@@ -10,6 +10,7 @@ import {HomeComponent} from "./home/home.component";
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule,} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -82,8 +83,7 @@ import {TallerService} from "./servicios/taller.service";
     MatListModule,
     MatDividerModule,
     MatTooltipModule,
-
-
+    MatChipsModule
 
   ],
   providers: [ LoginService,UserService,EquipoService,TallerService,

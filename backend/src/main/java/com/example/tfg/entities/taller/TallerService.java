@@ -18,5 +18,7 @@ public class TallerService {
     public Taller fetchByNombreTaller(String nombreTaller){
         return tallerRepository.findByNombreTaller(nombreTaller);
     }
+
     public List<Taller> findAll(){ return tallerRepository.findAll();}
+
 }

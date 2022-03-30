@@ -11,6 +11,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class DatabaseLoader {
@@ -23,6 +25,16 @@ public class DatabaseLoader {
 
     @PostConstruct
     private void initDataBase(){
+        /*List<String> listCat1 = new ArrayList<>();
+        listCat1.add("ciberseguridad");
+
+        List<String> listCat2 = new ArrayList<>();
+        listCat2.add("scrum");
+
+        List<String> listCat3 = new ArrayList<>();
+        listCat3.add("Vue3");
+        listCat3.add("Js");*/
+
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode("user");
 
@@ -60,15 +72,23 @@ public class DatabaseLoader {
 
 
 
-        Taller taller1  = new Taller("taller1" , "prueba");
+        Taller taller1  = new Taller("Cyber" , "ciberseguridad", "https://www.itdigitalsecurity.es/files/202203/ciberseguridad.jpg");
         tallerRepository.save(taller1);
 
-        Taller taller2  = new Taller("taller2" , "scrum");
+        Taller taller2  = new Taller("Scrum Coffe" , "scrum", "https://insights.dice.com/wp-content/uploads/2018/07/shutterstock_496292356.jpg");
         tallerRepository.save(taller2);
+
+        Taller taller3  = new Taller("Vue3 Masterclass" , "Vue", "https://d2sofvawe08yqg.cloudfront.net/vuejs3/s_hero?1620610748");
+        tallerRepository.save(taller3);
+
+        Taller taller4  = new Taller("JS Masterclass" , "JS", "https://d2sofvawe08yqg.cloudfront.net/vuejs3/s_hero?1620610748");
+        tallerRepository.save(taller4);
 
         equipo1.getTalleres().add(taller1);
         equipo2.getTalleres().add(taller1);
+        equipo1.getTalleres().add(taller4);
         equipo2.getTalleres().add(taller2);
+        equipo2.getTalleres().add(taller3);
         equipoRepository.save(equipo1);
         equipoRepository.save(equipo2);
 

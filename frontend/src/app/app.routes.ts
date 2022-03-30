@@ -9,6 +9,7 @@ export const ROUTES: Routes = [
   {path: '', component: LogInComponent},
   {path: 'home', component:HomeComponent},
   {path: 'talleres', component:TalleresComponent},
+  {path: 'talleres/:categoria', component:TalleresComponent},
   {path: 'equipos', component:EquiposComponent},
   {path: 'home/editarPerfil/:id', component: EditUserComponent},
   {path: '**', component:HomeComponent}

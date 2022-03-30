@@ -1,6 +1,7 @@
 package com.example.tfg.entities.taller;
 
 import com.example.tfg.entities.equipo.Equipo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -18,6 +19,7 @@ public class Taller {
 
     private String nombreTaller;
     private String categoria;
+    private String img;
 
     @ManyToMany (mappedBy = "talleres",fetch = FetchType.EAGER)
     @Fetch(value = FetchMode.SUBSELECT)
@@ -25,17 +27,19 @@ public class Taller {
 
     protected Taller(){}
 
-    public Taller(String nombreTaller, String categoria) {
+    public Taller(String nombreTaller, String categoria, String img) {
         this.nombreTaller = nombreTaller;
         this.categoria = categoria;
+        this.img = img;
         this.equipos = new ArrayList<>();
 
     }
 
-    public Taller(String nombreTaller, String categoria, List<Equipo> equipos) {
+    public Taller(String nombreTaller, String categoria, List<Equipo> equipos, String img) {
         this.nombreTaller = nombreTaller;
         this.categoria = categoria;
         this.equipos = equipos;
+        this.img = img;
     }
 
     public String getNombreTaller() {
@@ -46,7 +50,7 @@ public class Taller {
         this.nombreTaller = nombre_taller;
     }
 
-    public String getCategoria() {
+    public String  getCategoria() {
         return categoria;
     }
 
@@ -62,12 +66,22 @@ public class Taller {
         this.equipos = equipos;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     @Override
     public String toString() {
         return "Taller{" +
                 "id=" + id +
-                ", nombre_taller='" + nombreTaller + '\'' +
-                ", categoria='" + categoria + '\'' +
+                ", nombreTaller='" + nombreTaller + '\'' +
+                ", categoria=" + categoria +
+                ", img='" + img + '\'' +
+                ", equipos=" + equipos +
                 '}';
     }
 }
