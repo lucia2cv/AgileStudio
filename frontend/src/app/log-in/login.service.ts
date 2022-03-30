@@ -66,6 +66,7 @@ export class LoginService {
     );
   }
   private setCurrentUser(user: Users) {
+    console.log(user);
     this.isLogged = true;
     this.user = user;
   }

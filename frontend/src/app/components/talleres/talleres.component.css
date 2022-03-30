@@ -1,46 +1,112 @@
 .sidenav {
-  position: absolute;
-  top: 6.8%;
+  position: relative;;
   width:10%;
   min-width: 175px;
-  height: 85.3%;
-  border: solid 1px #003D33 !important;
-  background-color: #75A478;
-}
-.mat-nav-list{
-  display: flex;
-  padding-top: 6%;
-  flex-direction: column !important;
+  height: 100%;
+  border-right: solid 1px #003D33 !important;
+  background-color: #5EDE92;
 }
 
-.mat-subheader{
+.mat-subheader {
   font-size: 1.25rem;
   justify-content: center;
   color: #01332B;
 
 }
+
 .mat-list-item{
   color: #01332B;
 }
+
 .mat-divider{
   border-color: rgba(0, 61, 51, 1) !important;
 }
+
+.mat-nav-list {
+  display: flex;
+  padding-top: 6%;
+  flex-direction: column !important;
+}
+.workshop__category-list {
+  padding: 0;
+}
+
+.workshop__container {
+  display: flex;
+  height: 49.89rem;
+}
+
+.workshop__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.workshop__content-header {
+  align-items: center;
+  display: flex;
+  height: 6rem;
+}
+
 .workshop__tittle {
   display: flex;
   justify-content: center;
-  position: relative;
-  top: 6rem;
+  flex: 1;
   font-size: 3rem;
 }
+
 .workshop__wrapper-button {
-  display: flex;
-  position: relative;
-  top: 2rem;
-  justify-content: flex-end;
-  height: 4rem;
-  margin-right: 6rem;
+  position: absolute;
+  right: 2rem;
+  top: 6rem;
 }
+
 .workshop__button {
-  width: 15rem;
-  font-size: 1.5rem;
+  background-color: #5EDE92;
+  font-size: 1rem;
+  height: 3rem;
+  width: 8rem;
+}
+
+.workshop__wrapper{
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.workshop__wrapper-item{
+  align-items: center;
+  background-color: #CFFFCA;
+  display: flex;
+  flex-direction: column;
+  height: 30rem;
+  justify-content: space-evenly;
+  max-width: 21rem;
+  padding: 1rem;
+}
+
+.workshop__item-img {
+  flex: 1;
+  max-height: 24rem;
+  max-width: 21rem;
+  object-fit: cover;
+}
+
+.workshop__item-title {
+  font-family: 'Dancing Script';
+  font-size: 2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.workshop__item-chip-list {
+  display: flex;
+  width: 100%;
+}
+
+.workshop__item-chip {
+  background-color: #5EDE92;
 }

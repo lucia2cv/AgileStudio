@@ -6,9 +6,10 @@ import {catchError} from "rxjs/operators";
 import {Users} from "../user.service";
 
 export interface Taller {
+  img: string;
   id?:number;
   nombreTaller: string;
-  categoria:string;
+  categoria: string ;
   equipos: Equipo [];
 }
 
