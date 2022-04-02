@@ -50,7 +50,7 @@ public class Taller {
         this.nombreTaller = nombre_taller;
     }
 
-    public String  getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 

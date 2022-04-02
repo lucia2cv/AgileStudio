@@ -52,4 +52,10 @@ public class TallerController {
         }
         return  talleres;
     }
+
+    @GetMapping("/{categoria}")
+    public List<Taller> getAllWorkshopsByCategory(@PathVariable String categoria, String id){
+        List<Taller> workshops = service.fetchByCategory(categoria, id);
+        return workshops;
+    }
 }

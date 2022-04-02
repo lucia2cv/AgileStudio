@@ -42,6 +42,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import {EquipoService} from "./servicios/equipo.service";
 import {TallerService} from "./servicios/taller.service";
+import { CategoryComponent } from './components/category/category.component';
 
 /*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
@@ -59,6 +60,7 @@ import {TallerService} from "./servicios/taller.service";
     NavbarComponent,
     FooterComponent,
     EditUserComponent,
+    CategoryComponent,
   ],
   imports: [
     RouterModule.forRoot(ROUTES),
