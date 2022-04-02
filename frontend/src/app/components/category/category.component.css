@@ -1,0 +1,9 @@
+.workshop__container {
+  display: flex;
+  align-content: center;
+  min-height: 85.1%;
+}
+
+.workshop__global-container {
+  flex: 1
+}

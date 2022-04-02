@@ -1,9 +1,9 @@
 import {Equipo} from "./equipo.service";
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpParams} from "@angular/common/http";
-import {Observable} from "rxjs";
 import {catchError} from "rxjs/operators";
 import {Users} from "../user.service";
+import {Observable} from "rxjs";
 
 export interface Taller {
   img: string;
@@ -26,7 +26,12 @@ export class TallerService{
     return this.http.get<Taller[]>(URL, {params} )
       .pipe(catchError((error)=>this.handleError(error)));
   }
-
+  getAllWorkshopsByCategory(id: number, categoria: string ):Observable<string[]>{
+    let params = new HttpParams();
+    params = params.set('id', String(id));
+    return this.http.get<string[]>(URL+categoria, {params})
+      .pipe(catchError((error)=>this.handleError(error)));
+  }
   private handleError(error:any){
     console.error(error);
     return Observable.throw('Server error ('+error.status+' ): '+error);
