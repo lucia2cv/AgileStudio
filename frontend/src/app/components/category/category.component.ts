@@ -11,8 +11,8 @@ import {Observable} from "rxjs";
 })
 export class CategoryComponent implements OnInit {
   categoria: any;
-  allTalleres: Taller[];
-  filterTalleres: string[];
+  //allTalleres: Taller[];
+  filterTalleres: Taller[];
 
   constructor(activatedRoute: ActivatedRoute, public loginService: LoginService,public tallerService: TallerService) {
      this.categoria = activatedRoute.snapshot.params['categoria'];
@@ -22,6 +22,7 @@ export class CategoryComponent implements OnInit {
     this.tallerService.getAllWorkshopsByCategory(this.loginService.user.id, this.categoria).subscribe(
       (wk) => {
           this.filterTalleres = wk;
+
           },
       (error) =>alert('Invalid data login component ' + error)
     );

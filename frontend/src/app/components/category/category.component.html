@@ -1,7 +1,13 @@
 <app-navbar></app-navbar>
 <div class="workshop__container">
-  <div class="workshop__global-container">
+  <h1 class="workshop__title">
     {{categoria}}
-  </div>
+  </h1>
+  <ul class="workshop__list">
+    <li class="workshop__list-item" *ngFor="let elem of filterTalleres">
+      <img class="workshop__item-img" src="{{ elem.img }}">
+      <p class="workshop__item-title">{{ elem.nombreTaller }}</p>
+    </li>
+  </ul>
 </div>
 <app-footer></app-footer>

@@ -73,22 +73,49 @@ public class DatabaseLoader {
 
 
         Taller taller1  = new Taller("Cyber" , "ciberseguridad", "https://www.itdigitalsecurity.es/files/202203/ciberseguridad.jpg");
-        tallerRepository.save(taller1);
-
         Taller taller2  = new Taller("Scrum Coffe" , "scrum", "https://insights.dice.com/wp-content/uploads/2018/07/shutterstock_496292356.jpg");
-        tallerRepository.save(taller2);
-
         Taller taller3  = new Taller("Vue3 Masterclass" , "Vue", "https://d2sofvawe08yqg.cloudfront.net/vuejs3/s_hero?1620610748");
-        tallerRepository.save(taller3);
-
         Taller taller4  = new Taller("JS Masterclass" , "JS", "https://d2sofvawe08yqg.cloudfront.net/vuejs3/s_hero?1620610748");
+        Taller taller5  = new Taller("Cyber2" , "ciberseguridad", "https://www.itdigitalsecurity.es/files/202203/ciberseguridad.jpg");
+        Taller taller6  = new Taller("Scrum Coffe2" , "scrum", "https://insights.dice.com/wp-content/uploads/2018/07/shutterstock_496292356.jpg");
+        Taller taller7  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png");
+        Taller taller8  = new Taller("JS Masterclass" , "JS", "https://d2sofvawe08yqg.cloudfront.net/vuejs3/s_hero?1620610748");
+        Taller taller9  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png");
+        Taller taller10  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png");
+        Taller taller11  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png");
+        Taller taller12  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png");
+        Taller taller13  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png");
+
+        tallerRepository.save(taller1);
+        tallerRepository.save(taller2);
+        tallerRepository.save(taller3);
         tallerRepository.save(taller4);
+        tallerRepository.save(taller5);
+        tallerRepository.save(taller6);
+        tallerRepository.save(taller7);
+        tallerRepository.save(taller8);
+        tallerRepository.save(taller9);
+        tallerRepository.save(taller10);
+        tallerRepository.save(taller11);
+        tallerRepository.save(taller12);
+        tallerRepository.save(taller13);
 
         equipo1.getTalleres().add(taller1);
-        equipo2.getTalleres().add(taller1);
         equipo1.getTalleres().add(taller4);
+        equipo2.getTalleres().add(taller1);
         equipo2.getTalleres().add(taller2);
         equipo2.getTalleres().add(taller3);
+        equipo2.getTalleres().add(taller4);
+        equipo2.getTalleres().add(taller5);
+        equipo2.getTalleres().add(taller6);
+        equipo2.getTalleres().add(taller7);
+        equipo2.getTalleres().add(taller8);
+        equipo2.getTalleres().add(taller9);
+        equipo2.getTalleres().add(taller10);
+        equipo2.getTalleres().add(taller11);
+        equipo2.getTalleres().add(taller12);
+        equipo2.getTalleres().add(taller13);
+
         equipoRepository.save(equipo1);
         equipoRepository.save(equipo2);
 
