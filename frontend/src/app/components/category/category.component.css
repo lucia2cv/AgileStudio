@@ -1,9 +1,44 @@
 .workshop__container {
   display: flex;
-  align-content: center;
+  flex-direction: column;
   min-height: 85.1%;
 }
-
-.workshop__global-container {
-  flex: 1
+.workshop__list {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  margin: 1rem;
+  padding: 0;
 }
+
+.workshop__title {
+  align-self: center;
+  padding-top: 1rem;
+}
+
+.workshop__list-item{
+  align-items: center;
+  background-color: #89D48D;
+  display: flex;
+  flex-direction: column;
+  height: 16rem;
+  margin-bottom: 2rem;
+  min-width: 14rem;
+  padding: 1rem;
+}
+
+.workshop__item-img {
+  max-height: 13rem;
+  max-width: 16rem;
+}
+
+.workshop__item-title {
+  flex: 1;
+  font-family: 'Raleway';
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+

@@ -26,10 +26,10 @@ export class TallerService{
     return this.http.get<Taller[]>(URL, {params} )
       .pipe(catchError((error)=>this.handleError(error)));
   }
-  getAllWorkshopsByCategory(id: number, categoria: string ):Observable<string[]>{
+  getAllWorkshopsByCategory(id: number, categoria: string ):Observable<Taller[]>{
     let params = new HttpParams();
     params = params.set('id', String(id));
-    return this.http.get<string[]>(URL+categoria, {params})
+    return this.http.get<Taller[]>(URL+categoria, {params})
       .pipe(catchError((error)=>this.handleError(error)));
   }
   private handleError(error:any){
