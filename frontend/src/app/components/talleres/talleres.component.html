@@ -18,7 +18,7 @@
       </div>
     </div>
     <ul class="workshop__wrapper">
-      <li class="workshop__wrapper-item" *ngFor="let taller of talleres">
+      <li class="workshop__wrapper-item" *ngFor="let taller of talleres" (click)="goToTaller(taller.id)">
         <img class="workshop__item-img" src="{{ taller.img }}">
         <p class="workshop__item-title">{{ taller.nombreTaller }}</p>
         <mat-chip-list class="workshop__item-chip-list">

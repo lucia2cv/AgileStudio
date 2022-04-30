@@ -32,6 +32,9 @@ export class TallerService{
     return this.http.get<Taller[]>(URL+categoria, {params})
       .pipe(catchError((error)=>this.handleError(error)));
   }
+  getWorkshopsById(id: number):Observable<Taller>{
+    return this.http.get<Taller>(URL+'un-taller/' + id )
+  }
   private handleError(error:any){
     console.error(error);
     return Observable.throw('Server error ('+error.status+' ): '+error);

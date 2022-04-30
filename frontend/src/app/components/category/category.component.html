@@ -4,7 +4,7 @@
     {{categoria}}
   </h1>
   <ul class="workshop__list">
-    <li class="workshop__list-item" *ngFor="let elem of filterTalleres">
+    <li class="workshop__list-item" *ngFor="let elem of filterTalleres" (click)="goToTaller(elem.id)">
       <img class="workshop__item-img" src="{{ elem.img }}">
       <p class="workshop__item-title">{{ elem.nombreTaller }}</p>
     </li>

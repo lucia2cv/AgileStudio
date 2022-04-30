@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div class="workshop__container">
+  <h1 class="workshop__title">
+    {{ taller.nombreTaller }}
+  </h1>
+  <div class="workshop__wrapper">
+    <button mat-raised-button class="workshop__wrapper-button"  onclick=" window.open('https://meet.google.com/?hs=197&pli=1&authuser=0','_blank')">Videoconferencia</button>
+    <img class="workshop__img" src="{{ taller.img }}">
+    <div class="workshop__description">
+      <h2 class="workshop__description-title">Descripción</h2>
+    </div>
+  </div>
+  <!--<ul class="workshop__list">
+    <li class="workshop__list-item" *ngFor="let elem of filterTalleres">
+      <img class="workshop__item-img" src="{{ elem.img }}">
+      <p class="workshop__item-title">{{ elem.nombreTaller }}</p>
+    </li>
+  </ul>-->
+</div>
+<app-footer></app-footer>

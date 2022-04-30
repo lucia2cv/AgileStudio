@@ -5,6 +5,7 @@ import {EquiposComponent} from "./components/equipos/equipos.component";
 import {LogInComponent} from "./log-in/log-in.component";
 import {EditUserComponent} from "./edit-user/edit-user.component";
 import {CategoryComponent} from "./components/category/category.component";
+import { UnTallerComponent } from './components/unTaller/unTaller.component';
 
 export const ROUTES: Routes = [
   {path: '', component: LogInComponent},
@@ -13,5 +14,6 @@ export const ROUTES: Routes = [
   {path: 'talleres/:categoria', component:CategoryComponent},
   {path: 'equipos', component:EquiposComponent},
   {path: 'home/editarPerfil/:id', component: EditUserComponent},
+  {path: 'talleres/un-taller/:id', component: UnTallerComponent},
   {path: '**', component:HomeComponent}
 ];
