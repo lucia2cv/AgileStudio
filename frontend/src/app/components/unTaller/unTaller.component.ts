@@ -20,7 +20,7 @@ export class UnTallerComponent implements OnInit {
     this.tallerService.getWorkshopsById(this.id).subscribe(
       (wk) => {
         this.taller = wk;
-        console.log(this.taller.nombreTaller);
+        console.log(this.taller);
 
       },
       (error) =>alert('Invalid data taller component ' + error)

@@ -34,7 +34,9 @@ public class DatabaseLoader {
         List<String> listCat3 = new ArrayList<>();
         listCat3.add("Vue3");
         listCat3.add("Js");*/
-
+        /*List<String> documentacion1 = new ArrayList<>(4);
+        documentacion1.add("https://v2.vuejs.org/v2/guide/?redirect=true");
+        documentacion1.add("https://devdocs.io/vue~1/");*/
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode("user");
 
@@ -72,19 +74,32 @@ public class DatabaseLoader {
 
 
 
-        Taller taller1  = new Taller("Cyber" , "ciberseguridad", "https://www.itdigitalsecurity.es/files/202203/ciberseguridad.jpg");
-        Taller taller2  = new Taller("Scrum Coffe" , "scrum", "https://insights.dice.com/wp-content/uploads/2018/07/shutterstock_496292356.jpg");
-        Taller taller3  = new Taller("Vue3 Masterclass" , "Vue", "https://d2sofvawe08yqg.cloudfront.net/vuejs3/s_hero?1620610748");
-        Taller taller4  = new Taller("JS Masterclass" , "JS", "https://d2sofvawe08yqg.cloudfront.net/vuejs3/s_hero?1620610748");
-        Taller taller5  = new Taller("Cyber2" , "ciberseguridad", "https://www.itdigitalsecurity.es/files/202203/ciberseguridad.jpg");
-        Taller taller6  = new Taller("Scrum Coffe2" , "scrum", "https://insights.dice.com/wp-content/uploads/2018/07/shutterstock_496292356.jpg");
-        Taller taller7  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png");
-        Taller taller8  = new Taller("JS Masterclass" , "JS", "https://d2sofvawe08yqg.cloudfront.net/vuejs3/s_hero?1620610748");
-        Taller taller9  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png");
-        Taller taller10  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png");
-        Taller taller11  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png");
-        Taller taller12  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png");
-        Taller taller13  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png");
+        Taller taller1  = new Taller("Cyber" , "ciberseguridad", "https://www.itdigitalsecurity.es/files/202203/ciberseguridad.jpg",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
+        Taller taller2  = new Taller("Scrum Coffe" , "scrum", "https://insights.dice.com/wp-content/uploads/2018/07/shutterstock_496292356.jpg",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
+        Taller taller3  = new Taller("Vue3 Masterclass" , "Vue", "https://d2sofvawe08yqg.cloudfront.net/vuejs3/s_hero?1620610748",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
+        Taller taller4  = new Taller("JS Masterclass" , "JS", "https://d2sofvawe08yqg.cloudfront.net/vuejs3/s_hero?1620610748",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
+        Taller taller5  = new Taller("Cyber2" , "ciberseguridad", "https://www.itdigitalsecurity.es/files/202203/ciberseguridad.jpg",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
+        Taller taller6  = new Taller("Scrum Coffe2" , "scrum", "https://insights.dice.com/wp-content/uploads/2018/07/shutterstock_496292356.jpg",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
+        Taller taller7  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
+        Taller taller8  = new Taller("JS Masterclass" , "JS", "https://d2sofvawe08yqg.cloudfront.net/vuejs3/s_hero?1620610748",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
+        Taller taller9  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
+        Taller taller10  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
+        Taller taller11  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
+        Taller taller12  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
+        Taller taller13  = new Taller("Vue3 Master" , "Vue", "https://styde.net/wp-content/uploads/2017/02/vue-img-destacada-x2.png",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam");
 
         tallerRepository.save(taller1);
         tallerRepository.save(taller2);

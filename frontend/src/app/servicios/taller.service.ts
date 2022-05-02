@@ -11,6 +11,8 @@ export interface Taller {
   nombreTaller: string;
   categoria: string ;
   equipos: Equipo [];
+  descripcion: string;
+  //documentos: String [4];
 }
 
 const URL='http://localhost:8080/talleres/'
