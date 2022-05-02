@@ -58,4 +58,11 @@ public class TallerController {
         List<Taller> workshops = service.fetchByCategory(categoria, id);
         return workshops;
     }
+
+    @GetMapping("/un-taller/{id}")
+    public Taller getWorkshopsById(@PathVariable Long id){
+        Taller workshop = service.fetchById(id);
+        return workshop;
+    }
+
 }

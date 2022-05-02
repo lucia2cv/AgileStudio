@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {LoginService} from "../../log-in/login.service";
 import {Taller, TallerService} from "../../servicios/taller.service";
 import {Observable} from "rxjs";
@@ -14,7 +14,7 @@ export class CategoryComponent implements OnInit {
   //allTalleres: Taller[];
   filterTalleres: Taller[];
 
-  constructor(activatedRoute: ActivatedRoute, public loginService: LoginService,public tallerService: TallerService) {
+  constructor(private router:Router, activatedRoute: ActivatedRoute, public loginService: LoginService,public tallerService: TallerService) {
      this.categoria = activatedRoute.snapshot.params['categoria'];
   }
 
@@ -26,6 +26,10 @@ export class CategoryComponent implements OnInit {
           },
       (error) =>alert('Invalid data login component ' + error)
     );
+  }
+
+  goToTaller(id: number ): void {
+    this.router.navigate(['talleres/un-taller/',id]);
   }
 
 }

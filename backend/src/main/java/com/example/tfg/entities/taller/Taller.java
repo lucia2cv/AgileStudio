@@ -20,6 +20,8 @@ public class Taller {
     private String nombreTaller;
     private String categoria;
     private String img;
+    private String descripcion;
+    //private List<String> documentos = new ArrayList<>(4);
 
     @ManyToMany (mappedBy = "talleres",fetch = FetchType.EAGER)
     @Fetch(value = FetchMode.SUBSELECT)
@@ -27,19 +29,22 @@ public class Taller {
 
     protected Taller(){}
 
-    public Taller(String nombreTaller, String categoria, String img) {
+    public Taller(String nombreTaller, String categoria, String img, String descripcion) {
         this.nombreTaller = nombreTaller;
         this.categoria = categoria;
         this.img = img;
         this.equipos = new ArrayList<>();
-
+        this.descripcion = descripcion;
+        //this.documentos = documentos;
     }
 
-    public Taller(String nombreTaller, String categoria, List<Equipo> equipos, String img) {
+    public Taller(String nombreTaller, String categoria, List<Equipo> equipos, String img, String descripcion) {
         this.nombreTaller = nombreTaller;
         this.categoria = categoria;
         this.equipos = equipos;
         this.img = img;
+        this.descripcion = descripcion;
+        //this.documentos = documentos;
     }
 
     public String getNombreTaller() {
@@ -72,6 +77,22 @@ public class Taller {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     @Override

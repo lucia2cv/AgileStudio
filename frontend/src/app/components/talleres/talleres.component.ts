@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Taller, TallerService} from "../../servicios/taller.service";
 import {LoginService} from "../../log-in/login.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-talleres',
@@ -12,7 +13,7 @@ export class TalleresComponent implements OnInit {
   talleres: Taller[];
   categorias: String[];
 
-  constructor( public loginService: LoginService,public tallerService: TallerService) {}
+  constructor(private router:Router, public loginService: LoginService,public tallerService: TallerService) {}
 
   ngOnInit(): void {
     this.tallerService.getAllWorkshops(this.loginService.user).subscribe(
@@ -37,5 +38,9 @@ export class TalleresComponent implements OnInit {
       (error) =>alert('Invalid data login component ' + error),
 
     );
+  }
+
+  goToTaller(id: number ): void {
+    this.router.navigate(['talleres/un-taller/',id]);
   }
 }

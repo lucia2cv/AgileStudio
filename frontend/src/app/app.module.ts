@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {RouterModule} from "@angular/router";
+import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component'
 import { DialogoRegistroComponent } from './dialogoRegistro/dialogoRegistro.component';
@@ -43,6 +43,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import {EquipoService} from "./servicios/equipo.service";
 import {TallerService} from "./servicios/taller.service";
 import { CategoryComponent } from './components/category/category.component';
+import { UnTallerComponent } from './components/unTaller/unTaller.component';
 
 /*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
@@ -61,6 +62,7 @@ import { CategoryComponent } from './components/category/category.component';
     FooterComponent,
     EditUserComponent,
     CategoryComponent,
+    UnTallerComponent,
   ],
   imports: [
     RouterModule.forRoot(ROUTES),

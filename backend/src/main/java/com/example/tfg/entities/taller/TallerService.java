@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TallerService {
@@ -44,5 +45,10 @@ public class TallerService {
             }
         }
         return list;
+    }
+
+    public Taller fetchById(Long id) {
+        Optional<Taller> opt = tallerRepository.findById(id);
+        return opt.orElse(null);
     }
 }

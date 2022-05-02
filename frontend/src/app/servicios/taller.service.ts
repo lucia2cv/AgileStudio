@@ -11,6 +11,8 @@ export interface Taller {
   nombreTaller: string;
   categoria: string ;
   equipos: Equipo [];
+  descripcion: string;
+  //documentos: String [4];
 }
 
 const URL='http://localhost:8080/talleres/'
@@ -31,6 +33,9 @@ export class TallerService{
     params = params.set('id', String(id));
     return this.http.get<Taller[]>(URL+categoria, {params})
       .pipe(catchError((error)=>this.handleError(error)));
+  }
+  getWorkshopsById(id: number):Observable<Taller>{
+    return this.http.get<Taller>(URL+'un-taller/' + id )
   }
   private handleError(error:any){
     console.error(error);
