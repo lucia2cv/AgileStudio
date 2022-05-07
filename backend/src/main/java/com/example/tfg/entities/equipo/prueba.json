@@ -1,0 +1,11 @@
+[
+  Equipo{
+    id=1, nombre_equipo='equipo1',
+    miembros=[User{id=3, nombre='user1', password='$2a$10$AdDqKe52.iWfsaj1R0T9Rutg/GlLM43k7H0zt1aEKj2ArugVLEiEa', email='user@email.com', rol='desarrollador'}, User{id=6, nombre='user4', password='$2a$10$AdDqKe52.iWfsaj1R0T9Rutg/GlLM43k7H0zt1aEKj2ArugVLEiEa', email='user@email.com', rol='scrum master'}, User{id=5, nombre='user3', password='$2a$10$AdDqKe52.iWfsaj1R0T9Rutg/GlLM43k7H0zt1aEKj2ArugVLEiEa', email='user@email.com', rol='desarrollador'}, User{id=7, nombre='user5', password='$2a$10$AdDqKe52.iWfsaj1R0T9Rutg/GlLM43k7H0zt1aEKj2ArugVLEiEa', email='user@email.com', rol='scrum master'}]
+  },
+  Equipo{
+    id=2,
+    nombre_equipo='equipo2',
+    miembros=[User{id=4, nombre='user2', password='$2a$10$AdDqKe52.iWfsaj1R0T9Rutg/GlLM43k7H0zt1aEKj2ArugVLEiEa', email='user@email.com', rol='desarrollador'}, User{id=5, nombre='user3', password='$2a$10$AdDqKe52.iWfsaj1R0T9Rutg/GlLM43k7H0zt1aEKj2ArugVLEiEa', email='user@email.com', rol='desarrollador'}, User{id=6, nombre='user4', password='$2a$10$AdDqKe52.iWfsaj1R0T9Rutg/GlLM43k7H0zt1aEKj2ArugVLEiEa', email='user@email.com', rol='scrum master'}]
+  }
+]

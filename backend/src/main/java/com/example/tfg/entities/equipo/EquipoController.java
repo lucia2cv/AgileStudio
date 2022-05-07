@@ -1,6 +1,7 @@
 package com.example.tfg.entities.equipo;
 
 
+import com.example.tfg.entities.taller.TallerService;
 import com.example.tfg.entities.usuario.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,13 +18,17 @@ import java.util.List;
 @RequestMapping(value = "/equipos")
 public class EquipoController {
 
-    @Autowired
-    private EquipoRepository equipoRepository;
+    /*@Autowired
+    private EquipoRepository equipoRepository;*/
 
+    @Autowired
+    private EquipoService service;
 
     @GetMapping("/")
-    public List<Equipo> getAllEquipos(){
-        return equipoRepository.findAll();
+    public List<Equipo> getAllEquipos(Long id){
+        System.out.println("id: " + id);
+        System.out.println("respuesta: "+service.getuserTeams(id));
+        return service.getuserTeams(id);
     }
    /* @Autowired
     private EquipoService service;

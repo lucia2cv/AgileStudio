@@ -1,7 +1,7 @@
 import {Users, UserService} from "../user.service";
 import {Injectable} from "@angular/core";
 import {LoginService} from "../log-in/login.service";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {DomSanitizer} from "@angular/platform-browser";
 import {Observable} from "rxjs";
 import {catchError} from "rxjs/operators";
@@ -33,9 +33,11 @@ export class EquipoService{
       .pipe(catchError((error)=>this.handleError(error)));
   }*/
 
-  getAllEquipos():Observable<Equipo[]>{
+  getAllEquipos(user: Users):Observable<Equipo[]>{
     console.log("pidiendo todos los datos");
-    return this.http.get<Equipo[]>(URL)
+    let params = new HttpParams();
+    params = params.set('id', String(user.id));
+    return this.http.get<Equipo[]>(URL, {params})
       .pipe(catchError((error)=>this.handleError(error)));
   }
 
