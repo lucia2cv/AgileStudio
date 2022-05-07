@@ -10,7 +10,7 @@
     <ul class="teams__container">
       <li class="teams__container-item" *ngFor="let equipo of equipos">
         <div class="teams__container-name">{{equipo.nombreEquipo}}</div>
-        <div *ngFor="let miembro of miembros">{{miembro.nombre}}</div>
+        <div *ngFor="let miembro of equipo.miembros">{{miembro.nombre}}</div>
       </li>
     </ul>
   </div>

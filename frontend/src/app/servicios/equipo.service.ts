@@ -5,6 +5,7 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 import {DomSanitizer} from "@angular/platform-browser";
 import {Observable} from "rxjs";
 import {catchError} from "rxjs/operators";
+import {User} from "../user";
 
 export interface Equipo {
   id?:number;
@@ -40,7 +41,6 @@ export class EquipoService{
     return this.http.get<Equipo[]>(URL, {params})
       .pipe(catchError((error)=>this.handleError(error)));
   }
-
   private handleError(error:any){
     console.error(error);
     return Observable.throw('Server error ('+error.status+' ): '+error);

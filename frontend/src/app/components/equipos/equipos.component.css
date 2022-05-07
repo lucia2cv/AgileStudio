@@ -28,9 +28,12 @@
 }
 
 .teams__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   flex: 10;
-  list-style-type: none;
   height: auto;
+  list-style-type: none;
 }
 
 .teams__container-item {
