@@ -21,8 +21,11 @@ export class EquiposComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.equipoService.getAllEquipos().subscribe(
-      eq=>this.equipos=eq,
+      this.equipoService.getAllEquipos(this.loginService.user).subscribe(
+        (eq) => {
+          console.log(eq);
+          this.equipos=eq
+        },
       error=>console.log(error)
     );
   }

@@ -26,6 +26,7 @@ public class Users {
     private String rol;
 
     @ManyToMany(mappedBy = "miembros",fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<Equipo> equipos;
     //Constructor needed for the load from the BBDD
 

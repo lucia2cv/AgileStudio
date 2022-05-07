@@ -24,6 +24,7 @@ public class Taller {
     //private List<String> documentos = new ArrayList<>(4);
 
     @ManyToMany (mappedBy = "talleres",fetch = FetchType.EAGER)
+    @JsonIgnore
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Equipo> equipos;
 
