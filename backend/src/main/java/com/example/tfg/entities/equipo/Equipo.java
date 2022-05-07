@@ -23,6 +23,7 @@ public class Equipo {
     private long id;
 
     private String nombreEquipo;
+    private String logoImg;
 
     @ManyToMany(fetch = FetchType.EAGER)
     //@JsonManagedReference
@@ -34,10 +35,11 @@ public class Equipo {
 
     protected Equipo(){}
 
-    public Equipo(String nombreEquipo) {
+    public Equipo(String nombreEquipo, String logoImg) {
         this.nombreEquipo = nombreEquipo;
         this.miembros = new ArrayList<>();
         this.talleres = new ArrayList<>();
+        this.logoImg = logoImg;
     }
 
     public Equipo(String nombreEquipo, List<Users> miembros) {
@@ -46,10 +48,11 @@ public class Equipo {
 
     }
 
-    public Equipo(String nombreEquipo, List<Users> miembros, List<Taller> talleres) {
+    public Equipo(String nombreEquipo, List<Users> miembros, List<Taller> talleres, String logoImg) {
         this.nombreEquipo = nombreEquipo;
         this.miembros = miembros;
         this.talleres = talleres;
+        this.logoImg = logoImg;
     }
 
     public long getId() {
@@ -83,6 +86,14 @@ public class Equipo {
 
     public void setTalleres(List<Taller> talleres) {
         this.talleres = talleres;
+    }
+
+    public String getLogoImg() {
+        return logoImg;
+    }
+
+    public void setLogoImg(String logoImg) {
+        this.logoImg = logoImg;
     }
 
     @Override

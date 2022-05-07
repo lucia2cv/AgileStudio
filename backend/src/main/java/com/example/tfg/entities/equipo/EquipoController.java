@@ -26,8 +26,6 @@ public class EquipoController {
 
     @GetMapping("/")
     public List<Equipo> getAllEquipos(Long id){
-        System.out.println("id: " + id);
-        System.out.println("respuesta: "+service.getuserTeams(id));
         return service.getuserTeams(id);
     }
    /* @Autowired

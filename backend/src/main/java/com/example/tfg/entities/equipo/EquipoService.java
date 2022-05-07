@@ -27,7 +27,6 @@ public class EquipoService {
 
     public List<Equipo> getuserTeams (Long id) {
         Users user = userRepository.findUsersById(id);
-        System.out.println("EquipoService user: " + user);
         List<Equipo> equiposUsuarios = user.getEquipos();
         System.out.println("EquipoService lista equipos: " + equiposUsuarios);
         return equiposUsuarios;

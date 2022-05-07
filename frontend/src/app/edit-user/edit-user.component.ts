@@ -24,7 +24,7 @@ export class EditUserComponent{
       console.log(prueba)
       this.modUser=false;
     }else {
-      this.user = {email: "", equipo_id: 0, password: "", rol: "", nombre: ''}
+      this.user = {email: "", equipo_id: 0, password: "", rol: "", nombre: '', img: ''}
       this.modUser = true;
     }
   }

@@ -9,22 +9,18 @@
 
     <ul class="teams__container">
       <li class="teams__container-item" *ngFor="let equipo of equipos">
-        <div class="teams__container-name">{{equipo.nombreEquipo}}</div>
-        <div *ngFor="let miembro of miembros">{{miembro.nombre}}</div>
+        <div class="teams__container-team">
+          <img class="teams__container-logo" src="{{ equipo.logoImg }}">
+          <p class="teams__container-name">{{equipo.nombreEquipo}}</p>
+        </div>
+        <ul class="teams__members-list">
+          <li  class="teams__members-list-item" *ngFor="let miembro of equipo.miembros">
+            <img class="teams__member-img" src="{{ miembro.img }}">
+            <p class="teams__member-name">{{miembro.nombre}}</p>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
 </ng-container>
- <!-- <h1 class="teams__tittle">MIS EQUIPOS</h1>
-  <div  class="teams__wrapper-button">
-    <button mat-raised-button  class="teams__button">Nuevo Equipo</button>
-  </div>
-
-  <div class="teams__container">
-    <div class="teams__container-wrapper" *ngFor="let equipo of equipos">
-      {{equipo.nombreEquipo}}
-      <div *ngFor="let miembro of miembros">{{miembro.nombre}}</div>
-    </div>
-  </div>-->
-
-<!--<app-footer></app-footer>-->
+<app-footer></app-footer>
