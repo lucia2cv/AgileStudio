@@ -12,6 +12,7 @@ export interface Users {
   rol: string;
   equipo_id: number;
   authdata: string;
+  img: string;
 
 }
 @Injectable()

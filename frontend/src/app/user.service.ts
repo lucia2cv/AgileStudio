@@ -12,6 +12,7 @@ export interface Users {
   email:string;
   rol: string;
   equipo_id: number;
+  img: string;
 }
 
 const URL='http://localhost:8080/home/editarPerfil/';

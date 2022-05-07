@@ -6,6 +6,7 @@ import {Equipo, EquipoService} from "../../servicios/equipo.service";
 import {User} from "../../user";
 import {Observable} from "rxjs";
 import {parse} from "jasmine-spec-reporter/built/configuration-parser";
+import {element} from "protractor";
 
 @Component({
   selector: 'app-equipos',
@@ -33,9 +34,9 @@ export class EquiposComponent implements OnInit {
             console.log(element);
             element.miembros.forEach(miembro => {
               if (miembro.id == undefined) {
+                element.miembros = element.miembros.filter(obj => {return obj !== miembro})
                 this.equipos.forEach(el => {
                   el.miembros.forEach(m => {
-                    console.log(m);
                     // @ts-ignore
                     if (m.id == miembro) {
                       if(!element.miembros.includes(m)) {

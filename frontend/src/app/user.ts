@@ -5,15 +5,17 @@ export class User {
   email: string
   rol: string
   equipo:string;
+  img: string;
   //id_equipo: number;
 
-  constructor(nombre: string, password: string, email: string, rol: string, equipo:string) {
+  constructor(nombre: string, password: string, email: string, rol: string, equipo:string, img: string) {
     //this.id = id;
     this.nombre = nombre;
     this.password = password;
     this.email = email;
     this.rol = rol;
     this.equipo = equipo;
+    this.img = img;
     //this.id_equipo = id_equipo;
   }
   imprimir(){
