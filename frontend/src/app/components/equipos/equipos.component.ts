@@ -27,11 +27,9 @@ export class EquiposComponent implements OnInit {
   ngOnInit(): void {
       this.equipoService.getAllEquipos(this.loginService.user).subscribe(
         (eq) => {
-          console.log(eq);
           this.equipos=eq;
           this.equiposUltimate=eq;
           this.equiposUltimate.forEach(element => {
-            console.log(element);
             element.miembros.forEach(miembro => {
               if (miembro.id == undefined) {
                 element.miembros = element.miembros.filter(obj => {return obj !== miembro})
@@ -51,7 +49,9 @@ export class EquiposComponent implements OnInit {
         },
       error=>console.log(error)
     );
-
   }
 
+  goToEquipo(id: number ): void {
+    this.router.navigate(['equipos/un-equipo/',id]);
+  }
 }

@@ -44,6 +44,7 @@ import {EquipoService} from "./servicios/equipo.service";
 import {TallerService} from "./servicios/taller.service";
 import { CategoryComponent } from './components/category/category.component';
 import { UnTallerComponent } from './components/unTaller/unTaller.component';
+import { UnEquipoComponent } from './components/unEquipo/unEquipo.component';
 
 /*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
@@ -63,6 +64,7 @@ import { UnTallerComponent } from './components/unTaller/unTaller.component';
     EditUserComponent,
     CategoryComponent,
     UnTallerComponent,
+    UnEquipoComponent,
   ],
   imports: [
     RouterModule.forRoot(ROUTES),
