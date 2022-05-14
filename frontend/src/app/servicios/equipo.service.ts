@@ -6,12 +6,14 @@ import {DomSanitizer} from "@angular/platform-browser";
 import {Observable} from "rxjs";
 import {catchError} from "rxjs/operators";
 import {User} from "../user";
+import {Taller} from "./taller.service";
 
 export interface Equipo {
   id?:number;
   nombreEquipo:string;
   miembros: Users[] ;
-  logoImg: string
+  logoImg: string;
+  talleres: Taller[];
 }
 
 const URL='http://localhost:8080/equipos/'
@@ -45,5 +47,9 @@ export class EquipoService{
   private handleError(error:any){
     console.error(error);
     return Observable.throw('Server error ('+error.status+' ): '+error);
+  }
+
+  getTeamById(id: number):Observable<Equipo>{
+    return this.http.get<Equipo>(URL+'un-equipo/' + id );
   }
 }

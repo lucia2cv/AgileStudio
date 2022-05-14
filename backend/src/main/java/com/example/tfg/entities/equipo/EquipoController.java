@@ -1,6 +1,7 @@
 package com.example.tfg.entities.equipo;
 
 
+import com.example.tfg.entities.taller.Taller;
 import com.example.tfg.entities.taller.TallerService;
 import com.example.tfg.entities.usuario.Users;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,12 @@ public class EquipoController {
     @GetMapping("/")
     public List<Equipo> getAllEquipos(Long id){
         return service.getuserTeams(id);
+    }
+
+    @GetMapping("/un-equipo/{id}")
+    public Equipo getWorkshopsById(@PathVariable Long id){
+        Equipo team = service.fetchById(id);
+        return team;
     }
    /* @Autowired
     private EquipoService service;
