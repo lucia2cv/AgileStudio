@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Equipo, EquipoService} from "../../servicios/equipo.service";
 import {Taller} from "../../servicios/taller.service";
 
@@ -13,7 +13,7 @@ export class UnEquipoComponent implements OnInit {
   equipo: Equipo;
   talleres: Taller[];
   id: number;
-  constructor(activatedRoute: ActivatedRoute, public equipoService: EquipoService) {
+  constructor(activatedRoute: ActivatedRoute, public equipoService: EquipoService,private router:Router) {
     this.id = activatedRoute.snapshot.params['id'];
     this.equipoService.getTeamById(this.id).subscribe(
       (eq) => {
@@ -25,5 +25,7 @@ export class UnEquipoComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
+  goToTalleres(): void {
+    this.router.navigate(['talleres/']);
+  }
 }
