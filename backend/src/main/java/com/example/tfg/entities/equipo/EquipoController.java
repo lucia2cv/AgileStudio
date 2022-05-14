@@ -1,21 +1,45 @@
 package com.example.tfg.entities.equipo;
 
 
+import com.example.tfg.entities.taller.Taller;
+import com.example.tfg.entities.taller.TallerService;
+import com.example.tfg.entities.usuario.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+/*@RestController
+@RequestMapping("/home")*/
+
+@CrossOrigin("http://localhost:4200")
 @RestController
+@RequestMapping(value = "/equipos")
 public class EquipoController {
+
+    /*@Autowired
+    private EquipoRepository equipoRepository;*/
 
     @Autowired
     private EquipoService service;
 
+    @GetMapping("/")
+    public List<Equipo> getAllEquipos(Long id){
+        return service.getuserTeams(id);
+    }
+
+    @GetMapping("/un-equipo/{id}")
+    public Equipo getWorkshopsById(@PathVariable Long id){
+        Equipo team = service.fetchById(id);
+        return team;
+    }
+   /* @Autowired
+    private EquipoService service;
+
     /*Add equipo*/
-    @PostMapping(value = "/equipo")
+    /*@PostMapping(value = "/equipo")
     @ResponseStatus(HttpStatus.CREATED)
     public Equipo saveEquipo(@RequestBody Equipo equipo) throws Exception{
         String tempNombre = equipo.getNombreEquipo();
@@ -27,5 +51,5 @@ public class EquipoController {
         }
         service.saveEquipo(equipo);
         return equipo;
-    }
+    } */
 }

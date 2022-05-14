@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import {RouterModule} from "@angular/router";
+import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './log-in/log-in.component'
 import { DialogoRegistroComponent } from './dialogoRegistro/dialogoRegistro.component';
@@ -10,6 +10,7 @@ import {HomeComponent} from "./home/home.component";
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule,} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -39,6 +40,11 @@ import {UserService} from "./user.service";
 import { FooterComponent } from './components/footer/footer.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import {EquipoService} from "./servicios/equipo.service";
+import {TallerService} from "./servicios/taller.service";
+import { CategoryComponent } from './components/category/category.component';
+import { UnTallerComponent } from './components/unTaller/unTaller.component';
+import { UnEquipoComponent } from './components/unEquipo/unEquipo.component';
 
 /*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
@@ -56,6 +62,9 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     NavbarComponent,
     FooterComponent,
     EditUserComponent,
+    CategoryComponent,
+    UnTallerComponent,
+    UnEquipoComponent,
   ],
   imports: [
     RouterModule.forRoot(ROUTES),
@@ -80,11 +89,10 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     MatListModule,
     MatDividerModule,
     MatTooltipModule,
-
-
+    MatChipsModule
 
   ],
-  providers: [ LoginService,UserService,
+  providers: [ LoginService,UserService,EquipoService,TallerService,
     {provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi:true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},
     {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},

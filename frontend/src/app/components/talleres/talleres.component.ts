@@ -1,5 +1,7 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {MediaMatcher} from "@angular/cdk/layout";
+import {Component, OnInit} from '@angular/core';
+import {Taller, TallerService} from "../../servicios/taller.service";
+import {LoginService} from "../../log-in/login.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-talleres',
@@ -7,24 +9,38 @@ import {MediaMatcher} from "@angular/cdk/layout";
   styleUrls: ['./talleres.component.css']
 })
 export class TalleresComponent implements OnInit {
-  mobileQuery: MediaQueryList;
-  categorias: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
-  fillerNav = Array.from({length: 3}, (_, i) => `Nav Item ${i + 1}`);
 
+  talleres: Taller[];
+  categorias: String[];
 
-  fillerContent = Array.from({length: 50}, () =>
-    `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-       labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-       laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-       voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    /*this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);*/
-  }
+  constructor(private router:Router, public loginService: LoginService,public tallerService: TallerService) {}
 
   ngOnInit(): void {
+    this.tallerService.getAllWorkshops(this.loginService.user).subscribe(
+      (t) => {
+        this.talleres = t;
+        if (this.talleres.length > 0) {
+          this.categorias = [];
+          let cat;
+          this.talleres.forEach(tall => {
+            cat = tall.categoria;
+            if(!this.categorias.includes(cat)){
+              this.categorias.push(cat);
+            }
+          })
+        } else {
+          this.categorias = [];
+        }
+        if (this.talleres.length > 3) {
+          this.talleres = this.talleres.slice(0,3);
+        }
+      },
+      (error) =>alert('Invalid data login component ' + error),
+
+    );
   }
 
+  goToTaller(id: number ): void {
+    this.router.navigate(['talleres/un-taller/',id]);
+  }
 }

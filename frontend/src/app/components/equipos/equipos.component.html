@@ -1,12 +1,26 @@
 <app-navbar></app-navbar>
 
+<ng-container *ngIf="loginService.isLogged">
+  <div class="teams">
+    <div class="teams__header">
+      <h1 class="teams__tittle">MIS EQUIPOS</h1>
+      <button mat-raised-button  class="teams__button">Nuevo Equipo</button>
+    </div>
 
-<h1 class="teams__tittle">MIS EQUIPOS</h1>
-<div  class="teams__wrapper-button">
-  <button mat-raised-button  class="teams__button">Nuevo Equipo</button>
-</div>
-
-<div class="teams__container">
-  <div class="teams__container-wrapper"></div>
-</div>
+    <ul class="teams__container">
+      <li class="teams__container-item" *ngFor="let equipo of equipos" (click)="goToEquipo(equipo.id)">
+        <div class="teams__container-team">
+          <img class="teams__container-logo" src="{{ equipo.logoImg }}">
+          <p class="teams__container-name">{{equipo.nombreEquipo}}</p>
+        </div>
+        <ul class="teams__members-list">
+          <li  class="teams__members-list-item" *ngFor="let miembro of equipo.miembros">
+            <img class="teams__member-img" src="{{ miembro.img }}">
+            <p class="teams__member-name">{{miembro.nombre}}</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</ng-container>
 <app-footer></app-footer>

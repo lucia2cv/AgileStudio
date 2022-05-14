@@ -1,6 +1,7 @@
 package com.example.tfg.entities.taller;
 
 import com.example.tfg.entities.equipo.Equipo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -18,24 +19,33 @@ public class Taller {
 
     private String nombreTaller;
     private String categoria;
+    private String img;
+    private String descripcion;
+    //private List<String> documentos = new ArrayList<>(4);
 
     @ManyToMany (mappedBy = "talleres",fetch = FetchType.EAGER)
+    @JsonIgnore
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Equipo> equipos;
 
     protected Taller(){}
 
-    public Taller(String nombreTaller, String categoria) {
+    public Taller(String nombreTaller, String categoria, String img, String descripcion) {
         this.nombreTaller = nombreTaller;
         this.categoria = categoria;
+        this.img = img;
         this.equipos = new ArrayList<>();
-
+        this.descripcion = descripcion;
+        //this.documentos = documentos;
     }
 
-    public Taller(String nombreTaller, String categoria, List<Equipo> equipos) {
+    public Taller(String nombreTaller, String categoria, List<Equipo> equipos, String img, String descripcion) {
         this.nombreTaller = nombreTaller;
         this.categoria = categoria;
         this.equipos = equipos;
+        this.img = img;
+        this.descripcion = descripcion;
+        //this.documentos = documentos;
     }
 
     public String getNombreTaller() {
@@ -62,12 +72,38 @@ public class Taller {
         this.equipos = equipos;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     @Override
     public String toString() {
         return "Taller{" +
                 "id=" + id +
-                ", nombre_taller='" + nombreTaller + '\'' +
-                ", categoria='" + categoria + '\'' +
+                ", nombreTaller='" + nombreTaller + '\'' +
+                ", categoria=" + categoria +
+                ", img='" + img + '\'' +
+                ", equipos=" + equipos +
                 '}';
     }
 }

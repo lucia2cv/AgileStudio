@@ -48,13 +48,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/login").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/home").permitAll();
-       // http.authorizeRequests().antMatchers(HttpMethod.GET,"/home/{id}").hasAnyRole("desarrollador");
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/equipos").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/talleres").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/taller/un-taller/{id}").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/taller/un-equipo/{id}").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/talleres/{categoria}").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/home/editarPerfil/{id}").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/loginerror").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/logout").permitAll();
 
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/").permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST,"/equipo").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.POST,"/equipos").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/talleres").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.POST,"/editarPerfil/{id}").permitAll();
+
+        http.authorizeRequests().antMatchers(HttpMethod.PUT,"/home/editarPerfil/{id}").permitAll();
+
         //Private pages(all the others)
         //http.authorizeRequests().anyRequest().authenticated();
        // http.authorizeRequests().antMatchers(HttpMethod.GET,"/home").hasRole("desarrollador");

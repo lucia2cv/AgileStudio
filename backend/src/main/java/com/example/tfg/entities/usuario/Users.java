@@ -24,34 +24,38 @@ public class Users {
     private String password;
     private String email;
     private String rol;
+    private String img;
+
+    @ManyToMany(mappedBy = "miembros",fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<Equipo> equipos;
+    //Constructor needed for the load from the BBDD
 
     /*@ManyToOne
     @JsonIgnore
     //@JsonBackReference
     private Equipo equipo;
     //private long id_equipo;
-*/
-    @ManyToMany(mappedBy = "miembros",fetch = FetchType.EAGER)
-    private List<Equipo> equipos;
-    //Constructor needed for the load from the BBDD
-
+    */
     protected Users(){}
 
-    public Users(String nombre, String password, String email, String rol, List<Equipo> equipos /*long id_equipo*/) {
+    public Users(String nombre, String password, String email, String rol, List<Equipo> equipos, String img /*long id_equipo*/) {
         this.nombre = nombre;
         this.password = password;
         this.email = email;
         this.rol = rol;
        this.equipos = equipos;
+       this.img = img;
         //this.id_equipo = id_equipo;
     }
 
-    public Users(String nombre, String password, String email, String rol) {
+    public Users(String nombre, String password, String email, String rol, String img) {
         this.nombre = nombre;
         this.password = password;
         this.email = email;
         this.rol = rol;
         this.equipos = new ArrayList<>();
+        this.img = img;
     }
 
     public long getId() {
@@ -102,20 +106,13 @@ public class Users {
         this.equipos = equipos;
     }
 
-/* public Equipo getEquipo() {
-        return equipo;
+    public String getImg() {
+        return img;
     }
 
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
+    public void setImg(String img) {
+        this.img = img;
     }
-
-    /*public long getId_equipo() {
-        return id_equipo;
-    }
-    public void setId_equipo(long id_equipo) {
-        this.id_equipo = id_equipo;
-    }*/
 
     @Override
     public String toString() {

@@ -4,12 +4,15 @@ import {map} from "rxjs/operators";
 
 
 export interface Users {
-  id?:number;
+  equipos: [];
+  id?: number;
   nombre:string;
-  rol:string;
-  authdata: string;
+  password:string;
   email:string;
-  //equipo_id: number[];
+  rol: string;
+  equipo_id: number;
+  authdata: string;
+  img: string;
 
 }
 @Injectable()
@@ -64,6 +67,7 @@ export class LoginService {
     );
   }
   private setCurrentUser(user: Users) {
+    console.log(user);
     this.isLogged = true;
     this.user = user;
   }
