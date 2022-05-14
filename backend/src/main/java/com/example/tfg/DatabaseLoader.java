@@ -48,19 +48,19 @@ public class DatabaseLoader {
 
 
 
-        Users user1 = new Users("user1",password,"user@email.com","desarrollador", "https://i.pinimg.com/originals/fc/8a/ee/fc8aee57ed2b300efa3f46ad88f46b0f.jpg");
+        Users user1 = new Users("user1",password,"user1@email.com","desarrollador", "https://i.pinimg.com/originals/fc/8a/ee/fc8aee57ed2b300efa3f46ad88f46b0f.jpg");
         userRepository.save(user1);
 
-        Users user2 = new Users("user2",password,"user@email.com","desarrollador", "https://i.pinimg.com/originals/0a/bb/73/0abb730b167f1dfa3401b533458e75c2.jpg");
+        Users user2 = new Users("user2",password,"user2@email.com","desarrollador", "https://i.pinimg.com/originals/0a/bb/73/0abb730b167f1dfa3401b533458e75c2.jpg");
         userRepository.save(user2);
 
-        Users user3 = new Users("user3",password,"user@email.com","desarrollador", "https://i.redd.it/0t49x9lwa8c51.jpg");
+        Users user3 = new Users("user3",password,"user3@email.com","desarrollador", "https://i.redd.it/0t49x9lwa8c51.jpg");
         userRepository.save(user3);
 
-        Users user4 = new Users("user4",password,"user@email.com","scrum master", "https://pbs.twimg.com/media/EUtPVfXX0AAYMd3.jpg");
+        Users user4 = new Users("user4",password,"user4@email.com","scrum master", "https://pbs.twimg.com/media/EUtPVfXX0AAYMd3.jpg");
         userRepository.save(user4);
 
-        Users user5 = new Users("user5",password,"user@email.com","scrum master", "https://thicc.mywaifulist.moe/waifus/36498/aa551bf7420d0637353746af238de1b8a9c432a887bebd9a283f446c066a84fa_thumb.jpeg");
+        Users user5 = new Users("user5",password,"user5@email.com","scrum master", "https://thicc.mywaifulist.moe/waifus/36498/aa551bf7420d0637353746af238de1b8a9c432a887bebd9a283f446c066a84fa_thumb.jpeg");
         userRepository.save(user5);
 
         equipo1.getMiembros().add(user1);

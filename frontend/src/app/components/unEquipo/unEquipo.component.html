@@ -1,1 +1,32 @@
-<p>un-equipo works!</p>
+<app-navbar></app-navbar>
+<div class="team__container" *ngIf="equipo">
+  <h1 class="team__title">
+    {{equipo.nombreEquipo}}
+  </h1>
+  <div class="team__wrapper">
+    <ul class="teams__members-list">
+      <li  class="teams__members-list-item" *ngFor="let miembro of equipo.miembros">
+        <img class="teams__member-img" src="{{ miembro.img }}">
+        <p class="teams__member-name">{{miembro.nombre}}</p>
+        <p class="teams__member-info">{{miembro.rol}}</p>
+        <p class="teams__member-info">{{miembro.email}}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="team__workshop-wrapper">
+    <div class="team__workshop-container">
+      <h1>LOS TALLERES DEL EQUIPO</h1>
+      <section class="team__workshop-slider">
+        <img class="team__workshop-slider-img" *ngFor="let taller of equipo.talleres"
+             src="{{ taller.img }}"
+        />
+      </section>
+    </div>
+  </div>
+  <!--<div class="team__workshop-wrapper">
+    <li  class="teams__workshop-list" *ngFor="let taller of equipo.talleres">
+      <img class="teams__workshop-img" src="{{ taller.img }}">
+    </li>
+  </div>-->
+</div>
+<app-footer></app-footer>

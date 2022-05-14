@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Equipo, EquipoService} from "../../servicios/equipo.service";
+import {Taller} from "../../servicios/taller.service";
 
 @Component({
   selector: 'app-un-equipo',
@@ -9,21 +10,20 @@ import {Equipo, EquipoService} from "../../servicios/equipo.service";
 })
 export class UnEquipoComponent implements OnInit {
 
-  equipo: Equipo
+  equipo: Equipo;
+  talleres: Taller[];
   id: number;
   constructor(activatedRoute: ActivatedRoute, public equipoService: EquipoService) {
     this.id = activatedRoute.snapshot.params['id'];
-  }
-
-  ngOnInit(): void {
     this.equipoService.getTeamById(this.id).subscribe(
       (eq) => {
         this.equipo = eq;
         console.log(this.equipo);
+      },  error => console.error(error));
+  }
 
-      },
-      (error) =>alert('Invalid data equipo component ' + error)
-    );
+  ngOnInit(): void {
+
   }
 
 }

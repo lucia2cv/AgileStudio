@@ -12,7 +12,8 @@ export interface Equipo {
   id?:number;
   nombreEquipo:string;
   miembros: Users[] ;
-  logoImg: string
+  logoImg: string;
+  talleres: Taller[];
 }
 
 const URL='http://localhost:8080/equipos/'
