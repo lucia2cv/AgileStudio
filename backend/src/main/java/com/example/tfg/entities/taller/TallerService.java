@@ -51,4 +51,28 @@ public class TallerService {
         Optional<Taller> opt = tallerRepository.findById(id);
         return opt.orElse(null);
     }
+
+    public Taller saveWorkshop(WorkshopForm workshopForm) throws IllegalArgumentException {
+        Taller taller;
+        taller = new Taller();
+        long [] workshopFormTeams = workshopForm.getTeams();
+        List<Equipo> equipos = new ArrayList<>();
+        taller.setNombreTaller(workshopForm.getNombre());
+        taller.setCategoria(workshopForm.getCategoria());
+        taller.setImg(workshopForm.getImg());
+        taller.setDescripcion(workshopForm.getDescripcion());
+        for (long id: workshopFormTeams) {
+            Equipo equipo = equipoRepository.findById(id);
+            equipos.add(equipo);
+        }
+        taller.setEquipos(equipos);
+        tallerRepository.save(taller);
+        for (long id: workshopFormTeams) {
+            Equipo equipo = equipoRepository.findById(id);
+            equipo.getTalleres().add(taller);
+            equipoRepository.save(equipo);
+        }
+        return tallerRepository.save(taller);
+    }
+
 }
