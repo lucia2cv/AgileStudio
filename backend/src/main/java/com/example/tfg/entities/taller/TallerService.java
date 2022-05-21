@@ -61,6 +61,7 @@ public class TallerService {
         taller.setCategoria(workshopForm.getCategoria());
         taller.setImg(workshopForm.getImg());
         taller.setDescripcion(workshopForm.getDescripcion());
+        taller.setVideoconferencia(workshopForm.getVideconferencia());
         for (long id: workshopFormTeams) {
             Equipo equipo = equipoRepository.findById(id);
             equipos.add(equipo);

@@ -17,6 +17,10 @@
     <label for="imgInput"></label><input id="imgInput" matInput placeholder="www.googleimagen.com" [(ngModel)]="this.workshopForm.img" required>
   </mat-form-field>
   <mat-form-field appearance="fill">
+    <mat-label>Url sala reunión</mat-label>
+    <label for="urlInput"></label><input id="urlInput" matInput placeholder="https://meet.google.com/" [(ngModel)]="this.workshopForm.videconferencia" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
     <mat-label>Descripción del taller</mat-label>
     <label for="descripcionInput"></label><input id="descripcionInput" matInput maxlength="60" placeholder="máximo 60 caracteres" [(ngModel)]="this.workshopForm.descripcion" required>
   </mat-form-field>
@@ -30,5 +34,4 @@
   </mat-form-field>
   <button mat-stroked-button  matTooltip="Crear Cuenta" (click)="saveWorkshop()"> Guardar taller</button>
 </div>
-<mat-spinner *ngIf="showSpinner"></mat-spinner>
 <app-footer></app-footer>

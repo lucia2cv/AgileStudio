@@ -10,6 +10,7 @@ public class WorkshopForm {
     private String img;
     private long[] teams;
     private String descripcion;
+    private String videconferencia;
 
     public WorkshopForm() {}
 
@@ -54,6 +55,14 @@ public class WorkshopForm {
         this.descripcion = descripcion;
     }
 
+    public String getVideconferencia() {
+        return videconferencia;
+    }
+
+    public void setVideconferencia(String videconferencia) {
+        this.videconferencia = videconferencia;
+    }
+
     @Override
     public String toString() {
         return "WorkshopForm{" +
@@ -62,6 +71,7 @@ public class WorkshopForm {
                 ", img='" + img + '\'' +
                 ", teams=" + Arrays.toString(teams) +
                 ", descripcion='" + descripcion + '\'' +
+                ", videconferenci='" + videconferencia + '\'' +
                 '}';
     }
 }

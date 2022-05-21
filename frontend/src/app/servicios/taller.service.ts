@@ -13,6 +13,7 @@ export interface Taller {
   categoria: string ;
   equipos: Equipo [];
   descripcion: string;
+  videoconferencia: string;
   //documentos: String [4];
 }
 

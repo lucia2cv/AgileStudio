@@ -3,6 +3,7 @@ import {Equipo} from "../servicios/equipo.service";
 import {Taller, TallerService} from "../servicios/taller.service";
 import {LoginService} from "../log-in/login.service";
 import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
 
 export interface WorkshopForm{
   id?: number;
@@ -11,6 +12,7 @@ export interface WorkshopForm{
   img: string;
   teams: number[];
   descripcion: string;
+  videconferencia: string;
 }
 @Component({
   selector: 'app-crear-taller',
@@ -22,14 +24,14 @@ export class CrearTallerComponent implements OnInit {
   equiposUltimate: Equipo[];
   workshopForm: WorkshopForm;
   showSpinner: Boolean;
-  constructor( public tallerService: TallerService, public loginService: LoginService, private snackBar: MatSnackBar) {
+  constructor( public tallerService: TallerService, public loginService: LoginService, private snackBar: MatSnackBar,private router:Router) {
 
-    this.showSpinner = false;
     this.workshopForm = {
       nombre: '',
       img: '',
       categoria: '',
       descripcion: '',
+      videconferencia: '',
       teams: []
     };
   }
@@ -63,15 +65,11 @@ export class CrearTallerComponent implements OnInit {
   }
 
   saveWorkshop(){
-    this.showSpinner = true;
-    setTimeout(() => {
-      this.showSpinner = false;
-    }, 3000);
     this.tallerService.saveWorkshop(this.workshopForm).subscribe(id => {
-      this.snackBar.open('Taller guardado correctamente', 'OK', {duration: 3000});
+      this.snackBar.open('Taller guardado correctamente', 'OK', {duration: 4000});
     }, error => {
       console.log(error);
-      this.snackBar.open('Algo ha fallado', 'OK', {duration: 3000});
+      this.snackBar.open('Algo ha fallado', 'OK', {duration: 4000});
     });
   }
 }
