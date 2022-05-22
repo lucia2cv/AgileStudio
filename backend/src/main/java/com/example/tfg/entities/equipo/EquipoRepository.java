@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface EquipoRepository extends JpaRepository<Equipo,Long> {
     public Equipo findByNombreEquipo(String nombreEquipo);
+    public Equipo findById(long id);
 }

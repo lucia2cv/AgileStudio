@@ -30,7 +30,6 @@ public class EquipoService {
     public List<Equipo> getuserTeams (Long id) {
         Users user = userRepository.findUsersById(id);
         List<Equipo> equiposUsuarios = user.getEquipos();
-        System.out.println("EquipoService lista equipos: " + equiposUsuarios);
         return equiposUsuarios;
     }
 

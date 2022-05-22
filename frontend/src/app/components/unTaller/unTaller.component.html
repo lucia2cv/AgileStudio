@@ -13,7 +13,7 @@
           </li>
         </ul>-->
       </div>
-      <button mat-raised-button class="workshop__wrapper-button"  onclick=" window.open('https://meet.google.com/?hs=197&pli=1&authuser=0','_blank')">Videoconferencia</button>
+      <button mat-raised-button class="workshop__wrapper-button"  (click)="openNewTab()">Sala de reunión</button>
     </div>
     <img class="workshop__img" src="{{ taller.img }}">
     <div class="workshop__description">

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Taller, TallerService} from "../../servicios/taller.service";
 import {LoginService} from "../../log-in/login.service";
 import {Router} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-talleres',
@@ -13,7 +14,7 @@ export class TalleresComponent implements OnInit {
   talleres: Taller[];
   categorias: String[];
 
-  constructor(private router:Router, public loginService: LoginService,public tallerService: TallerService) {}
+  constructor(public dialog: MatDialog, private router:Router, public loginService: LoginService,public tallerService: TallerService) {}
 
   ngOnInit(): void {
     this.tallerService.getAllWorkshops(this.loginService.user).subscribe(
@@ -43,4 +44,8 @@ export class TalleresComponent implements OnInit {
   goToTaller(id: number ): void {
     this.router.navigate(['talleres/un-taller/',id]);
   }
+  goToNuevoTaller(): void {
+    this.router.navigate(['talleres/crear/taller']);
+  }
+
 }

@@ -1,9 +1,10 @@
 import {Equipo} from "./equipo.service";
 import {Injectable} from "@angular/core";
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {catchError} from "rxjs/operators";
 import {Users} from "../user.service";
 import {Observable} from "rxjs";
+import {WorkshopForm} from "../crear-taller/crear-taller.component";
 
 export interface Taller {
   img: string;
@@ -12,6 +13,7 @@ export interface Taller {
   categoria: string ;
   equipos: Equipo [];
   descripcion: string;
+  videoconferencia: string;
   //documentos: String [4];
 }
 
@@ -41,4 +43,21 @@ export class TallerService{
     console.error(error);
     return Observable.throw('Server error ('+error.status+' ): '+error);
   }
+  getAllEquipos(user: Users):Observable<Equipo[]>{
+    console.log("pidiendo todos los datos");
+    let params = new HttpParams();
+    params = params.set('id', String(user.id));
+    return this.http.get<Equipo[]>(URL + 'crear/taller', {params})
+      .pipe(catchError((error)=>this.handleError(error)));
+  }
+  saveWorkshop(workshopForm: WorkshopForm) {
+    const body = JSON.stringify(workshopForm);
+    console.log('body: ', body)
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.http.post(URL + 'crear/taller',body, {headers})
+  }
+
+
 }

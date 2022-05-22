@@ -21,6 +21,8 @@ import {MatIconModule} from "@angular/material/icon";
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dialog";
 import {MAT_RADIO_DEFAULT_OPTIONS, MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {LoginService} from "./log-in/login.service";
 import {BasicAuthInterceptor} from "./auth/auth.interceptor";
 import {ErrorInterceptor} from "./auth/error.interceptor";
@@ -36,6 +38,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatSelectModule} from '@angular/material/select';
 import {UserService} from "./user.service";
 import { FooterComponent } from './components/footer/footer.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
@@ -45,6 +48,7 @@ import {TallerService} from "./servicios/taller.service";
 import { CategoryComponent } from './components/category/category.component';
 import { UnTallerComponent } from './components/unTaller/unTaller.component';
 import { UnEquipoComponent } from './components/unEquipo/unEquipo.component';
+import { CrearTallerComponent } from './crear-taller/crear-taller.component';
 
 /*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
@@ -65,6 +69,7 @@ import { UnEquipoComponent } from './components/unEquipo/unEquipo.component';
     CategoryComponent,
     UnTallerComponent,
     UnEquipoComponent,
+    CrearTallerComponent,
   ],
   imports: [
     RouterModule.forRoot(ROUTES),
@@ -89,7 +94,10 @@ import { UnEquipoComponent } from './components/unEquipo/unEquipo.component';
     MatListModule,
     MatDividerModule,
     MatTooltipModule,
-    MatChipsModule
+    MatChipsModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule
 
   ],
   providers: [ LoginService,UserService,EquipoService,TallerService,

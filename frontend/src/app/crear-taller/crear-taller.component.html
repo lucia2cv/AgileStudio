@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h1 class="container__title">Nuevo taller</h1>
+  <div class="form__container">
+    <mat-form-field appearance="standard">
+      <mat-label>Nombre del taller</mat-label>
+      <label for="nombreInput"></label><input id="nombreInput" matInput placeholder="Masterclass Scrum" [(ngModel)]="this.workshopForm.nombre" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>Categoria</mat-label>
+      <label for="categoryInput"></label><input id="categoryInput" matInput placeholder="Scrum" [(ngModel)]="this.workshopForm.categoria" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>Imagen portada</mat-label>
+      <label for="imgInput"></label><input id="imgInput" matInput placeholder="www.googleimagen.com" [(ngModel)]="this.workshopForm.img" required>
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Url sala reunión</mat-label>
+      <label for="urlInput"></label><input id="urlInput" matInput placeholder="https://meet.google.com/" [(ngModel)]="this.workshopForm.videconferencia" required>
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Descripción del taller</mat-label>
+      <label for="descripcionInput"></label><input id="descripcionInput" matInput maxlength="60" placeholder="máximo 60 caracteres" [(ngModel)]="this.workshopForm.descripcion" required>
+    </mat-form-field>
+    <mat-form-field appearance="standard" >
+      <mat-label>Elige un equipo</mat-label>
+      <mat-select multiple [(ngModel)]="this.workshopForm.teams" required>
+        <mat-option *ngFor="let equipo of equipos" [value]="equipo.id">
+          {{equipo.nombreEquipo}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-stroked-button  matTooltip="Crear Cuenta" (click)="saveWorkshop()" class="form__button"> Guardar taller</button>
+  </div>
+</div>
+<app-footer></app-footer>
