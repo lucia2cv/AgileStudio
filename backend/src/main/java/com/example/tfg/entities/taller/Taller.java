@@ -21,6 +21,7 @@ public class Taller {
     private String categoria;
     private String img;
     private String descripcion;
+    private String videoconferencia;
     //private List<String> documentos = new ArrayList<>(4);
 
     @ManyToMany (mappedBy = "talleres",fetch = FetchType.EAGER)
@@ -30,12 +31,13 @@ public class Taller {
 
     protected Taller(){}
 
-    public Taller(String nombreTaller, String categoria, String img, String descripcion) {
+    public Taller(String nombreTaller, String categoria, String img, String descripcion, String videoconferencia) {
         this.nombreTaller = nombreTaller;
         this.categoria = categoria;
         this.img = img;
         this.equipos = new ArrayList<>();
         this.descripcion = descripcion;
+        this.videoconferencia = videoconferencia;
         //this.documentos = documentos;
     }
 
@@ -96,13 +98,23 @@ public class Taller {
         this.descripcion = descripcion;
     }
 
+    public String getVideoconferencia() {
+        return videoconferencia;
+    }
+
+    public void setVideoconferencia(String videoconferencia) {
+        this.videoconferencia = videoconferencia;
+    }
+
     @Override
     public String toString() {
         return "Taller{" +
                 "id=" + id +
                 ", nombreTaller='" + nombreTaller + '\'' +
-                ", categoria=" + categoria +
+                ", categoria='" + categoria + '\'' +
                 ", img='" + img + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", videoconferencia='" + videoconferencia + '\'' +
                 ", equipos=" + equipos +
                 '}';
     }

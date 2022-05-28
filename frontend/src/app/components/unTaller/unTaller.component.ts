@@ -26,5 +26,12 @@ export class UnTallerComponent implements OnInit {
       (error) =>alert('Invalid data taller component ' + error)
     );
   }
+  openNewTab(): void {
+    let finalUrl = this.taller.videoconferencia.trim();
+    if (!finalUrl.includes("http:") || !finalUrl.includes("https:") ) {
+      finalUrl = "https://" + finalUrl;
+    }
+    window.open(finalUrl, "_blank");
+  }
 
 }

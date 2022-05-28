@@ -1,10 +1,12 @@
 package com.example.tfg.entities.taller;
 
 import com.example.tfg.entities.equipo.Equipo;
+import com.example.tfg.entities.equipo.EquipoService;
 import com.example.tfg.entities.usuario.UserRepository;
 import com.example.tfg.entities.usuario.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -16,6 +18,8 @@ import java.util.List;
 public class TallerController {
     @Autowired
     private TallerService service;
+    @Autowired
+    private EquipoService equipoService;
     @Autowired
     private TallerRepository tallerRepository;
 
@@ -64,5 +68,22 @@ public class TallerController {
         Taller workshop = service.fetchById(id);
         return workshop;
     }
+    @GetMapping("/crear/taller")
+    public List<Equipo> getAllEquipos(Long id){
+        return equipoService.getuserTeams(id);
+    }
 
+    @PostMapping("/crear/taller")
+    public ResponseEntity<Long> saveWorkshop(@RequestBody WorkshopForm workshopForm){
+
+        try {
+            if (workshopForm.getTeams().length == 0) {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+            service.saveWorkshop(workshopForm);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
 }
