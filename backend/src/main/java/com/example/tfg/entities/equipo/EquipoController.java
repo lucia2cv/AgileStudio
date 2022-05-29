@@ -3,6 +3,8 @@ package com.example.tfg.entities.equipo;
 
 import com.example.tfg.entities.taller.Taller;
 import com.example.tfg.entities.taller.TallerService;
+import com.example.tfg.entities.taller.WorkshopForm;
+import com.example.tfg.entities.usuario.UserService;
 import com.example.tfg.entities.usuario.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,6 +26,13 @@ public class EquipoController {
 
     @Autowired
     private EquipoService service;
+    private UserService userService;
+    private TallerService tallerService;
+
+    public EquipoController(UserService userService, TallerService tallerService) {
+        this.userService = userService;
+        this.tallerService = tallerService;
+    }
 
     @GetMapping("/")
     public List<Equipo> getAllEquipos(Long id){
@@ -35,6 +44,28 @@ public class EquipoController {
         Equipo team = service.fetchById(id);
         return team;
     }
+    @GetMapping("/crear/equipo")
+    public List<Users> getAllUsers(){
+        return userService.getAllUsersList();
+    }
+   @GetMapping("/crear")
+    public List<Taller> getAllWorkshopsList(){
+        return tallerService.getAllWorkshopsList();
+    }
+    @PostMapping("/crear/equipo")
+    public ResponseEntity<Long> saveTeam(@RequestBody TeamForm teamForm){
+
+        try {
+            if (teamForm.getMiembros().length == 0) {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+            service.saveNewTeam(teamForm);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
    /* @Autowired
     private EquipoService service;
 

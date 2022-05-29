@@ -13,7 +13,7 @@
       </li>
     </ul>
   </div>
-  <div class="team__workshop-wrapper">
+  <div class="team__workshop-wrapper" *ngIf="equipo.talleres.length != 0">
     <div class="team__workshop-container" (click)="goToTalleres()">
       <h1>LOS TALLERES DEL EQUIPO</h1>
       <section class="team__workshop-slider">
@@ -23,10 +23,5 @@
       </section>
     </div>
   </div>
-  <!--<div class="team__workshop-wrapper">
-    <li  class="teams__workshop-list" *ngFor="let taller of equipo.talleres">
-      <img class="teams__workshop-img" src="{{ taller.img }}">
-    </li>
-  </div>-->
 </div>
 <app-footer></app-footer>

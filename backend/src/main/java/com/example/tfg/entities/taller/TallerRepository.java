@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface TallerRepository extends JpaRepository<Taller, Long> {
     public Taller findByNombreTaller(String nombreTaller);
+    public Taller findTallerById(Long id);
 }

@@ -16,7 +16,7 @@ export interface Users {
 }
 
 const URL='http://localhost:8080/home/editarPerfil/';
-
+const URLCrear='http://localhost:8080/equipos/crear/equipo';
 @Injectable()
 export class UserService {
 
@@ -56,5 +56,10 @@ export class UserService {
   private handleError(error:any){
 
     return throwError('Server error ('+error.status+ '): '+error);
+  }
+  getAllUsers():Observable<Users[]>{
+    console.log('getAllUSers');
+    return this.http.get<any>(URLCrear)
+      .pipe(catchError((error)=>this.handleError(error)));
   }
 }

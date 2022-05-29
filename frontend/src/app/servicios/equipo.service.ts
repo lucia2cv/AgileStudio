@@ -1,12 +1,14 @@
 import {Users, UserService} from "../user.service";
 import {Injectable} from "@angular/core";
 import {LoginService} from "../log-in/login.service";
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {DomSanitizer} from "@angular/platform-browser";
 import {Observable} from "rxjs";
 import {catchError} from "rxjs/operators";
 import {User} from "../user";
 import {Taller} from "./taller.service";
+import {WorkshopForm} from "../crear-taller/crear-taller.component";
+import {TeamForm} from "../crear-equipo/crear-equipo.component";
 
 export interface Equipo {
   id?:number;
@@ -51,5 +53,14 @@ export class EquipoService{
 
   getTeamById(id: number):Observable<Equipo>{
     return this.http.get<Equipo>(URL+'un-equipo/' + id );
+  }
+
+  saveTeam(teamForm: TeamForm) {
+    const body = JSON.stringify(teamForm);
+    console.log('body: ', body)
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.http.post(URL + 'crear/equipo',body, {headers})
   }
 }
