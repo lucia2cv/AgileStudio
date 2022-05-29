@@ -76,4 +76,6 @@ public class TallerService {
         return tallerRepository.save(taller);
     }
 
+    public List<Taller> getAllWorkshopsList() {return tallerRepository.findAll();}
+
 }

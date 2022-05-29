@@ -49,6 +49,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { UnTallerComponent } from './components/unTaller/unTaller.component';
 import { UnEquipoComponent } from './components/unEquipo/unEquipo.component';
 import { CrearTallerComponent } from './crear-taller/crear-taller.component';
+import { CrearEquipoComponent } from './crear-equipo/crear-equipo.component';
 
 /*const appRoutes =[
   {path: '', component: LogInComponent, useAsDefault: true},
@@ -70,6 +71,7 @@ import { CrearTallerComponent } from './crear-taller/crear-taller.component';
     UnTallerComponent,
     UnEquipoComponent,
     CrearTallerComponent,
+    CrearEquipoComponent,
   ],
   imports: [
     RouterModule.forRoot(ROUTES),

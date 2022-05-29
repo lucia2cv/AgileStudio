@@ -65,7 +65,7 @@ export class CrearTallerComponent implements OnInit {
   }
 
   saveWorkshop(){
-    this.tallerService.saveWorkshop(this.workshopForm).subscribe(id => {
+    this.tallerService.saveWorkshop(this.workshopForm).subscribe(() => {
       this.snackBar.open('Taller guardado correctamente', 'OK', {duration: 4000});
     }, error => {
       console.log(error);
