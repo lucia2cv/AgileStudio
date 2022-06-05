@@ -1,21 +1,26 @@
 package com.example.tfg.entities.usuario;
 
+import com.example.tfg.entities.equipo.Equipo;
+import com.example.tfg.entities.equipo.EquipoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
+import java.util.List;
 
 @CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping(value = "/home")
-public class UserController {   //todos los metodos de busqueda
+public class UserController {
 
     @Autowired
     private UserRepository userRepository;
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private EquipoService equipoService;
     /*Add user*/
     @PostMapping(value = "/users/")
     @ResponseStatus(HttpStatus.CREATED)
@@ -41,5 +46,20 @@ public class UserController {   //todos los metodos de busqueda
         userService.saveUser(updateUser);
         return updateUser;
     }
+    @GetMapping("/registro")
+    public List<Equipo> getAllTeams(){ return equipoService.getAllTeams();}
 
+    @PostMapping("/registro")
+    public ResponseEntity<Long> saveUser(@RequestBody RegisterForm registerForm){
+
+        try {
+            if (registerForm.getTeams().length == 0) {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+            userService.saveNewUser(registerForm);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
 }

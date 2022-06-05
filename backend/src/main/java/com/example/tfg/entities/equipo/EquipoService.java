@@ -71,4 +71,9 @@ public class EquipoService {
         equipo.setTalleres(tallerList);
         return equipoRepository.save(equipo);
     }
+
+    public List<Equipo> getAllTeams () {
+        List<Equipo> equiposUsuarios = equipoRepository.findAll();
+        return equiposUsuarios;
+    }
 }

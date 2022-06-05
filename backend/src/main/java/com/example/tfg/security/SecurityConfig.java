@@ -56,6 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/talleres/{categoria}").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/home/editarPerfil/{id}").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/equipos/crear/equipo").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/home/registro").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/loginerror").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/logout").permitAll();
 
@@ -65,6 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/editarPerfil/{id}").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/taller/crear/taller").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.POST,"/equipos/crear/equipo").permitAll();
+        http.authorizeRequests().antMatchers(HttpMethod.POST,"/home/registro").permitAll();
 
         http.authorizeRequests().antMatchers(HttpMethod.PUT,"/home/editarPerfil/{id}").permitAll();
 
