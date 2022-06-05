@@ -54,4 +54,7 @@ export class EquiposComponent implements OnInit {
   goToEquipo(id: number ): void {
     this.router.navigate(['equipos/un-equipo/',id]);
   }
+  goToNuevoEquipo(): void {
+    this.router.navigate(['equipos/crear/equipo']);
+  }
 }

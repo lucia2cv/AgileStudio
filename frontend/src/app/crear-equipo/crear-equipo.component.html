@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h1 class="container__title">Nuevo Equipo</h1>
+  <div class="form__container">
+    <mat-form-field appearance="standard">
+      <mat-label>Nombre del equipo</mat-label>
+      <label for="nombreInput"></label><input id="nombreInput" matInput placeholder="Masterclass Scrum" [(ngModel)]="this.teamForm.nombre" required>
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Logo del equipo</mat-label>
+      <label for="logoInput"></label><input id="logoInput" matInput placeholder="www.googleimagen.com" [(ngModel)]="this.teamForm.logo" required>
+    </mat-form-field>
+    <mat-form-field appearance="standard" >
+      <mat-label>Añade los miembros</mat-label>
+      <mat-select multiple [(ngModel)]="this.teamForm.miembros" required>
+        <mat-option *ngFor="let usuario of users" [value]="usuario.id">
+          {{usuario.email}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="standard" >
+      <mat-label>Añade talleres</mat-label>
+      <mat-select multiple [(ngModel)]="this.teamForm.talleres" required>
+        <mat-option *ngFor="let taller of talleres" [value]="taller.id">
+          {{taller.nombreTaller}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-stroked-button  matTooltip="Crear Cuenta" (click)="saveTeam()" class="form__button"> Guardar equipo</button>
+  </div>
+</div>
+<app-footer></app-footer>

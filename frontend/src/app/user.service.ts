@@ -1,9 +1,12 @@
 import {Injectable} from "@angular/core";
 import {LoginService} from "./log-in/login.service";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {catchError} from "rxjs/operators";
 import {User} from "./user";
+import {Equipo} from "./servicios/equipo.service";
+import {WorkshopForm} from "./crear-taller/crear-taller.component";
+import {RegisterForm} from "./components/crear-usuario/crear-usuario.component";
 
 export interface Users {
   id?: number;
@@ -16,26 +19,19 @@ export interface Users {
 }
 
 const URL='http://localhost:8080/home/editarPerfil/';
-
+const URLCrear='http://localhost:8080/equipos/crear/equipo';
+const urlRegistro='http://localhost:8080/home/registro';
 @Injectable()
 export class UserService {
 
   constructor(private loginService: LoginService, private http:HttpClient) {}
-  /*
-  getUserById(id:number|string):Observable<Users>{
-    console.log("entrando en get user By Id " + id);
-    console.log("entra en user unica");
-    console.log(id);
 
-    return this.http.get<any>(URL,{withCredentials:true})
-      .pipe(map(result => result.content),catchError((error)=>this.handleError(error)));
-  }*/
   getUser(id:number|string):Observable<Users>{
     console.log('getUSer');
     return this.http.get<any>(URL+id,{withCredentials:true})
       .pipe(catchError((error)=>this.handleError(error)));
   }
-  saveUser(user:Users):Observable<Users>{
+  oldSaveUser(user:Users):Observable<Users>{
     const body=JSON.stringify(user);
     const headers=new HttpHeaders({
       'Content-Type': 'application/json',
@@ -56,5 +52,24 @@ export class UserService {
   private handleError(error:any){
 
     return throwError('Server error ('+error.status+ '): '+error);
+  }
+  getAllUsers():Observable<Users[]>{
+    console.log('getAllUSers');
+    return this.http.get<any>(URLCrear)
+      .pipe(catchError((error)=>this.handleError(error)));
+  }
+  getAllTeams():Observable<Equipo[]>{
+    console.log("pidiendo todos los datos");
+    return this.http.get<any>(urlRegistro)
+      .pipe(catchError((error)=>this.handleError(error)));
+  }
+
+  saveUser(registerForm: RegisterForm) {
+    const body = JSON.stringify(registerForm);
+    console.log('body: ', body)
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    return this.http.post(urlRegistro ,body, {headers})
   }
 }

@@ -17,7 +17,8 @@ export interface Taller {
   //documentos: String [4];
 }
 
-const URL='http://localhost:8080/talleres/'
+const URL='http://localhost:8080/talleres/';
+const URLCrear='http://localhost:8080/equipos/crear/';
 @Injectable()
 export class TallerService{
   /*Constructor con lo que vamos a necesitar*/
@@ -59,5 +60,9 @@ export class TallerService{
     return this.http.post(URL + 'crear/taller',body, {headers})
   }
 
-
+  getAllWorkshopsList():Observable<Taller[]>{
+    console.log('getAllTalleresList');
+    return this.http.get<any>(URLCrear)
+      .pipe(catchError((error)=>this.handleError(error)));
+  }
 }
