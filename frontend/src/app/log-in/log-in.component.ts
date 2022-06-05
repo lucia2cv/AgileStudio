@@ -20,7 +20,6 @@ export interface DialogData {
 })
 export class LogInComponent implements OnInit {
 
-  /*email = new FormControl('', [ Validators.required, Validators.email]);*/
   hide = true;
   dialogoAbierto = false;
   nombre:string;
@@ -37,27 +36,13 @@ export class LogInComponent implements OnInit {
   @Input() error: string | null;
 
   @Output() submitEM = new EventEmitter();
- /* getErrorMessage() {
-    if(this.email.hasError('required')){
-      return 'You must enter a value';
-    }
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
-*/
 
   constructor( public dialog: MatDialog, public router: Router, public loginService: LoginService, public userService: UserService) { }
 
   login(event:any, nombre:string, password:string){
-    console.log(nombre);
-    console.log(password);
     event.preventDefault();
     this.loginService.login(nombre, password).subscribe((us) => {
-      console.log("loglin service1");
-      console.log(us);
-
-     // this.userService.getUserById(us.id);
-      console.log("estoy en linea 59");
       this.router.navigate(['/home']);
       return us;
     },
@@ -73,20 +58,9 @@ export class LogInComponent implements OnInit {
       );
   }
 
-  openDialog(): void{
-    this.dialogoAbierto = true;
-    console.log('Dialogo abierto');
-    const dialogRef = this.dialog.open(DialogoRegistroComponent,{
-      width: '50%', height:'50%', data: {nombre: this.nombre}
-    });
-    dialogRef.afterClosed().subscribe( result =>{
-      console.log('Dialogo cerrado');
-      this.dialogoAbierto=false;
-      this.nombre = result;
-    });
-  }
-
   ngOnInit(): void {
   }
-
+  goToRegistro(): void {
+    this.router.navigate(['registro']);
+  }
 }

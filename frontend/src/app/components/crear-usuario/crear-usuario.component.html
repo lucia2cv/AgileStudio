@@ -1,0 +1,41 @@
+<div class="container">
+  <h1 class="container__title">Bienvenido</h1>
+  <div class="form__container">
+    <mat-form-field appearance="standard">
+      <mat-label>Nombre </mat-label>
+      <label for="nombreInput"></label><input id="nombreInput" matInput placeholder="Lucía" [(ngModel)]="this.registerForm.nombre" required>
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>email</mat-label>
+      <label for="emailInput"></label><input id="emailInput" matInput placeholder="lucia@gmail.com" [(ngModel)]="this.registerForm.email" required>
+    </mat-form-field>
+    <mat-form-field class ="contraseña">
+      <mat-label>Contraseña</mat-label>
+      <input matInput #password [type]="hide ? 'password' : 'text'" [(ngModel)]="this.registerForm.password" required>
+      <button mat-icon-button matSuffix (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>imagen perfil</mat-label>
+      <label for="imgInput"></label><input id="imgInput" matInput placeholder="www.googleimagen.com" [(ngModel)]="this.registerForm.img" required>
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label >Rol</mat-label>
+      <mat-select [(ngModel)]="this.registerForm.rol" required>
+        <mat-option *ngFor="let rol of roles" [value]="rol">{{rol}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="standard" >
+      <mat-label>Tu equipo</mat-label>
+      <mat-select multiple [(ngModel)]="this.registerForm.teams" required>
+        <mat-option *ngFor="let equipo of equipos" [value]="equipo.id">
+          {{equipo.nombreEquipo}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-stroked-button  matTooltip="Crear Cuenta" (click)="saveUser()" class="form__button">Registrarse</button>
+  </div>
+</div>
+<app-footer></app-footer>

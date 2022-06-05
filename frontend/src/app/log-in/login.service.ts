@@ -13,6 +13,7 @@ export interface Users {
   equipo_id: number;
   authdata: string;
   img: string;
+  teams: number[];
 
 }
 @Injectable()
