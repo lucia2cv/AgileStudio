@@ -28,10 +28,18 @@ export class HomeComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    /* this.equipoService.getAllEquipos().subscribe(
-      equipos=>this.equipos=equipos,
+    this.equipoService.getAllEquipos(this.loginService.user).subscribe(
+      (eq) => {
+        this.equipos=eq;
+        if (this.equipos.length > 3) {
+          this.equipos = this.equipos.slice(0,3);
+        }
+        console.log(this.equipos);
+      },
       error=>console.log(error)
-    ); */
+    );
   }
-
+  goToEquipos(): void {
+    this.router.navigate(['equipos']);
+  }
 }

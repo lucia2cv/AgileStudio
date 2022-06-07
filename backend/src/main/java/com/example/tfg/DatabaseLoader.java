@@ -25,18 +25,6 @@ public class DatabaseLoader {
 
     @PostConstruct
     private void initDataBase(){
-        /*List<String> listCat1 = new ArrayList<>();
-        listCat1.add("ciberseguridad");
-
-        List<String> listCat2 = new ArrayList<>();
-        listCat2.add("scrum");
-
-        List<String> listCat3 = new ArrayList<>();
-        listCat3.add("Vue3");
-        listCat3.add("Js");*/
-        /*List<String> documentacion1 = new ArrayList<>(4);
-        documentacion1.add("https://v2.vuejs.org/v2/guide/?redirect=true");
-        documentacion1.add("https://devdocs.io/vue~1/");*/
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String password = passwordEncoder.encode("user");
 
@@ -46,7 +34,11 @@ public class DatabaseLoader {
         Equipo equipo2 = new Equipo("equipo2", "https://cdn1.vectorstock.com/i/1000x1000/79/15/ss-logos-and-symbols-template-icons-app-vector-20097915.jpg");
         equipoRepository.save(equipo2);
 
+        Equipo equipo3 = new Equipo("URJC", "https://economia.uniroma2.it/public/erasmus/images/rey_juan_carlos_mostoles.jpg");
+        equipoRepository.save(equipo3);
 
+        Equipo equipo4 = new Equipo("ETSII", "https://pbs.twimg.com/profile_images/378800000798423814/14d42d3051dd63ae5f6c46c3abd44ad3_400x400.jpeg");
+        equipoRepository.save(equipo4);
 
         Users user1 = new Users("user1",password,"user1@email.com","desarrollador", "https://i.pinimg.com/originals/fc/8a/ee/fc8aee57ed2b300efa3f46ad88f46b0f.jpg");
         userRepository.save(user1);
@@ -72,7 +64,8 @@ public class DatabaseLoader {
         equipo2.getMiembros().add(user3);
         equipo2.getMiembros().add(user4);
 
-
+        equipo3.getMiembros().add(user4);
+        equipo4.getMiembros().add(user4);
 
         Taller taller1  = new Taller("Cyber" , "ciberseguridad", "https://www.itdigitalsecurity.es/files/202203/ciberseguridad.jpg",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam", "https://meet.google.com/");
@@ -131,8 +124,12 @@ public class DatabaseLoader {
         equipo2.getTalleres().add(taller12);
         equipo2.getTalleres().add(taller13);
 
+        equipo3.getTalleres().add(taller12);
+        equipo4.getTalleres().add(taller13);
         equipoRepository.save(equipo1);
         equipoRepository.save(equipo2);
+        equipoRepository.save(equipo3);
+        equipoRepository.save(equipo4);
 
 
 

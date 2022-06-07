@@ -16,11 +16,12 @@
 }
 
 .teams__button {
+  background-color: #5EDE92;
   max-width: 15rem;
   font-size: 1.5rem;
   height: 4rem;
   position: absolute;
-  right: 1rem;
+  right: 2rem;
 }
 .teams__tittle {
   display: flex;
@@ -31,6 +32,7 @@
 
 .teams__container {
   align-items: center;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   flex: 10;
