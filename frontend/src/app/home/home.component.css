@@ -2,20 +2,24 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 6.8%;
+  padding: 2rem 1.5rem 1.5rem;
   left: 25%;
   width: 50%;
-  height: 83.5%;
+  height: 79.2%;
   background-color: #75A478;
 }
 .as-global__img {
   display: flex;
   justify-content: center;
 }
+
+.as-global__img-user {
+  height: 17rem;
+}
 .as-global__edit{
   background-color: #F0F8FFFF;
   position: relative;
-  left: 10%;
+  left: 2%;
   top: 85%;
 }
 .as-wrapper{
@@ -32,9 +36,47 @@
   display: flex;
   flex-direction: column;
   height: 45%;
-  margin-top: 3rem;
-
+  margin-top: 2rem;
 }
+
+.as-wrapper__titulo{
+  font-family: 'Raleway';
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.equipos__wrapper{
+  align-items: center;
+  background-color: #CFFFCA;
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.equipos__wrapper-item{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 13rem;
+  justify-content: space-evenly;
+  max-width: 21rem;
+  padding: 1rem;
+}
+
+.equipos__item-img {
+  border: solid 3px #295218;
+  border-radius: 8px;
+  flex: 1;
+  max-height: 13rem;
+  max-width: 21rem;
+  object-fit: cover;
+}
+
 /*
 .grid-container{
   height: 100%;
