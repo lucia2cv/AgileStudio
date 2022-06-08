@@ -46,7 +46,7 @@ export class CrearEquipoComponent implements OnInit {
 
   saveTeam(){
     this.teamsServicee.saveTeam(this.teamForm).subscribe(() => {
-      this.snackBar.open('Taller guardado correctamente', 'OK', {duration: 4000});
+      this.snackBar.open('Equipo guardado correctamente', 'OK', {duration: 4000});
     }, error => {
       console.log(error);
       this.snackBar.open('Algo ha fallado', 'OK', {duration: 4000});
