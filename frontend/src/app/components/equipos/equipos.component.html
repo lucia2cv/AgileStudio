@@ -4,7 +4,7 @@
   <div class="teams">
     <div class="teams__header">
       <h1 class="teams__tittle">MIS EQUIPOS</h1>
-      <button mat-raised-button  class="teams__button" (click)="goToNuevoEquipo()">Nuevo Equipo</button>
+      <button mat-raised-button  class="teams__button" (click)="goToNuevoEquipo()" *ngIf="loginService.user.rol == 'scrum master'">Nuevo Equipo</button>
     </div>
 
     <ul class="teams__container">
