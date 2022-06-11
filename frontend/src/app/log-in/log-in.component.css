@@ -19,9 +19,10 @@
 #image{
  height: 100%;
 }
-.mat-card{
+.home__card{
   width: 75%;
-  height: 75%;
+  height: 51%;
+  margin-bottom: 15rem;
 
 }
 

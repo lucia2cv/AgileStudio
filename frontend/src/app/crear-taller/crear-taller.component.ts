@@ -38,30 +38,35 @@ export class CrearTallerComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.tallerService.getAllEquipos(this.loginService.user).subscribe(
-      (eq) => {
-        this.equipos=eq;
-        this.equiposUltimate=eq;
-        this.equiposUltimate.forEach(element => {
-          element.miembros.forEach(miembro => {
-            if (miembro.id == undefined) {
-              element.miembros = element.miembros.filter(obj => {return obj !== miembro})
-              this.equipos.forEach(el => {
-                el.miembros.forEach(m => {
-                  // @ts-ignore
-                  if (m.id == miembro) {
-                    if(!element.miembros.includes(m)) {
-                      element.miembros.push(m)
+    if (this.loginService.user.rol !== 'scrum master') {
+      this.router.navigate(['talleres']);
+    } else {
+      this.tallerService.getAllEquipos(this.loginService.user).subscribe(
+        (eq) => {
+          this.equipos=eq;
+          this.equiposUltimate=eq;
+          this.equiposUltimate.forEach(element => {
+            element.miembros.forEach(miembro => {
+              if (miembro.id == undefined) {
+                element.miembros = element.miembros.filter(obj => {return obj !== miembro})
+                this.equipos.forEach(el => {
+                  el.miembros.forEach(m => {
+                    // @ts-ignore
+                    if (m.id == miembro) {
+                      if(!element.miembros.includes(m)) {
+                        element.miembros.push(m)
+                      }
                     }
-                  }
+                  })
                 })
-              })
-            }
+              }
+            })
           })
-        })
-      },
-      error=>console.log(error)
-    );
+        },
+        error=>console.log(error)
+      );
+    }
+
   }
 
   saveWorkshop(){

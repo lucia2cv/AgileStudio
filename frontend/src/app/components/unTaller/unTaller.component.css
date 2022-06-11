@@ -16,6 +16,7 @@
 .workshop__left-side {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .workshop__wrapper {
