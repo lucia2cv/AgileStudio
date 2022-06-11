@@ -31,19 +31,17 @@ export class UserService {
     return this.http.get<any>(URL+id,{withCredentials:true})
       .pipe(catchError((error)=>this.handleError(error)));
   }
-  oldSaveUser(user:Users):Observable<Users>{
+  editUser(user:Users):Observable<Users>{
     const body=JSON.stringify(user);
     const headers=new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    console.log(user);
 
     if(!user.id){
       return this.http
         .post<Users>(URL,body,{headers})
         .pipe(catchError((error)=>this.handleError(error)));
     }else{
-      console.log(user.nombre);
       return this.http
         .put<Users>(URL+user.id,body,{headers})
         .pipe(catchError((error)=>this.handleError(error)));
