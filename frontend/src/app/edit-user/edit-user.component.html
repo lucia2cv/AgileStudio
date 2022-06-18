@@ -3,22 +3,28 @@
     <!--Añadir el ngSubmit -->
     <h1>Editar Perfil</h1>
     <form #eventForm="ngForm" class="card-global__form" >
-      <mat-form-field class="nombre">
+      <mat-form-field appearance="legacy">
+        <mat-label>Rol</mat-label>
+        <mat-select [(ngModel)]="loginService.user.rol" required  name="rol">
+          <mat-option *ngFor="let rol of roles" [value]="rol">{{rol}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
         <input
           matInput
-          [(ngModel)]="loginService.user.nombre"
-          placeholder="Nombre"
-          #eventFormComponent
-          #eventFormControl="ngModel"
-          name="nombre"
-          required
+          [(ngModel)]="loginService.user.email"
+          placeholder="Correo electrónico"
+          name="email"
         />
       </mat-form-field>
-      <!-- <mat-form-field class="email">
-         <mat-label>Email</mat-label>
-         <input matInput #email placeholder="Email"
-                [formControl]="form.controls.email"  required>
-       </mat-form-field>-->
+      <mat-form-field>
+        <input
+          matInput
+          [(ngModel)]="loginService.user.img"
+          placeholder="Imagen de perfil"
+          name="img"
+        />
+      </mat-form-field>
     </form>
 
     <button mat-raised-button class="card-global__button" (click)="save()">Guardar</button>
