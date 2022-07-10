@@ -24,23 +24,7 @@ export class EquipoService{
   /*Constructor con lo que vamos a necesitar*/
   constructor(private loginService:LoginService,private userService:UserService,private http:HttpClient, private _sanitizer:DomSanitizer){}
 
-
-
-  /*getEvents():Observable<Equipo[]>{
-    console.log("Entrando en getEvents");
-    return this.http.get<any>(URL,{withCredentials:true})
-      .pipe(
-        map(result=>result.content),
-        catchError((error)=>this.handleError(error)));
-  }*/
-
- /* getEvent(id:number|string):Observable<Event>{
-    return this.http.get<Event>(URL+id,{withCredentials:true})
-      .pipe(catchError((error)=>this.handleError(error)));
-  }*/
-
   getAllEquipos(user: Users):Observable<Equipo[]>{
-    console.log("pidiendo todos los datos");
     let params = new HttpParams();
     params = params.set('id', String(user.id));
     return this.http.get<Equipo[]>(URL, {params})

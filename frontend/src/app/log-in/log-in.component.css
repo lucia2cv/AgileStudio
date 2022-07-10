@@ -1,16 +1,15 @@
 #global{
   height: inherit;
 }
-#botones{
-  padding-top: 10%;
-}
+
 .grid-container{
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 #right{
   background-color: #295218;
-  height: 100%;
+  height: 55%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,9 +17,9 @@
 #image{
  height: 100%;
 }
-.mat-card{
+.home__card{
   width: 75%;
-  height: 75%;
+  height: 62%;
 
 }
 

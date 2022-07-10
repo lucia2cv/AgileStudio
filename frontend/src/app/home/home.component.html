@@ -4,7 +4,7 @@
 
 <mat-card class="as-global">
   <div class="as-global__img">
-    <img src="assets/userIcon.png" class="icon">
+    <img src="{{loginService.user.img}}"  class="as-global__img-user">
     <button mat-icon-button class="as-global__edit"  matTooltip="Editar perfil" (click)="navigateEdit()">
       <mat-icon>mode_edit</mat-icon>
     </button>
@@ -16,66 +16,13 @@
   </div>
 
   <div class="as-wrapper__equipos">
-    <h2>Mis equipos</h2>
-    <div>
-      <a *ngFor="let equipo of equipos">
-        {{equipo.nombreEquipo}}
-      </a>
-    </div>
+    <h2 class="as-wrapper__titulo">Mis equipos</h2>
+    <ul class="equipos__wrapper" (click)="goToEquipos()">
+      <li class="equipos__wrapper-item" *ngFor="let equipo of equipos">
+        <img class="equipos__item-img" src="{{ equipo.logoImg }}">
+      </li>
+    </ul>
   </div>
-    <!--<div class="grid-container"
-      gdAreas="imagen imagen | nombreRol nombreRol| equipo equipo"
-      gdGap="13px"
-      gdRows="40% 10% 45%">
-      <div gdArea="imagen">
-                                                                       Imagen por defecto si el usuario no tiene una
-        <img src="assets/userIcon.png" id="icon">
-        <button mat-icon-button color="black" >
-          <mat-icon>mode_edit</mat-icon>
-        </button>
-                                                                                Añadir comprobación de la imagen del usuario  loginService.user.image
-      </div>
-      <div gdArea="nombreRol" id="nombreRol">
-        {{loginService.user.nombre}} <br>
-        {{loginService.user.rol}}
-      </div>
-
-      <div gdArea="equipo">
-        EQUIPOS
-      </div>
-    </div>
-    !!!!!!!!!!!!!!!!!!!!<div>
-      <strong>{{loginService.user.nombre}}</strong>
-      {{loginService.user.rol}}
-
-      <button mat-raised-button
-              matTooltip="Editar"
-              matTooltipClass="example-tooltip-red"
-              aria-label="Button that shows a red tooltip"
-              class="example-button">
-        Editar
-      </button>
-
-    !!!!!!!!!!!!!!!!!!!!!!!!!!!</div>-->
   </mat-card>
 </ng-container>
 <app-footer></app-footer>
-<!--<mat-card id="card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{user.nombre}}</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>!-->

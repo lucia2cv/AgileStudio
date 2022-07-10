@@ -5,14 +5,9 @@
   </h1>
   <div class="workshop__wrapper">
     <div class="workshop__left-side">
-      <div class="workshop__documents">
+      <!--<div class="workshop__documents">
         <h2 class="workshop__documents-title">Documentos</h2>
-        <!--<ul class="workshop__documents-list">
-          <li class="workshop__wrapper-item" *ngFor="let enlace of taller.documentos">
-            <a>{{enlace}}</a>
-          </li>
-        </ul>-->
-      </div>
+      </div>-->
       <button mat-raised-button class="workshop__wrapper-button"  (click)="openNewTab()">Sala de reunión</button>
     </div>
     <img class="workshop__img" src="{{ taller.img }}">
@@ -21,11 +16,5 @@
       <p class="workshop__description-text">{{ taller.descripcion }}</p>
     </div>
   </div>
-  <!--<ul class="workshop__list">
-    <li class="workshop__list-item" *ngFor="let elem of filterTalleres">
-      <img class="workshop__item-img" src="{{ elem.img }}">
-      <p class="workshop__item-title">{{ elem.nombreTaller }}</p>
-    </li>
-  </ul>-->
 </div>
 <app-footer></app-footer>

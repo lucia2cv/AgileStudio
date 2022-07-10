@@ -11,10 +11,8 @@ import {Users, UserService} from "../user.service";
 })
 export class EditUserComponent{
 
-  form: FormGroup = new FormGroup({
-    nombre: new FormControl('')/*,
-    email: new FormControl('')*/
-  });
+  roles: string[] = ['desarrollador', 'scrum master', 'product owner'];
+
   user: Users;
   modUser: boolean;
   constructor(public loginService: LoginService, activatedRoute: ActivatedRoute, public service: UserService, private router: Router) {
@@ -31,8 +29,11 @@ export class EditUserComponent{
 
   save(){
     console.log(this.loginService.user)
-    this.service.saveUser(this.loginService.user).subscribe(
-      _ =>{},(error:Error)=>console.error('error creating new categories: '+this.loginService.user + ' ' +error));
-    window.history.back();
+    this.service.editUser(this.loginService.user).subscribe(
+      _ => {
+        window.history.back();
+      },
+      (error:Error)=> console.error('error edit user info: '+this.loginService.user + ' ' +error));
+
   }
 }

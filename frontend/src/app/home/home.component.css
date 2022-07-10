@@ -2,21 +2,25 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 6.8%;
+  padding: 2rem 1.5rem 1.5rem;
   left: 25%;
   width: 50%;
-  height: 83.5%;
+  max-height: 72.7%;
   background-color: #75A478;
 }
 .as-global__img {
   display: flex;
   justify-content: center;
 }
+
+.as-global__img-user {
+  max-height: 12rem;
+}
 .as-global__edit{
   background-color: #F0F8FFFF;
-  position: relative;
-  left: 10%;
-  top: 85%;
+  position: absolute;
+  left: 65%;
+  top: 36%;
 }
 .as-wrapper{
   display: flex;
@@ -26,30 +30,49 @@
   display: flex;
   justify-content: center;
   font-size: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 .as-wrapper__equipos{
   display: flex;
   flex-direction: column;
   height: 45%;
-  margin-top: 3rem;
+  margin-top: 0.5rem;
+}
 
+.as-wrapper__titulo{
+  font-family: 'Raleway';
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
-/*
-.grid-container{
-  height: 100%;
-  width: 100%;
-}
-#icon{
+
+.equipos__wrapper{
+  align-items: center;
+  background-color: #CFFFCA;
+  cursor: pointer;
   display: flex;
-  padding-top: 3%;
-  margin-left: auto;
-  margin-right: auto;
+  flex: 1;
+  justify-content: space-around;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
 }
-#nombreRol{
-  padding-top: 1%;
-  text-align: center;
-  font-size: 25px;
-  line-height: 1.2;
+
+.equipos__wrapper-item{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-height: 8rem;
+  justify-content: space-evenly;
+  max-width: 21rem;
+  padding: 1rem;
 }
-*/
+
+.equipos__item-img {
+  border: solid 3px #295218;
+  border-radius: 8px;
+  flex: 1;
+  max-height: 8rem;
+  max-width: 10rem;
+  object-fit: cover;
+}
