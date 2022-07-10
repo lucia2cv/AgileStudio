@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 49.89rem;
+  height: 81.2%;
 }
 
 .workshop__title {
@@ -28,8 +28,8 @@
 .workshop__img {
   justify-self: center;
   margin-top: 2rem;
-  max-width: 40rem;
-  max-height: 40rem;
+  max-width: 25rem;
+  max-height: 20rem;
 }
 
 .workshop__wrapper-button {
@@ -48,9 +48,9 @@
   flex-direction: column;
   justify-content: center;
   background-color: #5EDE92;
-  margin-top: 3rem;
+  margin-top: 2rem;
   max-width: 35rem;
-  max-height: 28rem;
+  max-height: 12rem;
   margin-left: 2rem;
   margin-right: 1rem;
   padding: 1rem 2rem;
@@ -78,5 +78,6 @@
 
 .workshop__description-text, .workshop__documents-list {
   flex: 5;
+  padding-top: 2.5rem;
   text-align: center;
 }

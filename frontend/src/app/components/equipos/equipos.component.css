@@ -62,7 +62,7 @@
 
 .teams__container-logo {
   margin-right: 1rem;
-  max-height: 5rem;
+  max-height: 3rem;
   max-width: 5rem;
 }
 
@@ -73,6 +73,7 @@
   font-family: 'Raleway';
   font-size: 2rem;
   justify-content: center;
+  margin-bottom: 0;
 }
 
 .teams__members-list {
@@ -91,7 +92,7 @@
   padding-top: 1rem;
 }
 .teams__member-img {
-  max-height: 15rem;
+  max-height: 10rem;
   max-width: 17rem;
 }
 .teams__member-name {

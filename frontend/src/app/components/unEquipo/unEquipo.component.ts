@@ -11,7 +11,6 @@ import {Taller} from "../../servicios/taller.service";
 export class UnEquipoComponent implements OnInit {
 
   equipo: Equipo;
-  talleres: Taller[];
   id: number;
   constructor(activatedRoute: ActivatedRoute, public equipoService: EquipoService,private router:Router) {
     this.id = activatedRoute.snapshot.params['id'];
@@ -25,7 +24,5 @@ export class UnEquipoComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  goToTalleres(): void {
-    this.router.navigate(['talleres/']);
-  }
+
 }

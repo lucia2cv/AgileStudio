@@ -2,11 +2,10 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 85.1%;
 }
 .container__title {
   font-size: 3rem;
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
 .form__container {
@@ -16,8 +15,8 @@
   flex: 1;
   flex-direction: column;
   height: 50%;
-  margin: 2rem 0;
-  padding-top: 2rem;
+  margin: 1rem 0 2rem 0;
+  padding-top: 1rem;
   padding-right: 2rem;
   padding-left: 2rem;
   width: 50%;
@@ -27,6 +26,7 @@
   background-color: #39721a;
   color: #D7FFD9;
   font-size: 1rem;
-  height: 5rem;
-  margin-top: 3rem;
+  height: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
