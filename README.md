@@ -1,4 +1,4 @@
-# TaskManagement
+# Agile Studio
   Este es el repositorio utilizado para el proyecto Agile Studio del trabajo de fin de grado
 ##Autora
   Soy Lucía, estudiante de Ingeniería del Software en la Universidad Rey Juan Carlos.
