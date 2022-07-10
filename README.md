@@ -9,5 +9,5 @@
     Insertar en la terminal el siguiente comando:  
       npm install
 3. Instalar Angular cli  
-    Abrir el terminal en la carpeta frontend e instertar el siguiente comando:  
+    Abrir la terminal en la carpeta frontend e instertar el siguiente comando:  
       npm install -g @angular/cli
